@@ -1,0 +1,28 @@
+{
+  "id": "crs-ikmat-sys",
+  "slug": "ik-mat-system",
+  "status": "published",
+  "title": { "en": "IK-mat system and documentation", "no": "IK-mat system og dokumentasjon", "th": "ระบบเอกสาร IK-mat" },
+  "summary": {
+    "en": "Internkontroll-mat for small and medium serving places: the written system a food business must keep and be able to show.",
+    "no": "Internkontroll-mat for små og mellomstore serveringssteder: systemet en matbedrift må føre og kunne vise fram.",
+    "th": "ระบบควบคุมภายในด้านอาหารสำหรับร้านขนาดเล็กและกลาง เอกสารที่ธุรกิจอาหารต้องจัดทำและแสดงได้"
+  },
+  "regulator": "Mattilsynet",
+  "audience": {
+    "en": "Owners and managers responsible for a food business.",
+    "no": "Eiere og ledere med ansvar for en matbedrift.",
+    "th": "เจ้าของและผู้จัดการที่รับผิดชอบธุรกิจอาหาร"
+  },
+  "outcomes": [
+    { "en": "Building the written IK-mat system from scratch", "no": "Bygge IK-mat systemet fra bunnen", "th": "จัดทำระบบเอกสาร IK-mat ตั้งแต่ต้น" },
+    { "en": "Daily and weekly record keeping that holds up", "no": "Daglig og ukentlig journalføring som holder mål", "th": "การจดบันทึกประจำวันและประจำสัปดาห์ที่ใช้ได้จริง" },
+    { "en": "Handling deviations and corrective action", "no": "Håndtere avvik og korrigerende tiltak", "th": "การจัดการข้อบกพร่องและการแก้ไข" }
+  ],
+  "nextDateIso": null,
+  "priceNok": 800,
+  "durationHours": 5,
+  "capacity": [6, 8],
+  "format": { "en": "Online over Line video", "no": "Nettbasert over Line video", "th": "เรียนออนไลน์ผ่าน Line" },
+  "updatedAt": "2026-08-29"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "crs-allergy",
+  "slug": "food-allergy",
+  "status": "published",
+  "title": { "en": "Food allergy, Matallergi", "no": "Matallergi", "th": "โรคภูมิแพ้อาหาร" },
+  "summary": {
+    "en": "Allergen handling. A reaction can be fatal, and a kitchen that cannot answer questions about ingredients carries real liability.",
+    "no": "Håndtering av allergener. En reaksjon kan være dødelig, og et kjøkken som ikke kan svare på spørsmål om ingredienser har et reelt ansvar.",
+    "th": "การจัดการสารก่อภูมิแพ้ อาการแพ้อาจถึงแก่ชีวิต และครัวที่ตอบคำถามเรื่องส่วนผสมไม่ได้ต้องรับผิดชอบตามกฎหมาย"
+  },
+  "regulator": null,
+  "audience": {
+    "en": "Anyone who cooks for or serves the public.",
+    "no": "Alle som lager mat til eller serverer publikum.",
+    "th": "ผู้ที่ทำอาหารหรือเสิร์ฟให้กับลูกค้าทั่วไป"
+  },
+  "outcomes": [
+    { "en": "The declarable allergens and where they hide", "no": "Allergenene som må deklareres og hvor de gjemmer seg", "th": "สารก่อภูมิแพ้ที่ต้องแจ้งและจุดที่มักถูกมองข้าม" },
+    { "en": "Avoiding cross contamination in a small kitchen", "no": "Unngå krysskontaminering på et lite kjøkken", "th": "การป้องกันการปนเปื้อนข้ามในครัวขนาดเล็ก" },
+    { "en": "Answering a guest question correctly, every time", "no": "Svare riktig på spørsmål fra gjester, hver gang", "th": "การตอบคำถามลูกค้าอย่างถูกต้องทุกครั้ง" }
+  ],
+  "nextDateIso": null,
+  "priceNok": 800,
+  "durationHours": 5,
+  "capacity": [6, 8],
+  "format": { "en": "Online over Line video", "no": "Nettbasert over Line video", "th": "เรียนออนไลน์ผ่าน Line" },
+  "updatedAt": "2026-08-29"
+}

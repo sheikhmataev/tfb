@@ -1,0 +1,28 @@
+{
+  "id": "crs-hms",
+  "slug": "hse-labour-law",
+  "status": "published",
+  "title": { "en": "HMS and labour law", "no": "HMS og arbeidsmiljølov", "th": "HMS และกฎหมายแรงงาน" },
+  "summary": {
+    "en": "What the law requires of an employer, and what rights a worker has. Required training for owners and managers.",
+    "no": "Hva loven krever av en arbeidsgiver, og hvilke rettigheter en arbeidstaker har. Påkrevd opplæring for eiere og ledere.",
+    "th": "กฎหมายกำหนดอะไรกับนายจ้าง และลูกจ้างมีสิทธิอะไรบ้าง เป็นการอบรมที่เจ้าของกิจการและผู้จัดการต้องผ่าน"
+  },
+  "regulator": "Arbeidstilsynet",
+  "audience": {
+    "en": "Employers and managers, and workers who want to know their rights.",
+    "no": "Arbeidsgivere og ledere, og arbeidstakere som vil kjenne rettighetene sine.",
+    "th": "นายจ้าง ผู้จัดการ และลูกจ้างที่ต้องการรู้สิทธิของตน"
+  },
+  "outcomes": [
+    { "en": "Employer duties under arbeidsmiljøloven", "no": "Arbeidsgivers plikter etter arbeidsmiljøloven", "th": "หน้าที่ของนายจ้างตามกฎหมายสภาพแวดล้อมการทำงาน" },
+    { "en": "Contracts, working hours, overtime and pay", "no": "Kontrakter, arbeidstid, overtid og lønn", "th": "สัญญาจ้าง เวลาทำงาน ล่วงเวลา และค่าจ้าง" },
+    { "en": "What to do when something goes wrong at work", "no": "Hva du gjør når noe går galt på jobb", "th": "สิ่งที่ต้องทำเมื่อเกิดปัญหาในที่ทำงาน" }
+  ],
+  "nextDateIso": null,
+  "priceNok": 800,
+  "durationHours": 5,
+  "capacity": [6, 8],
+  "format": { "en": "Online over Line video", "no": "Nettbasert over Line video", "th": "เรียนออนไลน์ผ่าน Line" },
+  "updatedAt": "2026-08-29"
+}

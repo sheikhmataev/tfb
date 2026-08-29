@@ -1,0 +1,32 @@
+[
+  {
+    "heading": { "en": "Norwegian authorities", "no": "Norske myndigheter", "th": "หน่วยงานราชการนอร์เวย์" },
+    "items": [
+      { "name": "UDI", "href": "https://www.udi.no/", "note": { "en": "Residence permits, renewals, permanent residence", "no": "Oppholdstillatelse, fornyelse, permanent opphold", "th": "ใบอนุญาตพำนัก การต่ออายุ ถิ่นที่อยู่ถาวร" } },
+      { "name": "Politiet", "href": "https://www.politi.no/", "note": { "en": "Passports, reporting a crime, your local district", "no": "Pass, anmeldelse, ditt politidistrikt", "th": "หนังสือเดินทาง การแจ้งความ สถานีตำรวจในพื้นที่" } },
+      { "name": "NAV", "href": "https://www.nav.no/", "note": { "en": "Benefits, sick pay, unemployment, family support", "no": "Ytelser, sykepenger, dagpenger, familiestøtte", "th": "สวัสดิการ ค่าจ้างเจ็บป่วย เงินว่างงาน การช่วยเหลือครอบครัว" } },
+      { "name": "Barnevernet", "href": "https://www.bufdir.no/barnevern", "note": { "en": "Child welfare service", "no": "Barneverntjenesten", "th": "บริการคุ้มครองเด็ก" } },
+      { "name": "Mattilsynet", "href": "https://www.mattilsynet.no/", "note": { "en": "Food safety authority, inspects food businesses", "no": "Mattilsynet, fører tilsyn med matbedrifter", "th": "หน่วยงานความปลอดภัยด้านอาหาร ตรวจสอบธุรกิจอาหาร" } },
+      { "name": "Arbeidstilsynet", "href": "https://www.arbeidstilsynet.no/", "note": { "en": "Working environment authority", "no": "Arbeidstilsynet", "th": "หน่วยงานตรวจสอบสภาพแวดล้อมการทำงาน" } },
+      { "name": "Helsenorge", "href": "https://www.helsenorge.no/", "note": { "en": "Your health services and records", "no": "Helsetjenester og journal", "th": "บริการสุขภาพและประวัติการรักษา" } },
+      { "name": "Skatteetaten", "href": "https://www.skatteetaten.no/", "note": { "en": "Tax, D-number, national identity number", "no": "Skatt, D-nummer, fødselsnummer", "th": "ภาษี หมายเลข D และเลขประจำตัวประชาชน" } }
+    ]
+  },
+  {
+    "heading": { "en": "Thailand", "no": "Thailand", "th": "ประเทศไทย" },
+    "items": [
+      { "name": "Royal Thai Embassy, Oslo", "href": "https://oslo.thaiembassy.org/en", "note": { "en": "Passports, consular services, mobile consular visits", "no": "Pass, konsulære tjenester, mobilt konsulat", "th": "หนังสือเดินทาง งานกงสุล กงสุลสัญจร" } },
+      { "name": "Royal Norwegian Embassy, Bangkok", "href": "https://www.norway.no/en/thailand/", "note": { "en": "Norwegian services in Thailand", "no": "Norske tjenester i Thailand", "th": "บริการของนอร์เวย์ในประเทศไทย" } },
+      { "name": "Thai e-Visa", "href": "https://www.thaievisa.go.th/", "note": { "en": "Visa applications for travel to Thailand", "no": "Visumsøknad for reise til Thailand", "th": "การขอวีซ่าเดินทางเข้าประเทศไทย" } }
+    ]
+  },
+  {
+    "heading": { "en": "Urgent", "no": "Akutt", "th": "ฉุกเฉิน" },
+    "items": [
+      { "name": "Krisesenteret Bergen", "href": "https://www.krisesenteretibergen.no/", "phone": "55 31 50 50", "note": { "en": "Shelter and support, 24 hours, every day", "no": "Krisesenter, døgnåpent hele året", "th": "ที่พักพิงและการช่วยเหลือ 24 ชั่วโมงทุกวัน" } },
+      { "name": "Alarmtelefonen for barn og unge", "href": "https://www.116111.no/", "phone": "116 111", "note": { "en": "For children and young people, free", "no": "For barn og unge, gratis", "th": "สำหรับเด็กและเยาวชน ไม่มีค่าใช้จ่าย" } },
+      { "name": "Legevakt", "href": "https://www.helsenorge.no/", "phone": "116 117", "note": { "en": "Urgent medical help that is not life threatening", "no": "Akutt helsehjelp som ikke er livstruende", "th": "ความช่วยเหลือทางการแพทย์เร่งด่วนที่ไม่ถึงชีวิต" } },
+      { "name": "Nødnummer", "href": "https://www.politi.no/", "phone": "113", "note": { "en": "Immediate danger to life", "no": "Akutt fare for liv", "th": "อันตรายถึงชีวิตเฉพาะหน้า" } }
+    ]
+  }
+]

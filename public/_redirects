@@ -1,0 +1,3 @@
+/            /en/            302
+/courses/*   /en/courses/:splat  302
+/help/*      /en/help/:splat     302

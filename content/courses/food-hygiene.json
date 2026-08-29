@@ -1,0 +1,28 @@
+{
+  "id": "crs-ikmat",
+  "slug": "food-hygiene",
+  "status": "published",
+  "title": { "en": "Food hygiene, IK-mat", "no": "Mathygiene, IK-mat", "th": "สุขอนามัยอาหาร IK-mat" },
+  "summary": {
+    "en": "Food safety training for anyone who prepares or serves food in Norway. Required documentation for food businesses of any size.",
+    "no": "Opplæring i mattrygghet for alle som lager eller serverer mat i Norge. Påkrevd dokumentasjon for matbedrifter i alle størrelser.",
+    "th": "อบรมความปลอดภัยด้านอาหารสำหรับผู้ที่ทำหรือเสิร์ฟอาหารในนอร์เวย์ เป็นเอกสารที่ต้องมีสำหรับธุรกิจอาหารทุกขนาด"
+  },
+  "regulator": "Mattilsynet",
+  "audience": {
+    "en": "Kitchen staff, restaurant owners, market stall holders.",
+    "no": "Kjøkkenpersonale, restauranteiere, de som selger mat på marked.",
+    "th": "พนักงานครัว เจ้าของร้านอาหาร ผู้ขายอาหารในตลาด"
+  },
+  "outcomes": [
+    { "en": "Safe handling, storage and temperature control", "no": "Trygg håndtering, lagring og temperaturkontroll", "th": "การจัดการ การเก็บรักษา และการควบคุมอุณหภูมิอย่างปลอดภัย" },
+    { "en": "Cleaning routines and personal hygiene", "no": "Renholdsrutiner og personlig hygiene", "th": "ขั้นตอนการทำความสะอาดและสุขอนามัยส่วนบุคคล" },
+    { "en": "What an inspector looks for and how to prepare", "no": "Hva et tilsyn ser etter og hvordan du forbereder deg", "th": "สิ่งที่เจ้าหน้าที่ตรวจสอบมองหาและการเตรียมตัว" }
+  ],
+  "nextDateIso": null,
+  "priceNok": 800,
+  "durationHours": 5,
+  "capacity": [6, 8],
+  "format": { "en": "Online over Line video", "no": "Nettbasert over Line video", "th": "เรียนออนไลน์ผ่าน Line" },
+  "updatedAt": "2026-08-29"
+}

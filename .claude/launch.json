@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "tfb",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
+      "port": 3000,
+      "autoPort": true
+    },
+    {
+      "name": "tfb-design-system",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "design/serve.mjs"
+      ],
+      "port": 4321
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "year": 2011,
+    "status": "published",
+    "income": [
+      { "label": { "en": "Membership fees", "no": "Medlemskontingent", "th": "ค่าสมัครสมาชิก" }, "nok": 7550 },
+      { "label": { "en": "Garland sales at the opening event", "no": "Salg av kranser på åpningsarrangementet", "th": "รายได้จากการขายพวงมาลัยในงานเปิดสมาคม" }, "nok": 5100 },
+      { "label": { "en": "Donation from the Royal Thai Embassy", "no": "Gave fra den thailandske ambassaden", "th": "เงินบริจาคจากสถานทูตไทย" }, "nok": 5000 },
+      { "label": { "en": "Support from Norsk Tipping", "no": "Støtte fra Norsk Tipping", "th": "เงินสนับสนุนจาก Norsk Tipping" }, "nok": 404.5 }
+    ],
+    "expenditure": [
+      { "label": { "en": "Venue for the Songkran merit ceremony", "no": "Lokalleie til Songkran", "th": "ค่าเช่าสถานที่จัดงานสงกรานต์" }, "nok": 750 },
+      { "label": { "en": "Food, performance and sundries at Songkran", "no": "Mat, opptreden og diverse på Songkran", "th": "ค่าอาหาร การแสดง และค่าใช้จ่ายจิปาถะในงานสงกรานต์" }, "nok": 4316.25 },
+      { "label": { "en": "Support for the performing arts group", "no": "Støtte til kunstnergruppen", "th": "ค่าสนับสนุนฝ่ายศิลปการแสดง" }, "nok": 2000 },
+      { "label": { "en": "Sports equipment for children and young people", "no": "Sportsutstyr til barn og unge", "th": "ค่าอุปกรณ์กีฬาสำหรับเด็กและเยาวชน" }, "nok": 2536 },
+      { "label": { "en": "Refunded membership fee", "no": "Tilbakebetalt kontingent", "th": "ค่าคืนเงินสมาชิกที่ลาออก" }, "nok": 200 },
+      { "label": { "en": "Travel to the national Thai association meeting in Oslo", "no": "Reise til landsmøtet for thailandske foreninger i Oslo", "th": "ค่าเดินทางไปประชุมสมาคมคนไทยทั่วประเทศที่ออสโล" }, "nok": 1430 },
+      { "label": { "en": "Membership of the umbrella immigrant organisation", "no": "Medlemskap i paraplyorganisasjonen", "th": "ค่าสมัครสมาชิกกับสมาคมต่างชาติใหญ่" }, "nok": 300 },
+      { "label": { "en": "Registering the association", "no": "Registrering av foreningen", "th": "ค่าจดทะเบียนสมาคม" }, "nok": 250 },
+      { "label": { "en": "Three donation boxes, including shipping from Thailand", "no": "Tre innsamlingsbøsser, inkludert frakt fra Thailand", "th": "ค่าทำกล่องรับบริจาค 3 ใบ รวมค่าส่งจากไทย" }, "nok": 1000 }
+    ]
+  }
+]

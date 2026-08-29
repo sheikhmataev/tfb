@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TFB Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:ital,wght@0,300..700;1,400&family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14100F;
+  --ink-soft:#4A4341;
+  --lotus:#E31375;
+  --lotus-deep:#8D0C49;
+  --lotus-light:#FF77AE;
+  --paper:#FAF7F5;
+  --petal:#F6EAF1;
+  --rule:#E2D8DC;
+
+  --display:"Marcellus",Georgia,"Times New Roman",serif;
+  --text:"Public Sans","Helvetica Neue",Arial,sans-serif;
+  --thai:"Sarabun","Noto Sans Thai",sans-serif;
+
+  --ease:cubic-bezier(.22,1,.36,1);
+  --measure:66ch;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--text);font-size:17px;line-height:1.6;
+  font-variant-numeric:tabular-nums;
+  -webkit-font-smoothing:antialiased;
+}
+:lang(th){font-family:var(--thai);font-size:1.18em;line-height:1.85;letter-spacing:0;word-break:normal;overflow-wrap:normal}
+a{color:var(--lotus-deep);text-underline-offset:3px;text-decoration-thickness:1px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--lotus-deep);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0}
+h1{font-size:clamp(38px,5vw,62px);line-height:1.05;letter-spacing:.005em}
+h2{font-size:34px;line-height:1.15}
+h3{font-size:20px;line-height:1.3}
+p{margin:0 0 1em;max-width:var(--measure)}
+code{font-family:var(--text);font-weight:600;font-size:.92em;background:var(--petal);padding:1px 5px;color:var(--lotus-deep)}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.rule{border:0;border-top:1px solid var(--rule);margin:0}
+
+/* section heading device: label breaks through the rule on the left */
+.sec{padding:72px 0 8px}
+.sec-head{position:relative;border-top:1px solid var(--rule);padding-top:26px;margin-bottom:34px}
+.sec-num{
+  position:absolute;top:-9px;left:0;background:var(--paper);padding-right:14px;
+  font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;
+  font-size:15px;color:var(--lotus-deep);
+}
+.lede{font-size:20px;color:var(--ink-soft);max-width:60ch}
+
+/* specimen frame, dogfooding the same device */
+.spec{position:relative;border:1px solid var(--rule);padding:38px 28px 30px;margin:0 0 22px;background:var(--paper)}
+.spec-label{
+  position:absolute;top:-9px;left:20px;max-width:calc(100% - 52px);background:var(--paper);padding:0 10px;
+  font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:13px;color:var(--ink-soft);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.spec.framed{border-width:2px;border-color:var(--ink)}
+.spec.framed .spec-label{color:var(--ink)}
+
+.grid{display:grid;gap:22px}
+.g-7-5{grid-template-columns:7fr 5fr}
+.g-5-7{grid-template-columns:5fr 7fr}
+.g-8-4{grid-template-columns:8fr 4fr}
+.g-3{grid-template-columns:1fr 1fr 1fr;gap:26px}
+@media(max-width:760px){.g-3{grid-template-columns:1fr}}
+@media(max-width:860px){.g-7-5,.g-5-7,.g-8-4{grid-template-columns:1fr}}
+
+table{border-collapse:collapse;width:100%;font-size:15px}
+th{text-align:left;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+td{padding:11px 14px 11px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+tr:last-child td{border-bottom:0}
+
+/* swatches */
+.sw-row{display:flex;align-items:center;gap:16px;padding:10px 0;border-bottom:1px solid var(--rule)}
+.sw-row:last-child{border-bottom:0}
+.sw{width:52px;height:52px;flex:0 0 52px;border:1px solid rgba(20,16,15,.14)}
+.sw-meta{font-size:14px;color:var(--ink-soft)}
+.sw-name{font-weight:600;color:var(--ink);font-size:15px}
+.ratio{font-weight:600}
+.pass{color:#1B5E20}
+.fail{color:#8E0050}
+
+/* brand */
+.logo-frame{border:1px solid var(--rule);background:var(--paper);padding:26px;display:flex;align-items:center;justify-content:center;min-height:160px}
+.logo-frame img{max-width:100%!important;height:auto;display:block}
+.logo-frame.dark{background:var(--ink);border-color:#2E2725}
+.missing{text-align:center;color:var(--ink-soft);font-size:14px;line-height:1.5}
+.missing b{display:block;font-weight:600;color:var(--ink);font-size:15px;margin-bottom:4px}
+.missing code{background:transparent;color:var(--lotus-deep)}
+.mark-svg{display:block;color:var(--lotus)}
+.sizes{display:flex;align-items:flex-end;gap:20px 30px;flex-wrap:wrap}
+.tscroll{overflow-x:auto;max-width:100%}
+.tscroll table{width:auto;min-width:100%}
+.sizes figure{margin:0;text-align:center}
+.sizes figcaption{font-size:12px;color:var(--ink-soft);margin-top:8px;letter-spacing:.04em}
+.clearspace{position:relative;display:inline-block;padding:34px;outline:1px dashed var(--rule)}
+.clearspace::after{content:"";position:absolute;inset:34px;outline:1px solid var(--lotus);opacity:.5}
+.misuse{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:700px){.misuse{grid-template-columns:1fr}}
+.misuse div{border:1px solid var(--rule);padding:16px;font-size:15px}
+.misuse .no{border-left:3px solid var(--lotus-deep)}
+.scrimdemo{position:relative;background:var(--petal);height:150px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+
+/* petal mask, the only curve on the site */
+.petal{border-radius:0 62% 0 62%;overflow:hidden;display:block;width:100%;aspect-ratio:4/3;background:var(--ink)}
+.petal.small{aspect-ratio:1/1}
+.petal-cap{font-size:13px;color:var(--ink-soft);margin-top:10px}
+
+/* components */
+.helpbar{background:var(--ink);color:var(--paper);height:44px;display:flex;align-items:center;gap:14px;padding:0 20px;font-size:15px}
+.helpbar .tag{font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;color:var(--lotus-light);font-size:13px}
+.helpbar a{color:var(--paper);font-weight:600}
+.helpbar .spacer{margin-left:auto;color:#B9B0AE;font-size:14px}
+@media(max-width:720px){.helpbar .spacer{display:none}}
+
+.hdr{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;padding:14px 20px;border-bottom:1px solid var(--rule)}
+.mark{width:30px;height:30px;border-radius:0 62% 0 62%;background:var(--lotus);flex:0 0 30px}
+.wordmark{font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;font-size:14px}
+.nav{display:flex;flex-wrap:wrap;gap:14px 22px;margin-left:12px}
+.nav a{font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:15px;color:var(--ink);text-decoration:none;padding-bottom:14px;margin-bottom:-15px;border-bottom:2px solid transparent}
+.nav a[aria-current]{border-bottom-color:var(--lotus)}
+.nav a:hover{border-bottom-color:var(--rule)}
+.lang{margin-left:auto;display:flex;align-items:center;font-size:14px}
+.lang a{text-decoration:none;color:var(--ink-soft);padding:0 10px;border-right:1px solid var(--rule)}
+.lang a:last-child{border-right:0;padding-right:0}
+.lang a[aria-current]{color:var(--ink);font-weight:600}
+
+.btn{display:inline-block;background:var(--ink);color:var(--paper);padding:12px 22px;border-radius:2px;text-decoration:none;font-weight:600;font-size:16px;border:1px solid var(--ink);transition:background .14s var(--ease)}
+.btn:hover{background:#2C2523}
+.btn-text{display:inline-block;color:var(--ink);text-decoration:none;font-weight:600;font-size:16px;border-bottom:2px solid var(--lotus);padding-bottom:2px;margin-left:20px}
+
+.path{border-top:1px solid var(--rule);padding:20px 0 18px;transition:border-color .14s var(--ease)}
+.path:hover{border-top-color:var(--lotus)}
+.path .lab{font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:13px;color:var(--lotus-deep)}
+.path h3{margin:6px 0 8px}
+.path p{font-size:16px;color:var(--ink-soft);margin-bottom:10px}
+.path .go{font-weight:600;text-decoration:none;color:var(--ink)}
+.path .go span{display:inline-block;transition:transform .14s var(--ease)}
+.path:hover .go span{transform:translateX(4px)}
+
+.ctable{width:100%;border-collapse:collapse;font-size:15px}
+.ctable th{color:var(--ink-soft);border-bottom:1px solid var(--ink)}
+.ctable td{border-bottom:1px solid var(--rule)}
+.ctable tbody tr:nth-child(even){background:var(--petal)}
+.free{color:#1B5E20;font-weight:600}
+.tbd{color:var(--ink-soft)}
+.courses-head{display:flex;align-items:center;gap:20px;padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+.courses-head img{height:64px;width:auto}
+
+.empty{border:1px solid var(--rule);padding:28px;text-align:left;display:flex;gap:18px;align-items:center}
+.empty .glyph{width:42px;height:42px;flex:0 0 42px;border:1px solid var(--rule);border-radius:0 62% 0 62%;transform:rotate(45deg)}
+
+.footdemo{background:var(--ink);color:var(--paper);padding:26px 22px;font-size:14px}
+.footdemo .cols{display:grid;grid-template-columns:4fr 3fr 3fr 2fr;gap:24px}
+@media(max-width:860px){.footdemo .cols{grid-template-columns:1fr 1fr}}
+.footdemo b{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.07em;font-size:13px;color:#C9BFBD;display:block;margin-bottom:8px}
+.footdemo p{color:#D8D0CE;margin:0 0 4px}
+
+.kill li{margin-bottom:7px;max-width:var(--measure)}
+.kill{padding-left:20px}
+
+.scale-row{display:flex;align-items:baseline;gap:20px;padding:9px 0;border-bottom:1px solid var(--rule)}
+.scale-row:last-child{border-bottom:0}
+.scale-px{font-size:13px;color:var(--ink-soft);flex:0 0 116px}
+
+.pill{display:inline-block;font-size:12px;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--rule);padding:3px 9px;color:var(--ink-soft)}
+
+.mstage{display:grid;gap:14px}
+.mstage .item{border-top:1px solid var(--rule);padding-top:12px;font-size:16px}
+.mstage.play .item{animation:enter .22s var(--ease) both}
+.mstage.play .item:nth-child(2){animation-delay:.06s}
+.mstage.play .item:nth-child(3){animation-delay:.12s}
+@keyframes enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.replay{font-family:var(--text);font-size:15px;font-weight:600;color:var(--ink);background:none;border:0;border-bottom:2px solid var(--lotus);padding:0 0 2px;cursor:pointer}
+.replay[disabled]{color:var(--ink-soft);border-bottom-color:var(--rule);cursor:default;font-weight:400}
+@media(prefers-reduced-motion:reduce){
+  .mstage.play .item{animation:none}
+  *{animation:none!important;transition:none!important}
+}
+@media(max-width:900px){
+  .hdr{gap:12px 18px}
+  .courses-head img{height:48px}
+  .nav{order:3;width:100%;margin-left:0;flex-wrap:wrap;gap:16px}
+  .nav a{padding-bottom:0;margin-bottom:0;border-bottom-width:2px}
+  .lang{margin-left:auto}
+  .ctable,.ctable tbody,.ctable tr,.ctable td{display:block;width:100%}
+  .ctable thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .ctable tbody tr:nth-child(even){background:transparent}
+  .ctable tr{border-bottom:1px solid var(--rule);padding:15px 0}
+  .ctable tr:last-child{border-bottom:0}
+  .ctable td{border:0;padding:3px 0;display:flex;justify-content:space-between;gap:18px;text-align:right}
+  .ctable td::before{content:attr(data-l);color:var(--ink-soft);font-size:13px;text-transform:uppercase;letter-spacing:.05em;text-align:left;flex:0 0 auto}
+  .ctable td:first-child{font-weight:600;font-size:18px;margin-bottom:8px;display:block;text-align:left}
+  .helpbar{height:auto;flex-wrap:wrap;padding:10px 16px;gap:4px 12px;line-height:1.4}
+  .sizes{gap:18px 22px}
+  .logo-frame{padding:16px}
+  .clearspace{padding:24px}
+  .clearspace::after{inset:24px}
+}
+@media(max-width:560px){
+  .spec{padding-top:14px}
+  .spec-label{position:static;display:block;max-width:none;white-space:normal;overflow:visible;padding:0 0 10px;background:none}
+  .spec.on-dark .spec-label{background:none}
+}
+@media(max-width:430px){
+  .wrap{padding:0 16px}
+  .sw-row{flex-wrap:wrap;gap:10px 14px}
+  .sw{width:40px;flex:0 0 40px;height:40px}
+  .ratio{flex:0 0 auto!important;text-align:left!important}
+  .footdemo .cols{grid-template-columns:1fr}
+  .empty{flex-direction:column;align-items:flex-start;gap:12px;padding:20px}
+  .misuse{gap:12px}
+  .spec{padding:32px 16px 22px}
+  h1{font-size:34px}
+  .lede{font-size:18px}
+  .scale-row{flex-wrap:wrap;gap:4px}
+  .scale-px{flex:0 0 100%}
+  .ctable td{display:block;text-align:left;padding:2px 0}
+  .ctable td::before{display:block}
+  .misuse div{padding:14px}
+  .sizes{gap:16px 20px}
+  .logo-frame{padding:12px}
+  .helpbar{padding:10px 14px}
+}
+footer.page{border-top:1px solid var(--rule);margin-top:80px;padding:30px 0 70px;font-size:14px;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header style="padding:64px 0 0">
+    <div class="grid g-7-5" style="align-items:end">
+      <div>
+        <div class="sec-num" style="position:static;background:none;padding:0;margin-bottom:14px">Thai Foreningen Bergen</div>
+        <h1>Design system</h1>
+        <p class="lede" style="margin-top:18px">Tokens, typefaces, and components for the TFB website. Every number on this page is measured, not asserted. Contrast ratios are computed in the browser from the token values themselves.</p>
+        <p style="font-size:14px;color:var(--ink-soft)">Org.nr 996 630 307 · Founded in Bergen, 8 January 2010 · Revision 2</p>
+      </div>
+      <div>
+        <svg class="mark-svg" width="150" height="112" aria-hidden="true"><use href="#tfb-reduced"/></svg>
+        <div class="petal-cap" style="max-width:36ch;margin-top:18px">The reduced mark, authored as inline SVG for sizes below 44px. Each petal is the same lens shape used to mask photography, so the mark and the images are one geometry rather than two. Full brand assets in section 01.</div>
+      </div>
+    </div>
+  </header>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="tfb-reduced" viewBox="-100 -112 200 150">
+    <g fill="currentColor">
+      <g transform="rotate(-100)"><path d="M0 0Q44 -45 0 -82Q-44 -45 0 0Z"/></g>
+      <g transform="rotate(100)"><path d="M0 0Q44 -45 0 -82Q-44 -45 0 0Z"/></g>
+      <g transform="rotate(-52)"><path d="M0 0Q40 -48 0 -88Q-40 -48 0 0Z"/></g>
+      <g transform="rotate(52)"><path d="M0 0Q40 -48 0 -88Q-40 -48 0 0Z"/></g>
+      <path d="M0 0Q42 -55 0 -100Q-42 -55 0 0Z"/>
+    </g>
+  </symbol>
+</svg>
+
+  <!-- 01 BRAND -->
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">01 &middot; Brand</span></div>
+    <p class="lede" style="margin-bottom:26px">Three assets, each with a size range it owns. The supplied artwork is decorative and detailed, which is exactly why it must not be asked to work at 24px.</p>
+
+    <div class="grid g-7-5">
+      <div class="spec">
+        <span class="spec-label">Primary lockup &middot; 200px wide and up</span>
+        <div class="logo-frame">
+          <img src="assets/logo-lockup.svg" alt="Thai Foreningen Bergen"
+               onerror="this.outerHTML='&lt;div class=\'missing\'&gt;&lt;b&gt;Asset not in repo yet&lt;/b&gt;Drop the supplied file at &lt;code&gt;design/assets/logo-lockup.svg&lt;/code&gt;&lt;/div&gt;'">
+        </div>
+        <p style="margin-top:16px;font-size:16px;color:var(--ink-soft);margin-bottom:0">Mark above THAI, a magenta rule, FORENINGEN BERGEN, a second rule. Used once per page at most: the footer, the OG image, printed material. Not in the sticky header, where it is too tall and too detailed.</p>
+      </div>
+
+      <div class="spec">
+        <span class="spec-label">Mark &middot; 96px and up</span>
+        <div class="logo-frame">
+          <img src="assets/logo-mark.svg" alt="TFB mark" style="max-width:150px"
+               onerror="this.outerHTML='&lt;div class=\'missing\'&gt;&lt;b&gt;Asset not in repo yet&lt;/b&gt;Drop the supplied file at &lt;code&gt;design/assets/logo-mark.svg&lt;/code&gt;&lt;/div&gt;'">
+        </div>
+        <p style="margin-top:16px;font-size:16px;color:var(--ink-soft);margin-bottom:0">Petals, heart, TFB, filigree. Measured on the supplied file: the heart outline is an 18px stroke on the 939 x 767 artwork, and the filigree runs at 3px. The heart holds a full device pixel only from 56px, the filigree only from about 320px. So 96px is the working floor, and full fidelity wants 320px and up.</p>
+      </div>
+    </div>
+
+    <div class="grid g-5-7">
+      <div class="spec">
+        <span class="spec-label">Reduced mark &middot; below 96px</span>
+        <div class="sizes">
+          <figure><svg class="mark-svg" width="64" height="48"><use href="#tfb-reduced"/></svg><figcaption>64</figcaption></figure>
+          <figure><svg class="mark-svg" width="36" height="27"><use href="#tfb-reduced"/></svg><figcaption>36 &middot; header</figcaption></figure>
+          <figure><svg class="mark-svg" width="24" height="18"><use href="#tfb-reduced"/></svg><figcaption>24</figcaption></figure>
+          <figure><svg class="mark-svg" width="16" height="12"><use href="#tfb-reduced"/></svg><figcaption>16 &middot; favicon</figcaption></figure>
+        </div>
+        <p style="margin-top:22px;font-size:16px;color:var(--ink-soft);margin-bottom:0">Five petals, nothing else. Inline SVG, single path group, <code>currentColor</code>, so it inherits ink on paper and paper on ink without a second file. Each petal is the same lens shape as the image mask, which is why the mark and the photography read as one system.</p>
+      </div>
+
+      <div class="spec">
+        <span class="spec-label">Clear space and inversion</span>
+        <div class="grid" style="grid-template-columns:1fr 1fr;gap:20px;align-items:center">
+          <div>
+            <span class="clearspace"><svg class="mark-svg" width="72" height="54"><use href="#tfb-reduced"/></svg></span>
+            <div class="petal-cap">Clear space equals the height of one outer petal on all four sides. Nothing crosses it, including rules.</div>
+          </div>
+          <div>
+            <div class="logo-frame dark" style="min-height:130px;gap:22px">
+              <svg class="mark-svg" width="60" height="45" style="color:var(--paper)"><use href="#tfb-reduced"/></svg>
+              <img src="assets/logo-lockup-inverse.svg" alt="" style="height:96px;width:auto">
+            </div>
+            <div class="petal-cap">On <code>--ink</code> the reduced mark goes to <code>--paper</code>, never magenta, and the lockup switches to the inverse file. The default lockup has a pure black wordmark and must never be placed on a dark ground.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g-5-7">
+      <div class="spec">
+        <span class="spec-label">Lockup on photography</span>
+        <div class="scrimdemo">
+          <img src="assets/banner.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"
+               onerror="this.outerHTML='&lt;div class=\'missing\' style=\'position:absolute;inset:0;display:flex;align-items:center;justify-content:center\'&gt;&lt;span&gt;&lt;b&gt;Asset not in repo yet&lt;/b&gt;&lt;code&gt;design/assets/banner.jpg&lt;/code&gt;&lt;/span&gt;&lt;/div&gt;'">
+        </div>
+        <p style="margin-top:16px;font-size:16px;color:var(--ink-soft);margin-bottom:0">The supplied banner is the one sanctioned lockup-on-photo treatment, and it works because the photograph is already washed to near-white behind the type. Any other photograph needs the same wash, at 82 per cent paper or lighter, measured, not eyeballed. This treatment appears on the banner alone. It is not a hero pattern, and the homepage hero does not repeat it.</p>
+      </div>
+
+      <div class="spec">
+        <span class="spec-label">Logo misuse</span>
+        <div class="misuse">
+          <div class="no">Do not recolour the mark. Magenta, ink, or paper. Never a tint, never a gradient.</div>
+          <div class="no">Do not place the full mark below 96px. Use the reduced mark.</div>
+          <div class="no">Do not lift the lotus out and repeat it as a pattern, a bullet, or a watermark.</div>
+          <div class="no">Do not rebuild the lockup in live type. Its rules and letterspacing are artwork. The header's plain text wordmark beside the reduced mark is a different thing and is fine.</div>
+          <div class="no">Do not add a drop shadow or an outline to lift it off a busy photograph. Fix the photograph.</div>
+          <div class="no">Do not stretch, rotate, or crop the mark. The petal angles carry the identity.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g-7-5">
+      <div class="spec">
+        <span class="spec-label">Sub-brand &middot; the courses arm</span>
+        <div class="logo-frame"><img src="assets/logo-courses.png" alt="Thai mat virksomhet kurs og market" style="width:100%;max-width:340px"
+               onerror="this.outerHTML='&lt;div class=\'missing\'&gt;&lt;b&gt;Asset not in repo yet&lt;/b&gt;Drop the supplied file at &lt;code&gt;design/assets/logo-courses.png&lt;/code&gt;&lt;/div&gt;'"></div>
+        <p style="margin-top:16px;font-size:16px;color:var(--ink-soft)">An open book with leaves growing out of it, education and food in one mark, over THAI in the same Roman capitals as the association lockup, with a Thai flag ribbon through the wordmark. Strapline: Thai mat virksomhet kurs &amp; market.</p>
+        <p style="margin-top:0;font-size:16px;color:var(--ink-soft);margin-bottom:0">Because both lockups set THAI in the same Roman capital, the two brands already read as a family. That shared letterform is the link, not a shared colour, and it is also independent evidence that Marcellus is the right display face.</p>
+      </div>
+      <div class="spec">
+        <span class="spec-label">Two brands, one site</span>
+        <p style="font-size:16px">The association mark is magenta. The courses mark is black with a red and white and blue ribbon. Those palettes do not merge, so the site does not try.</p>
+        <p style="font-size:16px">Measured on the artwork, the flag colours are <b>0.6 per cent red and 0.4 per cent blue</b> of the mark. They are incidental, they live inside the ribbon, and they never become site tokens. No red or blue enters the palette.</p>
+        <p style="font-size:16px;margin-bottom:0">The courses mark appears at the head of the courses section and on course pages. Nowhere else. The association mark never appears inside that section, so the two never sit side by side competing.</p>
+      </div>
+    </div>
+
+    <div class="spec">
+      <span class="spec-label">Where each asset appears</span>
+      <div class="tscroll"><table>
+        <thead><tr><th>Placement</th><th>Asset</th><th>Size</th><th>Colour</th></tr></thead>
+        <tbody>
+          <tr><td>Sticky header</td><td>Reduced mark plus wordmark set in Marcellus</td><td>36px tall</td><td>Magenta mark, ink wordmark</td></tr>
+          <tr><td>Footer, on ink</td><td>Inverse lockup, or the reduced mark plus a text wordmark</td><td>40px tall</td><td>Paper on ink</td></tr>
+          <tr><td>Favicon and app icon</td><td>Reduced mark</td><td>16, 32, 180, 512</td><td>Magenta on paper</td></tr>
+          <tr><td>Print, roll-up, poster</td><td>Primary lockup</td><td>320px and up</td><td>Supplied artwork</td></tr>
+          <tr><td>Courses section and course pages</td><td>Courses sub-brand mark</td><td>64px tall, 48px on mobile</td><td>Black as supplied, light grounds only</td></tr>
+          <tr><td>OG and social card</td><td>Primary lockup</td><td>1200 x 630, lockup at 340px</td><td>Supplied artwork on paper</td></tr>
+          <tr><td>Banner, /about pages</td><td>Supplied banner</td><td>Full width</td><td>As supplied</td></tr>
+          <tr><td>Empty states, dividers</td><td>One petal outline from the reduced mark</td><td>12 to 48px</td><td>Rule colour, 1px stroke</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="spec">
+      <span class="spec-label">Asset register, measured from the supplied files</span>
+      <div class="tscroll"><table>
+        <thead><tr><th>File</th><th>Canvas</th><th>Ink bounds</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>logo-mark.svg</td><td>939 x 767</td><td>trimmed</td><td>Vector, magenta #E31375 with paper detail. The working mark for all editorial use at 96px and up.</td></tr>
+          <tr><td>logo-lockup.svg</td><td>420 x 562</td><td>trimmed</td><td>Vector. Wordmark #14100F, so light grounds only.</td></tr>
+          <tr><td>logo-lockup-inverse.svg</td><td>420 x 562</td><td>trimmed</td><td>Vector. Wordmark #FAF7F5 for dark grounds. Verified as a genuinely different file, not a duplicate.</td></tr>
+          <tr><td>logo-courses.png</td><td>1915 x 1423</td><td>trimmed</td><td>Courses sub-brand, trimmed from Logo2.jpg which carried 20 per cent white margin. Still raster on an opaque white background, so it cannot sit on <code>--petal</code> or any tinted band. A transparent SVG is the one asset still outstanding.</td></tr>
+          <tr><td>banner.jpg</td><td>1983 x 793</td><td>full bleed</td><td>2.5:1. The lockup reads only because the photograph is already washed to near-white behind it.</td></tr>
+          <tr><td>TFB logo.png</td><td>1254 x 1254</td><td>opaque</td><td>Original supply, RGB with a white background and no alpha. Archive only. Do not reference it from the site; use logo-mark.svg.</td></tr>
+        </tbody>
+      </table></div>
+      <p style="margin-top:16px;font-size:16px;color:var(--ink-soft);margin-bottom:0">Outstanding: a transparent vector of the courses mark. Everything else is now vector and correctly trimmed.</p>
+    </div>
+  </section>
+
+  <!-- 02 TYPEFACES -->
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">02 · Typefaces</span></div>
+
+    <div class="grid g-8-4">
+      <div>
+        <div class="spec">
+          <span class="spec-label">Display, Latin</span>
+          <div style="font-family:var(--display);font-size:52px;line-height:1.05">Thai Foreningen Bergen</div>
+          <div style="font-family:var(--display);font-size:22px;letter-spacing:.06em;text-transform:uppercase;margin-top:16px;color:var(--ink-soft)">Vedtekter · Årsmøte · Krisesenter</div>
+          <p style="margin-top:20px;font-size:16px;color:var(--ink-soft)"><b>Marcellus</b>, one weight, 400. A Roman inscriptional capital from the same tradition as the Trajan-style letters in the TFB wordmark, so the page and the logo speak one language. Single weight is deliberate: hierarchy comes from size and hairline rules, not from weight soup. Headings and section labels only, never below 20px, never in UI.</p>
+        </div>
+
+        <div class="spec">
+          <span class="spec-label">Text and UI, Latin</span>
+          <div style="font-size:26px;font-weight:600">Vi hjelper thailendere i Bergen og Vestland</div>
+          <p style="margin-top:12px">We help Thai people in Bergen and Vestland deal with the police, lawyers, hospitals and the crisis centre. We keep Thai traditions alive here, and we run the courses you need to work in a Norwegian kitchen.</p>
+          <div style="font-size:14px;color:var(--ink-soft)">300 · 400 · 600 · 700 &nbsp;|&nbsp; æ ø å Æ Ø Å &nbsp;|&nbsp; 996 630 307 &nbsp;|&nbsp; 55 31 50 50</div>
+          <p style="margin-top:20px;font-size:16px;color:var(--ink-soft)"><b>Public Sans</b>, variable 300 to 700. The typeface of the US Web Design System, drawn from Libre Franklin for public-service interfaces. A civic face by origin, which is the exact register this organisation needs, and it is built for small sizes, dense tables, and forms.</p>
+        </div>
+
+        <div class="spec">
+          <span class="spec-label">Thai, all levels</span>
+          <div lang="th" style="font-weight:600;font-size:26px">สมาคมคนไทยในเบอร์เกน</div>
+          <p lang="th" style="margin-top:12px">เราช่วยคนไทยในเบอร์เกนและเวสต์ลันด์ ติดต่อตำรวจ ทนาย โรงพยาบาล และศูนย์ช่วยเหลือ เรารักษาประเพณีไทยไว้ที่นี่ และจัดคอร์สอบรมที่จำเป็นสำหรับการทำงานในครัวที่นอร์เวย์</p>
+          <p style="margin-top:20px;font-size:16px;color:var(--ink-soft)"><b>Sarabun</b>, 400 and 600. Drawn by Cadson Demak and one of Thailand's national typefaces, used across official Thai government documents. It carries in Thai the same civic authority Public Sans carries in Latin, which is the whole argument for the pairing. Real Thai design, not a Latin face with Thai glyphs attached.</p>
+        </div>
+      </div>
+
+      <aside>
+        <div class="spec">
+          <span class="spec-label">Rejected</span>
+          <p style="font-size:15px;color:var(--ink-soft);margin-bottom:14px">These are the reflex picks. None of them has an argument on this site beyond familiarity.</p>
+          <div class="tscroll"><table>
+            <tr><td><b>Inter</b><div class="sw-meta">The default body face of every generated interface.</div></td></tr>
+            <tr><td><b>Space Grotesk, Manrope</b><div class="sw-meta">Geometric sans reached for when something should feel designed. Reads as tech, not civic.</div></td></tr>
+            <tr><td><b>Playfair Display, Lora</b><div class="sw-meta">The elegance reflex. Playfair's high contrast collapses at 15px on a cheap Android screen, which is the device this audience uses.</div></td></tr>
+            <tr><td><b>JetBrains Mono, Fira Code</b><div class="sw-meta">There is no code on this site.</div></td></tr>
+            <tr><td><b>Poppins, Montserrat, DM Sans, Outfit, Sora</b><div class="sw-meta">Same reflex, different year.</div></td></tr>
+          </table></div>
+        </div>
+        <div class="spec">
+          <span class="spec-label">No monospace</span>
+          <p style="font-size:15px;color:var(--ink-soft);margin:0">Nothing here is code, so no mono family ships. Tabular figures come from <code>font-variant-numeric: tabular-nums</code> on Public Sans. Payload budget for all three families after subsetting: under 120KB.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 02 TYPE RULES -->
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">03 · Type rules and scale</span></div>
+    <div class="grid g-7-5">
+      <div class="spec">
+        <span class="spec-label">Latin scale</span>
+        <div class="scale-row"><span class="scale-px">62 / display</span><span style="font-family:var(--display);font-size:62px;line-height:1">Bergen</span></div>
+        <div class="scale-row"><span class="scale-px">46 / display</span><span style="font-family:var(--display);font-size:46px;line-height:1">Vedtekter</span></div>
+        <div class="scale-row"><span class="scale-px">34 / display</span><span style="font-family:var(--display);font-size:34px;line-height:1">Slik hjelper vi</span></div>
+        <div class="scale-row"><span class="scale-px">26 / text 600</span><span style="font-size:26px;font-weight:600">Kurs og sertifisering</span></div>
+        <div class="scale-row"><span class="scale-px">20 / text 400</span><span style="font-size:20px">Lead paragraph size</span></div>
+        <div class="scale-row"><span class="scale-px">17 / text 400</span><span style="font-size:17px">Body, the base size</span></div>
+        <div class="scale-row"><span class="scale-px">15 / text 400</span><span style="font-size:15px">Table cells and metadata</span></div>
+        <div class="scale-row"><span class="scale-px">13 / display caps</span><span style="font-family:var(--display);font-size:13px;letter-spacing:.06em;text-transform:uppercase">Section label</span></div>
+      </div>
+      <div class="spec">
+        <span class="spec-label">Non-negotiable</span>
+        <div class="tscroll"><table>
+          <tr><td>Thai size ratio<div class="sw-meta">Sarabun renders at 1.18em of the Latin size at the same optical weight.</div></td></tr>
+          <tr><td>Thai line-height 1.85<div class="sw-meta">Stacked vowel and tone marks need the room.</div></td></tr>
+          <tr><td>Thai letter-spacing 0<div class="sw-meta">Thai has no inter-word spaces. Tracking destroys word boundaries.</div></td></tr>
+          <tr><td>Thai never uses Marcellus<div class="sw-meta">Thai has no Roman inscriptional tradition. Thai headings step up to Sarabun 600 instead.</div></td></tr>
+          <tr><td><code>lang</code> on every switch<div class="sw-meta">Including inline switches, so the right family and line-breaker apply.</div></td></tr>
+          <tr><td>Subsets<div class="sw-meta">latin plus latin-ext for æ ø å. Never latin-only.</div></td></tr>
+        </table></div>
+      </div>
+    </div>
+    <div class="spec">
+      <span class="spec-label">Three scripts, one paragraph, live</span>
+      <div class="grid g-3">
+        <div><span class="pill">EN</span><p style="margin-top:10px;font-size:16px">Emergency contacts are never reported to the board, and no record is kept.</p></div>
+        <div><span class="pill">NO</span><p style="margin-top:10px;font-size:16px">Henvendelser om akutt hjelp blir aldri rapportert til styret, og det føres ingen logg.</p></div>
+        <div><span class="pill">TH</span><p lang="th" style="margin-top:10px;font-size:16px">การติดต่อขอความช่วยเหลือฉุกเฉินจะไม่มีการรายงานให้คณะกรรมการทราบ และไม่มีการเก็บบันทึกใดๆ</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 COLOUR -->
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">04 · Colour</span></div>
+    <p class="lede" style="margin-bottom:26px">Eight tokens. No ninth. Magenta stays under roughly five per cent of pixels on any full page.</p>
+    <div class="grid g-8-4">
+      <div class="spec">
+        <span class="spec-label">Tokens, contrast measured against --paper</span>
+        <div id="swatches"></div>
+      </div>
+      <div class="spec">
+        <span class="spec-label">The magenta correction</span>
+        <p style="font-size:16px"><code>--lotus</code> is sampled from the supplied artwork, not chosen. The dominant fill in <code>logo-mark.png</code> is <b>#E31375</b>, which is redder than it looks on screen. It measures <b id="lotusRatio">4.23</b>:1 on <code>--paper</code>, below the 4.5:1 AA threshold for normal text.</p>
+        <p style="font-size:16px">So <code>--lotus</code> is display and graphics only: 24px and up, or 18.66px bold, where the 3:1 large-text threshold applies.</p>
+        <p style="font-size:16px;margin-bottom:0">Every link, label, caption and table cell uses <code>--lotus-deep</code>. Never put <code>--lotus</code> on a body string, including eyebrow labels if they drop below 24px.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 STRUCTURE -->
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">05 · Structure and geometry</span></div>
+    <div class="grid g-5-7">
+      <div class="spec">
+        <span class="spec-label">Geometry</span>
+        <div class="tscroll"><table>
+          <tr><td>Radius<div class="sw-meta">2px on inputs and buttons. 0 on cards and bands.</div></td></tr>
+          <tr><td>Petal mask<div class="sw-meta"><code>border-radius: 0 62% 0 62%</code> on image containers. Three per page maximum. The only curve on the site.</div></td></tr>
+          <tr><td>Hairlines<div class="sw-meta">1px <code>--rule</code> is how sections separate. No box shadows anywhere.</div></td></tr>
+          <tr><td>Grid<div class="sw-meta">12 columns, max 1180px. Default splits 7/5 and 8/4. Three equal columns are forbidden as a default.</div></td></tr>
+        </table></div>
+      </div>
+      <div class="spec">
+        <span class="spec-label">The section-label device, used by this page</span>
+        <p style="font-size:16px">A heading sits on a 1px rule with its label breaking through the rule on the left, the way a printed programme sets a running head. Every section on this page uses it, and so does every specimen frame around it.</p>
+        <div class="grid" style="grid-template-columns:1fr 1fr;gap:22px;margin-top:22px">
+          <div><div class="petal" style="background:var(--ink)"></div><div class="petal-cap">4:3 mask. A real photograph goes here.</div></div>
+          <div><div class="petal" style="background:var(--petal)"></div><div class="petal-cap">The mask animates from 0 40% 0 40% to 0 62% 0 62% over 700ms on mount, once. Hero only.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 MOTION -->
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">06 · Motion</span></div>
+    <div class="spec">
+      <span class="spec-label">The whole motion budget</span>
+      <div class="tscroll"><table>
+        <thead><tr><th>Case</th><th>Property</th><th>Duration</th><th>Curve</th></tr></thead>
+        <tbody>
+          <tr><td>Section entrance</td><td>opacity 0 to 1, translateY 8px to 0</td><td>220ms</td><td>cubic-bezier(.22, 1, .36, 1)</td></tr>
+          <tr><td>Hover on a rule or link</td><td>border-color, transform 4px</td><td>140ms</td><td>same</td></tr>
+          <tr><td>Hero mask, once on mount</td><td>border-radius</td><td>700ms</td><td>same</td></tr>
+          <tr><td>Course row expand</td><td>height</td><td>200ms</td><td>same</td></tr>
+          <tr><td>Everything else</td><td>none</td><td>0</td><td>none</td></tr>
+        </tbody>
+      </table></div>
+      <p style="margin-top:18px;font-size:16px;color:var(--ink-soft)">No spring, no bounce, no parallax on text, no stagger over 60ms per item, no scroll hijacking. Under <code>prefers-reduced-motion</code> everything renders at its final state with transitions removed, not shortened. The help bar never moves under any circumstance.</p>
+    </div>
+    <div class="grid g-5-7">
+      <div class="spec">
+        <span class="spec-label">Entrance, live</span>
+        <div class="mstage" id="motionStage">
+          <div class="item">Interpreting and paperwork</div>
+          <div class="item">Meeting the authorities</div>
+          <div class="item">Confidentiality</div>
+        </div>
+        <p style="margin:20px 0 0"><button class="replay" id="motionReplay" type="button">Replay entrance</button></p>
+      </div>
+      <div class="spec">
+        <span class="spec-label">Why this is a button and not a scroll trigger</span>
+        <p style="font-size:16px">A design system page that fades its own content in on scroll hides the thing it is documenting behind a scroll position and a working IntersectionObserver. So the demo is deliberate and replayable, and nothing on this page starts at zero opacity.</p>
+        <p style="font-size:16px;margin-bottom:0">On the real site the same 220ms entrance runs once per section via <code>whileInView</code> with <code>once: true</code>, and the content is present in the HTML either way.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 COMPONENTS -->
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">07 · Components</span></div>
+
+    <div class="spec">
+      <span class="spec-label">Help bar, persistent, never dismissible</span>
+      <div class="helpbar">
+        <span class="tag">Urgent help</span>
+        <span>Krisesenteret <a href="tel:+4755315050">55 31 50 50</a></span>
+        <span style="color:#B9B0AE">open 24 hours, every day</span>
+        <span class="spacer">We can provide an interpreter</span>
+      </div>
+      <div class="helpbar" style="margin-top:10px">
+        <span class="tag" lang="th">ช่วยเหลือฉุกเฉิน</span>
+        <span lang="th">ศูนย์ช่วยเหลือ <a href="tel:+4755315050">55 31 50 50</a></span>
+        <span class="spacer" lang="th">สมาคมจัดล่ามให้ได้</span>
+      </div>
+      <p style="margin-top:14px;font-size:15px;color:var(--ink-soft)">Sits above the header, 44px, single line, tabular numerals. On mobile the whole bar is the tap target and the right text drops. It does not animate, collapse, or reveal.</p>
+    </div>
+
+    <div class="spec">
+      <span class="spec-label">Header and three-way language switcher</span>
+      <div class="hdr">
+        <svg class="mark-svg" width="34" height="26" aria-hidden="true" style="flex:0 0 34px"><use href="#tfb-reduced"/></svg>
+        <span class="wordmark">Thai Foreningen Bergen</span>
+        <nav class="nav">
+          <a href="#" aria-current="page">Help</a>
+          <a href="#">Courses</a>
+          <a href="#">News</a>
+          <a href="#">Membership</a>
+          <a href="#">About</a>
+        </nav>
+        <span class="lang"><a href="#" aria-current="true">EN</a><a href="#">NO</a><a href="#" lang="th">ไทย</a></span>
+      </div>
+      <div class="hdr" style="max-width:380px;margin-top:26px">
+        <svg class="mark-svg" width="30" height="23" aria-hidden="true" style="flex:0 0 30px"><use href="#tfb-reduced"/></svg>
+        <span class="wordmark" style="font-size:13px">Thai Foreningen Bergen</span>
+        <span style="margin-left:auto;font-weight:600;font-size:15px">Menu</span>
+        <span aria-hidden="true" style="display:inline-block;width:20px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);height:9px"></span>
+      </div>
+      <p style="margin-top:14px;font-size:15px;color:var(--ink-soft)">Five items, matching the embassy's count. Text switcher, no flags, no globe icon, no dropdown, each one a real link to the same route in that locale. The active item carries a 2px magenta underline sitting on the header rule.</p>
+      <p style="font-size:15px;color:var(--ink-soft)">Below 700px the header collapses to mark, wordmark, and the word Menu beside a two-line glyph. The panel slides down from the header at 220ms with the language switcher at its top, never buried at the bottom. Narrow this window to see the specimens above reflow.</p>
+    </div>
+
+    <div class="grid g-7-5">
+      <div class="spec">
+        <span class="spec-label">Help pathway block, not a card</span>
+        <div class="path">
+          <div class="lab">Emergency</div>
+          <h3>If you are in danger right now</h3>
+          <p>Call the crisis centre directly. It is free, open every day of the year, and you do not need to be a member. Bring identity documents for yourself and your children if you can.</p>
+          <a class="go" href="tel:+4755315050">55 31 50 50 <span>&rsaquo;</span></a>
+        </div>
+        <div class="path">
+          <div class="lab">Interpreting and paperwork</div>
+          <h3>Letters you cannot read</h3>
+          <p>We help with interpreting and translation, and with understanding a letter from NAV or UDI before a deadline passes.</p>
+          <a class="go" href="#">Read more <span>&rsaquo;</span></a>
+        </div>
+        <p style="margin-top:16px;font-size:15px;color:var(--ink-soft)">Copy lengths differ per block on purpose, because the situations differ. Hover moves the rule to magenta and shifts the arrow 4px. Nothing else.</p>
+      </div>
+      <div>
+        <div class="spec">
+          <span class="spec-label">Actions</span>
+          <a class="btn" href="#">Get help</a>
+          <a class="btn-text" href="#">Become a member</a>
+          <p style="margin-top:20px;font-size:15px;color:var(--ink-soft);margin-bottom:0">Solid ink primary, text plus 2px magenta underline secondary. 2px radius. No gradient, no shadow, no icon unless the action is a phone call.</p>
+        </div>
+        <div class="spec">
+          <span class="spec-label">Empty state</span>
+          <div class="empty">
+            <span class="glyph" aria-hidden="true"></span>
+            <div>
+              <div style="font-weight:600">No news published yet</div>
+              <div class="sw-meta">Follow us on Facebook for updates.</div>
+            </div>
+          </div>
+          <p style="margin-top:16px;font-size:15px;color:var(--ink-soft);margin-bottom:0">Never an empty grid. The legacy site left the event calendar blank for years, so empty states are designed, not skipped.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="spec framed">
+      <span class="spec-label">Courses, the section the client ranks first</span>
+      <div class="courses-head">
+        <img src="assets/logo-courses.png" alt="Thai mat virksomhet kurs og market"
+             onerror="this.outerHTML='&lt;div class=\'missing\'&gt;&lt;b&gt;Asset not in repo yet&lt;/b&gt;Drop the supplied file at &lt;code&gt;design/assets/logo-courses.png&lt;/code&gt;&lt;/div&gt;'">
+        <div style="font-size:15px;color:var(--ink-soft);max-width:38ch">The courses arm carries its own mark. It heads this section and appears nowhere else on the site.</div>
+      </div>
+      <table class="ctable">
+        <thead><tr><th>Course</th><th>Next date</th><th>Language</th><th>Price</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Food hygiene, IK-mat</td><td class="tbd" data-l="Next date">To be announced</td><td data-l="Language">Thai and Norwegian</td><td class="tbd" data-l="Price">To be announced</td><td data-l=""><a href="#" style="color:var(--lotus-deep)">Register</a></td></tr>
+          <tr><td>HSE for managers, HMS for ledere</td><td class="tbd" data-l="Next date">To be announced</td><td data-l="Language">Norwegian</td><td class="tbd" data-l="Price">To be announced</td><td data-l=""><a href="#" style="color:var(--lotus-deep)">Register</a></td></tr>
+          <tr><td>Fire safety, Brannvern</td><td class="tbd" data-l="Next date">To be announced</td><td data-l="Language">Thai</td><td class="free" data-l="Price">Free</td><td data-l=""><a href="#" style="color:var(--lotus-deep)">Register</a></td></tr>
+          <tr><td>Food allergy, Matallergi</td><td class="tbd" data-l="Next date">To be announced</td><td data-l="Language">Thai</td><td class="tbd" data-l="Price">To be announced</td><td data-l=""><a href="#" style="color:var(--lotus-deep)">Register</a></td></tr>
+        </tbody>
+      </table>
+      <div style="display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:20px;padding-top:16px;border-top:1px solid var(--rule);font-size:15px;color:var(--ink-soft)">
+        <span>Online over Line video</span><span>Camera on throughout</span><span>6 to 8 participants</span><span>About 5 hours</span><span>No written exam</span><span>Certificate posted to you</span>
+      </div>
+      <p style="margin-top:18px;font-size:15px;color:var(--ink-soft)">A table, not cards. Every course is 800 kr, so price is not a differentiator and the filter sorts by regulator instead, which is what a kitchen worker actually searches by: whichever certificate the inspector asks for. The 6 to 8 cap is a real scarcity fact and sits beside the action, stated plainly rather than as a countdown. Unset dates link to the enquiry contact, never a fabricated date. Below 900px this becomes stacked definition blocks, live in this page, never a horizontally scrolling table.</p>
+      <p style="margin-top:10px;font-size:15px;color:var(--ink-soft);margin-bottom:0">Payment here goes to <b>Thai Restaurantvirksomhet Kurs</b>, org.nr 924 409 509, a different legal entity from the association. The section carries its own entity block, and course income never appears in the association's accounts.</p>
+    </div>
+
+    <div class="spec" style="padding:0;border:0">
+      <div class="footdemo">
+        <div class="cols">
+          <div>
+            <b>Thai Foreningen Bergen</b>
+            <p>Founded in Bergen, 8 January 2010</p>
+            <p>Org.nr 996 630 307</p>
+            <p>Affiliated with the local frivilligsentral</p>
+          </div>
+          <div>
+            <b>Sections</b>
+            <p>Help · Courses · News</p>
+            <p>Membership · About</p>
+            <p>Events · Culture · Contact</p>
+          </div>
+          <div>
+            <b>Contact</b>
+            <p>emergency@ · post@</p>
+            <p>membership@ · complaint@</p>
+          </div>
+          <div>
+            <b>Support us</b>
+            <p>Payment details are being set up.</p>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:14px;font-size:15px;color:var(--ink-soft)">Four unequal columns at 4/3/3/2. No newsletter signup. No social icon larger than 20px. The support column shows its empty state rather than a placeholder account number.</p>
+    </div>
+  </section>
+
+  <!-- 07 DO NOT -->
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">08 · Do not</span></div>
+    <div class="grid g-7-5">
+      <div class="spec">
+        <span class="spec-label">Visual</span>
+        <ul class="kill">
+          <li>No magenta gradient washes, no glowing pink, no pink-on-pink hero. The logo colour is loud, so the site must not be.</li>
+          <li>No lotus watermark behind a section, no lotus as a bullet, no lotus repeated as a pattern. The lotus exists once, in the logo.</li>
+          <li>No recoloured, stretched, rotated, or shadowed mark. No full mark below 44px. See section 01.</li>
+          <li>No Thai silk texture, gold filigree, temple silhouettes, elephants, or restaurant-menu styling.</li>
+          <li>No AI-generated or stock photographs of people. Every face is a real member at a real event.</li>
+          <li>No box shadows, no 20px blanket radius, no light and dark toggle. Language is the only switcher.</li>
+          <li>No homepage carousel. No view counters.</li>
+        </ul>
+      </div>
+      <div class="spec">
+        <span class="spec-label">Content</span>
+        <ul class="kill">
+          <li>No em dashes in user-facing copy.</li>
+          <li>No curly quotes in body copy.</li>
+          <li>No fabricated bank account, Vipps number, or fee. Someone will send money to it.</li>
+          <li>No invented board member and no invented member count.</li>
+          <li>No three cards with three identical two-sentence descriptions.</li>
+          <li>No Thai text falling back to a Latin face.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="page">
+    Thai Foreningen Bergen · Org.nr 996 630 307 · Design system revision 2 · Contrast ratios on this page are computed at runtime from the token values, so they cannot drift from the CSS.
+  </footer>
+</div>
+
+<script>
+(function(){
+  var TOKENS = [
+    ['--ink',      '#14100F', 'Body text, display type, help bar ground'],
+    ['--ink-soft', '#4A4341', 'Secondary text, captions, metadata'],
+    ['--lotus',    '#E31375', 'Display 24px and up, rules, active state. Not body text.'],
+    ['--lotus-deep','#8D0C49','Links, small text, hover, anything under 24px'],
+    ['--lotus-light','#FF77AE','Labels and links on --ink grounds'],
+    ['--paper',    '#FAF7F5', 'Page ground'],
+    ['--petal',    '#F6EAF1', 'Alternating band, table zebra, quiet callouts'],
+    ['--rule',     '#E2D8DC', '1px hairlines, the primary structural device'],
+  ];
+  function lin(c){c/=255;return c<=0.04045?c/12.92:Math.pow((c+0.055)/1.055,2.4);}
+  function lum(hex){
+    var r=parseInt(hex.substr(1,2),16),g=parseInt(hex.substr(3,2),16),b=parseInt(hex.substr(5,2),16);
+    return 0.2126*lin(r)+0.7152*lin(g)+0.0722*lin(b);
+  }
+  function ratio(a,b){var la=lum(a),lb=lum(b);var hi=Math.max(la,lb),lo=Math.min(la,lb);return (hi+0.05)/(lo+0.05);}
+  var PAPER='#FAF7F5';
+  var host=document.getElementById('swatches');
+  TOKENS.forEach(function(t){
+    if(!t){ return; }
+    var name=t[0],hex=t[1],use=t[2];
+    var isGround = (name==='--paper'||name==='--petal'||name==='--rule');
+    var onInk = (name==='--lotus-light');
+    var r=ratio(hex, onInk ? '#14100F' : PAPER);
+    var label, cls='';
+    if(isGround){ label='ground'; }
+    else { label=r.toFixed(2)+':1'; cls = r>=4.5?'pass':'fail'; }
+    var row=document.createElement('div');
+    row.className='sw-row';
+    row.innerHTML =
+      '<span class="sw" style="background:'+hex+'"></span>'+
+      '<span style="flex:1 1 auto">'+
+        '<span class="sw-name">'+name+'</span> '+
+        '<span class="sw-meta">'+hex+'</span>'+
+        '<div class="sw-meta">'+use+'</div>'+
+      '</span>'+
+      '<span class="ratio '+cls+'" style="flex:0 0 108px;text-align:right;font-size:15px">'+label+
+        (isGround?'':'<div class="sw-meta" style="font-weight:400">'+(r>=4.5?'AA normal':'large only')+(onInk?' on ink':'')+'</div>')+
+      '</span>';
+    host.appendChild(row);
+  });
+  var lr=document.getElementById('lotusRatio');
+  if(lr) lr.textContent = ratio('#E31375',PAPER).toFixed(2);
+
+  // Motion demo. Deliberate and replayable, so the spec page never hides its own
+  // content behind JS or a scroll position.
+  var stage=document.getElementById('motionStage');
+  var replay=document.getElementById('motionReplay');
+  if(stage&&replay){
+    var reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+    function run(){
+      if(reduced.matches){ stage.className='mstage'; return; }
+      stage.className='mstage';
+      void stage.offsetWidth;
+      stage.className='mstage play';
+    }
+    replay.addEventListener('click',run);
+    function sync(){ replay.disabled=reduced.matches; replay.textContent=reduced.matches?'Disabled by prefers-reduced-motion':'Replay entrance'; }
+    reduced.addEventListener('change',function(){sync();run();});
+    sync();
+  }
+})();
+</script>
+</body>
+</html>

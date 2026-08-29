@@ -1,0 +1,35 @@
+{
+  "association": {
+    "name": "Thai Foreningen Bergen",
+    "orgNumber": "996 630 307",
+    "bank": "1503.21.07556",
+    "vipps": null,
+    "address": ["Landas Menighet Eldresenter", "Landasveien 26", "5097 Bergen", "Norway"],
+    "email": "post@thaiforeningenbergen.no",
+    "phone": "+47 97 08 81 36"
+  },
+  "courseProvider": {
+    "name": "Thai Restaurantvirksomhet Kurs",
+    "orgNumber": "924 409 509",
+    "bank": "1506.34.69634",
+    "vipps": null,
+    "address": ["Vallahøgda 17", "5227 Nesttun", "Norway"],
+    "email": "kurs@thaiforeningenbergen.no",
+    "phone": "+47 97 08 81 36"
+  },
+  "foundedIso": "2010-01-08",
+  "registeredIso": "2011-03-18",
+  "bylawsAmendedIso": "2016-02-15",
+  "membershipFeeNok": 50,
+  "memberCount": { "value": 233, "asOfIso": "2016-12-25" },
+  "emergency": {
+    "name": "Krisesenteret",
+    "phone": "55 31 50 50",
+    "hours": {
+      "en": "open 24 hours, every day of the year",
+      "no": "døgnåpent, hele året",
+      "th": "เปิด 24 ชั่วโมง ทุกวัน ตลอดทั้งปี"
+    }
+  },
+  "frivilligsentral": true
+}

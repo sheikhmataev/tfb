@@ -1,0 +1,78 @@
+[
+  {
+    "id": "help-emergency",
+    "slug": "emergency",
+    "label": { "en": "Emergency", "no": "Akutt", "th": "ฉุกเฉิน" },
+    "title": {
+      "en": "If you are in danger right now",
+      "no": "Hvis du er i fare akkurat nå",
+      "th": "หากคุณกำลังตกอยู่ในอันตราย"
+    },
+    "body": {
+      "en": "Call Krisesenteret directly. It is free, it is open every day of the year, and you do not need to be a member. If you can, bring identity documents for yourself and for your children. We can arrange an interpreter.",
+      "no": "Ring krisesenteret direkte. Det er gratis, det er åpent hele året, og du trenger ikke være medlem. Ta med legitimasjon for deg selv og barna dine hvis du får det til. Vi kan skaffe tolk.",
+      "th": "โทรหาศูนย์ช่วยเหลือได้โดยตรง ไม่มีค่าใช้จ่าย เปิดทุกวันตลอดทั้งปี และไม่จำเป็นต้องเป็นสมาชิก หากทำได้ ให้นำเอกสารแสดงตัวตนของคุณและของลูกติดตัวไปด้วย เราจัดล่ามให้ได้"
+    },
+    "phone": "55 31 50 50",
+    "href": null,
+    "hours": {
+      "en": "24 hours, every day of the year",
+      "no": "Døgnåpent, hele året",
+      "th": "24 ชั่วโมง ทุกวันตลอดปี"
+    }
+  },
+  {
+    "id": "help-child-welfare",
+    "slug": "child-welfare",
+    "label": { "en": "Barnevernet", "no": "Barnevernet", "th": "หน่วยงานคุ้มครองเด็ก" },
+    "title": {
+      "en": "When Barnevernet contacts you",
+      "no": "Når barnevernet tar kontakt",
+      "th": "เมื่อหน่วยงานคุ้มครองเด็กติดต่อคุณ"
+    },
+    "body": {
+      "en": "A letter or a phone call from Barnevernet is not a verdict. You have the right to understand what is being asked and to answer in your own language. We can explain the process, come with you to the meeting, and make sure nothing is lost between Thai and Norwegian.",
+      "no": "Et brev eller en telefon fra barnevernet er ikke en dom. Du har rett til å forstå hva som blir spurt om, og til å svare på ditt eget språk. Vi kan forklare prosessen, bli med i møtet, og passe på at ingenting går tapt mellom thai og norsk.",
+      "th": "จดหมายหรือโทรศัพท์จากหน่วยงานคุ้มครองเด็กไม่ใช่คำตัดสิน คุณมีสิทธิเข้าใจว่าเขาถามอะไรและตอบเป็นภาษาของคุณเอง เราอธิบายขั้นตอนให้ได้ ไปประชุมกับคุณได้ และดูแลไม่ให้ข้อมูลตกหล่นระหว่างภาษาไทยกับนอร์เวย์"
+    },
+    "phone": null,
+    "href": "https://www.bufdir.no/barnevern",
+    "hours": null
+  },
+  {
+    "id": "help-interpreting",
+    "slug": "interpreting",
+    "label": { "en": "Interpreting", "no": "Tolk og papirer", "th": "ล่ามและเอกสาร" },
+    "title": {
+      "en": "Letters you cannot read",
+      "no": "Brev du ikke får lest",
+      "th": "จดหมายที่คุณอ่านไม่ออก"
+    },
+    "body": {
+      "en": "A letter from NAV or UDI usually has a deadline in it. Bring it to us before the deadline passes. We help with interpreting and translation, and with working out what the letter is actually asking you to do.",
+      "no": "Et brev fra NAV eller UDI har som regel en frist i seg. Ta det med til oss før fristen går ut. Vi hjelper med tolking og oversettelse, og med å finne ut hva brevet faktisk ber deg om.",
+      "th": "จดหมายจาก NAV หรือ UDI มักมีกำหนดเวลา นำมาให้เราก่อนหมดกำหนด เราช่วยเรื่องล่ามและการแปล และช่วยดูว่าจดหมายต้องการให้คุณทำอะไร"
+    },
+    "phone": null,
+    "href": null,
+    "hours": null
+  },
+  {
+    "id": "help-confidentiality",
+    "slug": "confidentiality",
+    "label": { "en": "Confidentiality", "no": "Taushetsplikt", "th": "การรักษาความลับ" },
+    "title": {
+      "en": "What we write down, which is nothing",
+      "no": "Hva vi skriver ned, som er ingenting",
+      "th": "สิ่งที่เราบันทึกไว้ ซึ่งคือไม่มีเลย"
+    },
+    "body": {
+      "en": "Everyone who takes an emergency call is bound by taushetsplikt. Emergency contacts are not reported to the board and no record is kept of them. That has been the rule since the association started and it has not changed.",
+      "no": "Alle som tar imot en akutthenvendelse har taushetsplikt. Akutte henvendelser blir ikke rapportert til styret, og det føres ingen logg over dem. Slik har det vært siden foreningen startet, og det er ikke endret.",
+      "th": "ทุกคนที่รับเรื่องฉุกเฉินมีหน้าที่รักษาความลับตามกฎหมาย การติดต่อขอความช่วยเหลือฉุกเฉินจะไม่ถูกรายงานต่อคณะกรรมการ และไม่มีการเก็บบันทึกใดๆ กฎนี้มีมาตั้งแต่ก่อตั้งสมาคมและไม่เคยเปลี่ยน"
+    },
+    "phone": null,
+    "href": null,
+    "hours": null
+  }
+]

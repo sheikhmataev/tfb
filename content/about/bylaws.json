@@ -1,0 +1,20 @@
+{
+  "amendedIso": "2016-02-15",
+  "note": {
+    "en": "The Norwegian text is the binding version. The heading was updated to Bergen, but the body still says Hordaland throughout: that wording predates the county merger of 1 January 2020 and can only be changed by a resolution at an annual meeting. Two further defects are recorded below the text.",
+    "no": "Den norske teksten er den bindende versjonen. Overskriften er oppdatert til Bergen, men selve teksten sier fortsatt Hordaland: den ordlyden er eldre enn fylkessammenslåingen 1. januar 2020 og kan bare endres ved vedtak på et årsmøte. To ytterligere feil er notert under teksten.",
+    "th": "ข้อความภาษานอร์เวย์เป็นฉบับที่มีผลผูกพัน หัวข้อได้แก้เป็น Bergen แล้ว แต่เนื้อหายังใช้คำว่า Hordaland อยู่ ซึ่งเป็นถ้อยคำก่อนการรวมจังหวัดเมื่อ 1 มกราคม 2020 และแก้ไขได้เฉพาะโดยมติที่ประชุมใหญ่ ข้อบกพร่องอีกสองประการระบุไว้ใต้ตัวบท"
+  },
+  "defects": [
+    {
+      "en": "The section between § 5 and § 7 carries no number. It should be § 6.",
+      "no": "Paragrafen mellom § 5 og § 7 mangler nummer. Den skulle vært § 6.",
+      "th": "มาตราระหว่าง § 5 กับ § 7 ไม่มีหมายเลขกำกับ ควรเป็น § 6"
+    },
+    {
+      "en": "§ 7 defines the duties of the leader and of the deputy and secretary, and then stops. The treasurer has no duties section, even though § 7 a gives that role joint control of the accounts and joint authority over all spending.",
+      "no": "§ 7 beskriver oppgavene til leder og til nestleder og sekretær, og stopper der. Kassereren har ingen egen paragraf, selv om § 7 a gir den rollen felles disposisjonsrett over kontoene og felles myndighet over alle utgifter.",
+      "th": "§ 7 กำหนดหน้าที่ของประธาน รองประธาน และเลขานุการ แล้วจบลง เหรัญญิกไม่มีมาตราระบุหน้าที่ ทั้งที่ § 7 ก ให้ตำแหน่งนี้มีอำนาจร่วมในการดูแลบัญชีและอนุมัติค่าใช้จ่ายทั้งหมด"
+    }
+  ]
+}
