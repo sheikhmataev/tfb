@@ -17,7 +17,7 @@ export function Recently({ locale, today }: { locale: Locale; today: string }) {
   const items = getRecently(today);
   const [lead, ...rest] = items;
   const archived = isArchive(today);
-  const range = archiveRange();
+  const range = archiveRange(today);
 
   return (
     <section id="articles" className="scroll-mt-24 border-t border-rule">

@@ -100,8 +100,15 @@ export function isArchive(today: string): boolean {
   return months > 18;
 }
 
-export function archiveRange(): { from: string; to: string } {
-  const years = allEntries.map((e) => entrySortKey(e).slice(0, 4)).sort();
+/**
+ * The span of what is actually archived. Upcoming occasions are excluded, or
+ * an archive would advertise itself as running into next year.
+ */
+export function archiveRange(today: string): { from: string; to: string } {
+  const years = allEntries
+    .filter((e) => !isUpcoming(e, today))
+    .map((e) => entrySortKey(e).slice(0, 4))
+    .sort();
   return { from: years[0], to: years[years.length - 1] };
 }
 
