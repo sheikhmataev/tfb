@@ -111,6 +111,8 @@ export interface FactRow {
   /** The year the figure was true. A dated fact, never a bare current claim. */
   asOf: string | null;
   href: string | null;
+  /** A short named target. The value stays plain text, never a link itself. */
+  linkLabel?: L10n;
 }
 
 export interface BoardFunction {

@@ -245,7 +245,7 @@
       "no": "Bergen",
       "th": "Bergen"
     },
-    "leadImage": "activities-lead.jpg",
+    "leadImage": null,
     "sourceUrl": null,
     "sourcePlatform": null,
     "sourceFetchedAt": null,

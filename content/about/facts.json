@@ -1,14 +1,31 @@
 [
   {
     "id": "orgnr",
-    "label": { "en": "Organisation number", "no": "Organisasjonsnummer", "th": "เลขทะเบียนองค์กร" },
-    "value": { "en": "996 630 307", "no": "996 630 307", "th": "996 630 307" },
+    "label": {
+      "en": "Organisation number",
+      "no": "Organisasjonsnummer",
+      "th": "เลขทะเบียนองค์กร"
+    },
+    "value": {
+      "en": "996 630 307",
+      "no": "996 630 307",
+      "th": "996 630 307"
+    },
     "asOf": null,
-    "href": "https://virksomhet.brreg.no/nb/oppslag/enheter/996630307"
+    "href": "https://virksomhet.brreg.no/nb/oppslag/enheter/996630307",
+    "linkLabel": {
+      "en": "Brønnøysund register",
+      "no": "Brønnøysundregistrene",
+      "th": "ทะเบียน Brønnøysund"
+    }
   },
   {
     "id": "founded",
-    "label": { "en": "Founded", "no": "Stiftet", "th": "ก่อตั้ง" },
+    "label": {
+      "en": "Founded",
+      "no": "Stiftet",
+      "th": "ก่อตั้ง"
+    },
     "value": {
       "en": "Bergen, 8 January 2010. Affiliated with the local frivilligsentral.",
       "no": "Bergen, 8. januar 2010. Tilknyttet den lokale frivilligsentralen.",
@@ -19,7 +36,11 @@
   },
   {
     "id": "members",
-    "label": { "en": "Members", "no": "Medlemmer", "th": "สมาชิก" },
+    "label": {
+      "en": "Members",
+      "no": "Medlemmer",
+      "th": "สมาชิก"
+    },
     "value": {
       "en": "233. The count is confirmed at each annual meeting.",
       "no": "233. Tallet bekreftes på hvert årsmøte.",
@@ -30,35 +51,62 @@
   },
   {
     "id": "accounts",
-    "label": { "en": "Annual accounts", "no": "Årsregnskap", "th": "บัญชีประจำปี" },
+    "label": {
+      "en": "Annual accounts",
+      "no": "Årsregnskap",
+      "th": "บัญชีประจำปี"
+    },
     "value": {
       "en": "Published in full, line by line, 2011 to 2015. The 2016 accounts were announced and never filed.",
       "no": "Publisert i sin helhet, post for post, 2011 til 2015. Regnskapet for 2016 ble varslet og aldri levert.",
       "th": "เผยแพร่ครบถ้วนเป็นรายการ ปี 2011 ถึง 2015 ส่วนบัญชีปี 2016 ประกาศไว้แต่ไม่เคยจัดทำ"
     },
     "asOf": null,
-    "href": "/about/finances"
+    "href": "/about/finances",
+    "linkLabel": {
+      "en": "See the accounts",
+      "no": "Se regnskapene",
+      "th": "ดูบัญชี"
+    }
   },
   {
     "id": "bylaws",
-    "label": { "en": "Bylaws", "no": "Vedtekter", "th": "ข้อบังคับ" },
+    "label": {
+      "en": "Bylaws",
+      "no": "Vedtekter",
+      "th": "ข้อบังคับ"
+    },
     "value": {
       "en": "Adopted 2010, last amended at the annual meeting of 15 February 2016.",
       "no": "Vedtatt 2010, sist endret på årsmøtet 15. februar 2016.",
       "th": "รับรองปี 2010 แก้ไขล่าสุดในการประชุมใหญ่ 15 กุมภาพันธ์ 2016"
     },
     "asOf": null,
-    "href": "/about/bylaws"
+    "href": "/about/bylaws",
+    "linkLabel": {
+      "en": "Read the bylaws",
+      "no": "Les vedtektene",
+      "th": "อ่านข้อบังคับ"
+    }
   },
   {
     "id": "board",
-    "label": { "en": "Board", "no": "Styre", "th": "คณะกรรมการ" },
+    "label": {
+      "en": "Board",
+      "no": "Styre",
+      "th": "คณะกรรมการ"
+    },
     "value": {
       "en": "Eight unpaid functions. Elected by the members every two years.",
       "no": "Åtte ulønnede funksjoner. Valgt av medlemmene hvert andre år.",
       "th": "แปดฝ่ายงาน ไม่มีค่าตอบแทน สมาชิกเลือกทุกสองปี"
     },
     "asOf": null,
-    "href": "/about/board"
+    "href": "/about/board",
+    "linkLabel": {
+      "en": "Who sits on it",
+      "no": "Hvem sitter i styret",
+      "th": "ใครอยู่ในคณะกรรมการ"
+    }
   }
 ]

@@ -125,21 +125,15 @@ export const S = {
       no: "Du trenger verken å være thailandsk eller medlem for å hjelpe. Foreningen trenger folk som kan kjøre, lage mat til en festival, eller sitte med noen gjennom et møte på norsk.",
       th: "คุณไม่จำเป็นต้องเป็นคนไทยหรือเป็นสมาชิกจึงจะช่วยได้ สมาคมต้องการคนที่ขับรถได้ ทำอาหารในงานเทศกาลได้ หรือไปนั่งเป็นเพื่อนในการประชุมภาษานอร์เวย์",
     },
+    photoNote: {
+      en: "Bergen. The association's own photographs of its events will replace this one.",
+      no: "Bergen. Foreningens egne bilder fra arrangementene erstatter dette.",
+      th: "เบอร์เกน ภาพถ่ายงานของสมาคมเองจะมาแทนที่ภาพนี้",
+    },
     howToJoin: { en: "How to join", no: "Slik blir du medlem", th: "วิธีสมัครสมาชิก" },
     howToHelp: { en: "Contact the board", no: "Kontakt styret", th: "ติดต่อคณะกรรมการ" },
   },
 
-  hero: {
-    eyebrow: { en: "Founded in Bergen, 8 January 2010", no: "Stiftet i Bergen 8. januar 2010", th: "ก่อตั้งที่เบอร์เกน 8 มกราคม 2010" },
-    lead: {
-      en: "We run the food safety courses you need to work in a Norwegian kitchen, and we help Thai people in Bergen deal with the police, lawyers, hospitals and the crisis centre.",
-      no: "Vi arrangerer matkursene du trenger for å jobbe på kjøkken i Norge, og vi hjelper thailendere i Bergen med kontakt mot politi, advokat, sykehus og krisesenter.",
-      th: "เราจัดคอร์สอบรมความปลอดภัยด้านอาหารที่จำเป็นสำหรับการทำงานในครัวที่นอร์เวย์ และช่วยคนไทยในเบอร์เกนติดต่อตำรวจ ทนาย โรงพยาบาล และศูนย์ช่วยเหลือ",
-    },
-    primary: { en: "See the courses", no: "Se kursene", th: "ดูคอร์สอบรม" },
-    secondary: { en: "Get help", no: "Få hjelp", th: "ขอความช่วยเหลือ" },
-    proof: { en: "Volunteer run since 2010", no: "Frivillig drevet siden 2010", th: "ดำเนินงานโดยอาสาสมัครตั้งแต่ปี 2010" },
-  },
 
   courses: {
     label: { en: "Courses and certification", no: "Kurs og sertifisering", th: "อบรมและใบรับรอง" },

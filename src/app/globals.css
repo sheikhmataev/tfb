@@ -144,10 +144,3 @@
   [data-js] .reveal:not(.is-in) { opacity: 1; transform: none; }
 }
 
-/* Hero mask opens once on mount. "both" holds the end state, so the global
-   reduced-motion rule lands on the finished shape rather than the start. */
-@keyframes petal-open {
-  from { border-radius: 0 40% 0 40%; }
-  to { border-radius: 0 62% 0 62%; }
-}
-.petal-open { animation: petal-open 700ms var(--ease-out-soft) both; }

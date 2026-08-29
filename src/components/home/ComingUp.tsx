@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getComingUp } from "@/lib/content";
 import { S } from "@/lib/strings";
-import { formatDate, formatMonth } from "@/lib/i18n";
+import { DateRail } from "@/components/DateRail";
 import type { Locale } from "@/lib/types";
 
 /**
@@ -42,12 +42,12 @@ export function ComingUp({ locale, today }: { locale: Locale; today: string }) {
         ) : (
           <ul className="mt-6">
             {items.map((e) => (
-              <li key={e.id} className="grid gap-x-8 gap-y-1 border-t border-rule py-5 md:grid-cols-[13rem_1fr]">
-                <p className="text-sm text-ink-soft">
-                  {e.dateIsApproximate
-                    ? formatMonth(e.eventStartsAt as string, locale)
-                    : formatDate(e.eventStartsAt as string, locale)}
-                </p>
+              <li key={e.id} className="grid gap-x-8 gap-y-2 border-t border-rule py-5 md:grid-cols-[7rem_1fr]">
+                <DateRail
+                  iso={e.eventStartsAt as string}
+                  locale={locale}
+                  approximate={e.dateIsApproximate}
+                />
                 <div>
                   <h3 lang={th} className="display text-xl leading-snug">
                     {e.title[locale]}

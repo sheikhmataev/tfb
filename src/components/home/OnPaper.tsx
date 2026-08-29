@@ -36,30 +36,31 @@ export function OnPaper({ locale }: { locale: Locale }) {
                   {f.label[locale]}
                 </dt>
                 <dd lang={th} className="max-w-[62ch]">
-                  {f.href ? (
-                    external ? (
-                      <a
-                        href={f.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex min-h-11 items-center text-lotus-deep underline-offset-4"
-                      >
-                        {f.value[locale]}
-                      </a>
-                    ) : (
-                      <Link
-                        href={`/${locale}${f.href}`}
-                        className="inline-flex min-h-11 items-center text-lotus-deep underline-offset-4"
-                      >
-                        {f.value[locale]}
-                      </Link>
-                    )
-                  ) : (
-                    f.value[locale]
-                  )}
+                  {f.value[locale]}
                   {f.asOf && (
                     <span className="ml-2 whitespace-nowrap text-sm text-ink-soft">
                       {S.onPaper.asOf[locale]} {formatDate(f.asOf, locale)}
+                    </span>
+                  )}
+                  {f.href && f.linkLabel && (
+                    <span className="block">
+                      {external ? (
+                        <a
+                          href={f.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex min-h-11 items-center text-sm text-lotus-deep underline-offset-4"
+                        >
+                          {f.linkLabel[locale]}
+                        </a>
+                      ) : (
+                        <Link
+                          href={`/${locale}${f.href}`}
+                          className="inline-flex min-h-11 items-center text-sm text-lotus-deep underline-offset-4"
+                        >
+                          {f.linkLabel[locale]}
+                        </Link>
+                      )}
                     </span>
                   )}
                 </dd>

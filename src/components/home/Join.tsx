@@ -17,7 +17,7 @@ export function Join({ locale }: { locale: Locale }) {
       <div className="mx-auto max-w-[1180px] px-4 py-14 sm:px-7">
         <div className="grid gap-x-10 gap-y-8 md:grid-cols-12">
           <figure className="m-0 md:col-span-5">
-            <div className="petal-mask relative aspect-[3/2] bg-petal">
+            <div className="petal-mask relative aspect-square bg-petal">
               <Image
                 src={withBase("/assets/activities-lead.jpg")}
                 alt=""
@@ -26,9 +26,8 @@ export function Join({ locale }: { locale: Locale }) {
                 className="object-cover"
               />
             </div>
-            <figcaption className="mt-2 text-sm text-ink-soft">
-              {/* TODO(board): confirm what this photograph shows before launch. */}
-              Bergen, from the association&apos;s own archive.
+            <figcaption lang={th} className="mt-2 text-sm text-ink-soft">
+              {S.join.photoNote[locale]}
             </figcaption>
           </figure>
 
