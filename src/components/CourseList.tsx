@@ -14,7 +14,15 @@ const FACTS = ["hours", "seats", "noExam", "certificatePosted"] as const;
  * asked for something and need to find which one that was. Register is the
  * point of the section, so it is a real button and clears the 44px floor.
  */
-export function CourseList({ courses, locale }: { courses: Course[]; locale: Locale }) {
+export function CourseList({
+  courses,
+  locale,
+  heading = false,
+}: {
+  courses: Course[];
+  locale: Locale;
+  heading?: boolean;
+}) {
   const th = locale === "th" ? "th" : undefined;
 
   // Show the price once when every course shares it, per row when they diverge.
@@ -24,14 +32,20 @@ export function CourseList({ courses, locale }: { courses: Course[]; locale: Loc
   return (
     <section className="border-2 border-ink">
       <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-5 border-b border-rule px-6 py-7 sm:px-8">
-        <div>
-          <h2 lang={th} className="display text-[clamp(1.75rem,3vw,2.125rem)] leading-tight">
-            {S.courses.label[locale]}
-          </h2>
-          <p lang={th} className="mt-2 max-w-[46ch] text-ink-soft">
-            {S.courses.lead[locale]}
+        {heading ? (
+          <div>
+            <h2 lang={th} className="display text-[clamp(1.75rem,3vw,2.125rem)] leading-tight">
+              {S.courses.label[locale]}
+            </h2>
+            <p lang={th} className="mt-2 max-w-[46ch] text-ink-soft">
+              {S.courses.lead[locale]}
+            </p>
+          </div>
+        ) : (
+          <p lang={th} className="max-w-[46ch] text-ink-soft">
+            {S.courses.whatItCosts[locale]}
           </p>
-        </div>
+        )}
         {flatPrice !== null && (
           <div className="text-left sm:text-right">
             <p className="display text-[clamp(2rem,4vw,2.75rem)] leading-none">

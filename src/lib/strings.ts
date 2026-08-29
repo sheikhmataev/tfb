@@ -154,6 +154,11 @@ export const S = {
     price: { en: "Price", no: "Pris", th: "ราคา" },
     register: { en: "Register", no: "Meld deg på", th: "ลงทะเบียน" },
     tbd: { en: "Date to be announced", no: "Dato kommer", th: "รอประกาศวันอบรม" },
+    whatItCosts: {
+      en: "Every course costs the same and covers the same ground: what an inspection asks you to be able to show.",
+      no: "Alle kursene koster det samme og dekker det samme: det et tilsyn ber deg kunne vise fram.",
+      th: "ทุกคอร์สราคาเท่ากันและครอบคลุมเรื่องเดียวกัน คือสิ่งที่การตรวจสอบขอให้คุณแสดงได้",
+    },
     priceIncludes: {
       en: "every course, materials and certificate included",
       no: "alle kurs, kursmateriell og kursbevis inkludert",

@@ -46,7 +46,7 @@ export default async function CoursesPage({
       <div className="mx-auto max-w-[1180px] px-4 py-12 sm:px-7">
         <div className="mb-8 flex flex-wrap items-center gap-6 border-b border-rule pb-6">
           <Image
-            src={withBase("/assets/logo-courses.png")}
+            src={withBase("/assets/logo-courses.svg")}
             alt={settings.courseProvider.name}
             width={1915}
             height={1423}
