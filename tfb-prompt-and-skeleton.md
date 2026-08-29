@@ -1,6 +1,8 @@
 # Thai Foreningen Bergen (TFB) — Enhanced Build Prompt + Baseline Skeleton
 
 **Status:** design brief only. No application code in this document.
+**Revision 5** — the skeleton has been built. See Part 1.5 for what shipped, what deviated, and why.
+
 **Revision 4** — a full 70-page Firecrawl crawl of the legacy site replaces guesswork. The courses entity, its org number and prices, the board roster, the association's bank details, membership terms, and seven years of accounts are now known facts rather than open questions. Revision 3 note follows.
 
 **Revision 3** — client brief folded in: stated content priorities now drive the homepage and nav order, Thai Airways added as a second reference, the courses sub-brand is handled as brand architecture, and all logo assets are delivered and measured.
@@ -307,6 +309,27 @@ Count the em dashes in your copy; the answer must be zero. Check whether the pal
 Once the plan is complete, proceed without asking. Order: scaffold and `@theme` tokens, content layer and types, root layout with locale routing and the persistent help bar, header and footer, homepage sections in order, the Help section, then remaining routes. Ship real copy in all three languages as you go.
 
 ---
+
+## PART 1.5 — BUILD REPORT
+
+The skeleton has been executed. 99 static pages across `en`, `no` and `th`.
+Run it with `npm run dev`; build with `npm run build`.
+
+**Three deviations from the plan, each with a reason.**
+
+**1. The JavaScript budget is missed, and cannot be met on this stack.** The brief set 120 KB gzip for the homepage. The shipped figure is **184.6 KB gzip**, of which roughly **178 KB is the Next.js App Router and React 19 baseline** that every page carries whether or not it has a client component: a page with no interactive code of its own measures 178 KB. Application code is about 7 KB per page. Framer Motion was removed entirely once it became clear its only job was a single `border-radius` tween, which CSS does natively; that alone cut 42 KB. Getting under 120 KB would mean leaving the App Router, which the brief mandates, so the number is reported rather than quietly dropped.
+
+What was done instead is the thing that actually matters for this audience: **the site is fully usable with no JavaScript at all.** The mobile menu is a `<details>` element, every navigation item is a real link, the language switcher is three links, the emergency number is a `tel:` link, and no content anywhere starts at zero opacity. A member on an old Android whose bundle never arrives still gets the whole site. Verified against the built HTML.
+
+**2. Scroll reveals were rebuilt so they cannot hide content.** The first implementation used Framer Motion's `whileInView`, which writes `opacity: 0` into the server-rendered HTML. Eight blocks shipped invisible, so a crawler, a failed observer, or disabled JS would have hidden the help pathways. The replacement ships the finished state and only hides once an inline script has proved JS is running, with a 1.5 second failsafe on top.
+
+**3. `<html lang>` needed route groups.** A single root layout cannot know the locale, so Thai pages were shipping `lang="en"`. The app is now split into two route groups, each with its own root layout: `(site)/[locale]` renders `<html lang>` from the locale, and `(chooser)` handles `/`. Norwegian correctly emits `nb`.
+
+**Smaller corrections made during the build.** `redirect()` cannot run in a static export, so `/` is a real language-chooser page with a meta refresh, backed by an edge rule in `public/_redirects`. Em-dash placeholders standing in for absent values were removed, since a glyph doing a word's job is still the kill list's problem: an unset field now renders nothing or does not render at all. The hero image bleed only applies above 1240px, where the container genuinely has gutter to spare; below that it was pushing the document sideways. Thai needed `overflow-wrap: anywhere` as a last resort, because the earlier `normal` left long Thai runs unbreakable and they forced their container wider than the screen.
+
+**Verified.** 99 pages build clean, no broken internal links, zero em dashes in shipped copy, zero curly quotes, no horizontal overflow across 52 route and breakpoint combinations at 320, 414, 768 and 1280.
+
+**Still outstanding, all content rather than code.** Course dates, the Brannvern contradiction, the membership catchment after the Vestland merger, the board roster for 2026, accounts after 2015, Vipps, and a transparent vector of the courses mark. Each has a designed empty state today, so none of them blocks launch.
 
 ## PART 2 — THE BASELINE SKELETON
 
