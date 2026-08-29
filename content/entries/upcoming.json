@@ -1,0 +1,98 @@
+[
+  {
+    "id": "ent-loikrathong-2026",
+    "slug": "loi-krathong-2026",
+    "status": "published",
+    "strand": "culture",
+    "publishedAt": "2026-08-29",
+    "eventStartsAt": "2026-11-01",
+    "eventEndsAt": "2026-11-30",
+    "dateIsApproximate": true,
+    "approximateReason": {
+      "en": "Loi Krathong follows the lunar calendar. The day is fixed in September.",
+      "no": "Loi Krathong følger månekalenderen. Dagen fastsettes i september.",
+      "th": "ลอยกระทงกำหนดตามปฏิทินจันทรคติ วันจะระบุได้ในเดือนกันยายน"
+    },
+    "venue": null,
+    "leadImage": null,
+    "sourceUrl": null, "sourcePlatform": null, "sourceFetchedAt": null, "sourceLocked": false,
+    "title": { "en": "Loi Krathong", "no": "Loi Krathong", "th": "ลอยกระทง" },
+    "summary": {
+      "en": "The festival of lights on the water. Place and time follow once the hall is booked.",
+      "no": "Lysfesten på vannet. Sted og tid kommer når lokalet er booket.",
+      "th": "งานลอยกระทง สถานที่และเวลาจะแจ้งเมื่อจองสถานที่เรียบร้อย"
+    },
+    "body": null,
+    "updatedAt": "2026-08-29"
+  },
+  {
+    "id": "ent-arsmote-2027",
+    "slug": "arsmote-2027",
+    "status": "published",
+    "strand": "notice",
+    "publishedAt": "2026-08-29",
+    "eventStartsAt": "2027-02-01",
+    "eventEndsAt": "2027-02-28",
+    "dateIsApproximate": true,
+    "approximateReason": {
+      "en": "The annual meeting is held in February. The date is set by the board and announced with the agenda.",
+      "no": "Årsmøtet holdes i februar. Datoen settes av styret og kunngjøres sammen med saklisten.",
+      "th": "การประชุมใหญ่จัดในเดือนกุมภาพันธ์ คณะกรรมการจะกำหนดวันและแจ้งพร้อมระเบียบวาระ"
+    },
+    "venue": null,
+    "leadImage": null,
+    "sourceUrl": null, "sourcePlatform": null, "sourceFetchedAt": null, "sourceLocked": false,
+    "title": { "en": "Annual meeting", "no": "Årsmøte", "th": "การประชุมใหญ่สามัญ" },
+    "summary": {
+      "en": "Members elect the board and approve the accounts. Every member may attend and vote.",
+      "no": "Medlemmene velger styret og godkjenner regnskapet. Alle medlemmer kan møte og stemme.",
+      "th": "สมาชิกเลือกคณะกรรมการและอนุมัติบัญชี สมาชิกทุกคนเข้าร่วมและออกเสียงได้"
+    },
+    "body": null,
+    "updatedAt": "2026-08-29"
+  },
+  {
+    "id": "ent-songkran-2027",
+    "slug": "songkran-2027",
+    "status": "published",
+    "strand": "culture",
+    "publishedAt": "2026-08-29",
+    "eventStartsAt": "2027-04-13",
+    "eventEndsAt": "2027-04-15",
+    "dateIsApproximate": false,
+    "approximateReason": null,
+    "venue": null,
+    "leadImage": null,
+    "sourceUrl": null, "sourcePlatform": null, "sourceFetchedAt": null, "sourceLocked": false,
+    "title": { "en": "Songkran", "no": "Songkran", "th": "สงกรานต์" },
+    "summary": {
+      "en": "Thai New Year, marked on the same dates every year. Place and time follow.",
+      "no": "Thailandsk nyttår, på de samme datoene hvert år. Sted og tid kommer.",
+      "th": "วันขึ้นปีใหม่ไทย ตรงกับวันเดิมทุกปี สถานที่และเวลาจะแจ้งภายหลัง"
+    },
+    "body": null,
+    "updatedAt": "2026-08-29"
+  },
+  {
+    "id": "ent-17mai-2027",
+    "slug": "17-mai-2027",
+    "status": "published",
+    "strand": "festival",
+    "publishedAt": "2026-08-29",
+    "eventStartsAt": "2027-05-17",
+    "eventEndsAt": "2027-05-17",
+    "dateIsApproximate": false,
+    "approximateReason": null,
+    "venue": null,
+    "leadImage": null,
+    "sourceUrl": null, "sourcePlatform": null, "sourceFetchedAt": null, "sourceLocked": false,
+    "title": { "en": "17 May, Norwegian Constitution Day", "no": "17. mai", "th": "วันชาตินอร์เวย์ 17 พฤษภาคม" },
+    "summary": {
+      "en": "The association sells Thai food on the day. Pitch and times follow closer to May.",
+      "no": "Foreningen selger thaimat på dagen. Plass og tider kommer nærmere mai.",
+      "th": "สมาคมออกร้านขายอาหารไทยในวันนี้ จุดจำหน่ายและเวลาจะแจ้งใกล้เดือนพฤษภาคม"
+    },
+    "body": null,
+    "updatedAt": "2026-08-29"
+  }
+]

@@ -3,7 +3,7 @@ import { fontVars } from "@/lib/fonts";
 import "../../globals.css";
 import { notFound } from "next/navigation";
 import { HelpBar } from "@/components/HelpBar";
-import { Header } from "@/components/Header";
+import { Masthead, MastheadNav } from "@/components/home/Masthead";
 import { Footer } from "@/components/Footer";
 import { S } from "@/lib/strings";
 import { HTML_LANG, isLocale } from "@/lib/i18n";
@@ -70,7 +70,8 @@ export default async function LocaleLayout({
         {S.skipToContent[l]}
       </a>
         <HelpBar locale={l} />
-        <Header locale={l} />
+        <Masthead locale={l} />
+        <MastheadNav locale={l} />
         <main id="main">{children}</main>
         <Footer locale={l} />
       </body>

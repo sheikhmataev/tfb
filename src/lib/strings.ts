@@ -5,10 +5,11 @@ export const S = {
   siteName: { en: "Thai Foreningen Bergen", no: "Thai Foreningen Bergen", th: "สมาคมคนไทยในเบอร์เกน" },
 
   nav: {
-    courses: { en: "Courses", no: "Kurs", th: "อบรม" },
     help: { en: "Help", no: "Hjelp", th: "ความช่วยเหลือ" },
-    activities: { en: "Activities", no: "Aktiviteter", th: "กิจกรรม" },
+    calendar: { en: "Calendar", no: "Kalender", th: "ปฏิทิน" },
+    articles: { en: "Articles", no: "Artikler", th: "บทความ" },
     about: { en: "About", no: "Om oss", th: "เกี่ยวกับสมาคม" },
+    courses: { en: "Courses", no: "Kurs", th: "อบรม" },
     contact: { en: "Contact", no: "Kontakt", th: "ติดต่อ" },
   },
 
@@ -21,6 +22,112 @@ export const S = {
   close: { en: "Close", no: "Lukk", th: "ปิด" },
   skipToContent: { en: "Skip to content", no: "Hopp til innhold", th: "ข้ามไปยังเนื้อหา" },
   language: { en: "Language", no: "Språk", th: "ภาษา" },
+
+  masthead: {
+    identity: {
+      en: "A volunteer association for Thai people in Bergen, founded 8 January 2010. Affiliated with the local frivilligsentral.",
+      no: "En frivillig forening for thailendere i Bergen, stiftet 8. januar 2010. Tilknyttet den lokale frivilligsentralen.",
+      th: "สมาคมอาสาสมัครสำหรับคนไทยในเบอร์เกน ก่อตั้งเมื่อ 8 มกราคม 2010 สังกัดศูนย์อาสาสมัครท้องถิ่น",
+    },
+    orgNumber: { en: "Organisation number", no: "Organisasjonsnummer", th: "เลขทะเบียนองค์กร" },
+    registryLink: {
+      en: "opens the entry in the Brønnøysund register",
+      no: "åpner oppføringen i Brønnøysundregistrene",
+      th: "เปิดข้อมูลในทะเบียน Brønnøysund",
+    },
+  },
+
+  helpToday: {
+    heading: { en: "If you need help today", no: "Hvis du trenger hjelp i dag", th: "หากคุณต้องการความช่วยเหลือวันนี้" },
+    lead: {
+      en: "You do not have to be a member. You do not have to explain yourself in Norwegian. Tell us in Thai what has happened and we will take it from there.",
+      no: "Du trenger ikke være medlem. Du trenger ikke forklare deg på norsk. Fortell oss på thai hva som har skjedd, så tar vi det derfra.",
+      th: "คุณไม่จำเป็นต้องเป็นสมาชิก ไม่จำเป็นต้องอธิบายเป็นภาษานอร์เวย์ เล่าให้เราฟังเป็นภาษาไทยว่าเกิดอะไรขึ้น แล้วเราจะดำเนินการต่อ",
+    },
+    krisesenterFor: {
+      en: "Violence, threats, or somewhere safe to sleep tonight",
+      no: "Vold, trusler, eller et trygt sted å sove i natt",
+      th: "ความรุนแรง การข่มขู่ หรือที่พักที่ปลอดภัยสำหรับคืนนี้",
+    },
+    krisesenterNote: {
+      en: "Free, 24 hours, every day of the year, nights and holidays included. They will get an interpreter.",
+      no: "Gratis, døgnåpent, hele året, også netter og helligdager. De skaffer tolk.",
+      th: "ไม่มีค่าใช้จ่าย เปิด 24 ชั่วโมง ทุกวันตลอดปี รวมกลางคืนและวันหยุด มีล่ามให้",
+    },
+    associationFor: {
+      en: "A letter from NAV, UDI or Barnevernet, an interpreter, or someone to come with you",
+      no: "Brev fra NAV, UDI eller barnevernet, tolk, eller noen som blir med deg",
+      th: "จดหมายจาก NAV, UDI หรือหน่วยงานคุ้มครองเด็ก ล่าม หรือคนไปเป็นเพื่อน",
+    },
+    associationNote: {
+      en: "Answered by a volunteer. If nobody picks up, leave a message and someone will call back.",
+      no: "Besvares av en frivillig. Får du ikke svar, legg igjen en beskjed så ringer noen tilbake.",
+      th: "รับสายโดยอาสาสมัคร หากไม่มีคนรับ ฝากข้อความไว้แล้วจะมีคนโทรกลับ",
+    },
+    confidentiality: {
+      en: "Everyone who takes these calls is bound by taushetsplikt. We keep no written record of who contacts us, and nothing is reported to the board.",
+      no: "Alle som tar imot disse henvendelsene har taushetsplikt. Vi fører ingen logg over hvem som kontakter oss, og ingenting rapporteres til styret.",
+      th: "ทุกคนที่รับเรื่องเหล่านี้มีหน้าที่รักษาความลับตามกฎหมาย เราไม่เก็บบันทึกว่าใครติดต่อมา และไม่มีการรายงานต่อคณะกรรมการ",
+    },
+    allServices: { en: "Public services and who to contact", no: "Offentlige tjenester og hvem du kontakter", th: "บริการภาครัฐและผู้ที่ควรติดต่อ" },
+  },
+
+  comingUp: {
+    heading: { en: "Coming up", no: "Det som kommer", th: "กิจกรรมที่กำลังจะมาถึง" },
+    all: { en: "The full calendar", no: "Hele kalenderen", th: "ดูปฏิทินทั้งหมด" },
+    empty: {
+      en: "Nothing is booked yet. The hall is usually confirmed a few weeks ahead, and it appears here when it is.",
+      no: "Ingenting er booket ennå. Lokalet bekreftes som regel noen uker i forveien, og dukker opp her når det er klart.",
+      th: "ยังไม่มีการจองสถานที่ โดยปกติจะยืนยันล่วงหน้าไม่กี่สัปดาห์ และจะแสดงที่นี่เมื่อพร้อม",
+    },
+    detailsFollow: { en: "Place and time follow", no: "Sted og tid kommer", th: "สถานที่และเวลาจะแจ้งภายหลัง" },
+  },
+
+  entries: {
+    recently: { en: "Recently", no: "Nylig", th: "ล่าสุด" },
+    archive: { en: "From the archive", no: "Fra arkivet", th: "จากคลังข้อมูล" },
+    all: { en: "All articles", no: "Alle artikler", th: "บทความทั้งหมด" },
+    empty: { en: "Nothing published here yet.", no: "Ingenting publisert her ennå.", th: "ยังไม่มีเนื้อหาที่เผยแพร่" },
+    fromFacebook: { en: "From Facebook", no: "Fra Facebook", th: "จาก Facebook" },
+    fromInstagram: { en: "From Instagram", no: "Fra Instagram", th: "จาก Instagram" },
+    notYetIn: {
+      en: "Not yet in English, shown in {locale}",
+      no: "Ikke oversatt til norsk ennå, vises på {locale}",
+      th: "ยังไม่มีฉบับภาษาไทย แสดงเป็น{locale}",
+    },
+    strands: {
+      culture: { en: "Culture", no: "Kultur", th: "วัฒนธรรม" },
+      charity: { en: "Charity", no: "Veldedighet", th: "การกุศล" },
+      festival: { en: "Festival", no: "Festival", th: "เทศกาล" },
+      notice: { en: "Notice", no: "Kunngjøring", th: "ประกาศ" },
+    },
+  },
+
+  onPaper: {
+    heading: { en: "The association on paper", no: "Foreningen på papiret", th: "ข้อมูลทางการของสมาคม" },
+    asOf: { en: "as of", no: "per", th: "ณ" },
+  },
+
+  join: {
+    heading: { en: "Membership, giving and helping", no: "Medlemskap, gaver og frivillige", th: "สมาชิก การบริจาค และอาสาสมัคร" },
+    terms: {
+      en: "Membership is 50 kroner, once, for one person or for a family. Anyone living in the Bergen area with a connection to Thailand can join, and so can a Norwegian husband, wife or partner. Children under fifteen need a guardian to sign.",
+      no: "Medlemskap koster 50 kroner, én gang, for én person eller for en familie. Alle som bor i Bergensområdet og har en tilknytning til Thailand kan bli medlem, og det kan en norsk ektefelle eller partner også. Barn under femten år trenger underskrift fra en foresatt.",
+      th: "ค่าสมาชิก 50 โครนเนอร์ ชำระครั้งเดียว ต่อหนึ่งคนหรือหนึ่งครอบครัว ผู้ที่อาศัยในพื้นที่เบอร์เกนและมีความเกี่ยวข้องกับประเทศไทยสมัครได้ รวมถึงคู่สมรสหรือคู่ชีวิตชาวนอร์เวย์ เด็กอายุต่ำกว่าสิบห้าปีต้องมีผู้ปกครองลงนาม",
+    },
+    notSubscription: {
+      en: "It is not a subscription to anything. It is a name on a list, which is how the board knows how many people it speaks for.",
+      no: "Det er ikke et abonnement på noe. Det er et navn på en liste, og det er slik styret vet hvor mange det taler for.",
+      th: "ไม่ใช่การสมัครรับบริการใด เป็นเพียงรายชื่อในทะเบียน ซึ่งทำให้คณะกรรมการรู้ว่าตนพูดแทนคนกี่คน",
+    },
+    helping: {
+      en: "You do not have to be Thai, or a member, to help. The association needs people who can drive, cook for a festival, or sit with someone through a meeting in Norwegian.",
+      no: "Du trenger verken å være thailandsk eller medlem for å hjelpe. Foreningen trenger folk som kan kjøre, lage mat til en festival, eller sitte med noen gjennom et møte på norsk.",
+      th: "คุณไม่จำเป็นต้องเป็นคนไทยหรือเป็นสมาชิกจึงจะช่วยได้ สมาคมต้องการคนที่ขับรถได้ ทำอาหารในงานเทศกาลได้ หรือไปนั่งเป็นเพื่อนในการประชุมภาษานอร์เวย์",
+    },
+    howToJoin: { en: "How to join", no: "Slik blir du medlem", th: "วิธีสมัครสมาชิก" },
+    howToHelp: { en: "Contact the board", no: "Kontakt styret", th: "ติดต่อคณะกรรมการ" },
+  },
 
   hero: {
     eyebrow: { en: "Founded in Bergen, 8 January 2010", no: "Stiftet i Bergen 8. januar 2010", th: "ก่อตั้งที่เบอร์เกน 8 มกราคม 2010" },
@@ -142,6 +249,11 @@ export const S = {
     frivilligsentral: { en: "Affiliated with the local frivilligsentral", no: "Tilknyttet den lokale frivilligsentralen", th: "สังกัดศูนย์อาสาสมัครท้องถิ่น" },
     vippsPending: { en: "Vipps is not set up yet. Bank transfer works today.", no: "Vipps er ikke satt opp ennå. Bankoverføring fungerer i dag.", th: "ยังไม่ได้เปิดใช้ Vipps สามารถโอนผ่านธนาคารได้" },
     separateEntity: { en: "Courses are run by a separate company", no: "Kursene drives av et eget foretak", th: "คอร์สอบรมดำเนินการโดยบริษัทแยกต่างหาก" },
+    rolesForward: {
+      en: "These addresses forward to whoever currently holds the role, so a change of board never breaks a contact.",
+      no: "Disse adressene går videre til den som til enhver tid har vervet, slik at et styrebytte aldri bryter en kontakt.",
+      th: "ที่อยู่อีเมลเหล่านี้ส่งต่อไปยังผู้ที่ดำรงตำแหน่งอยู่ในขณะนั้น การเปลี่ยนคณะกรรมการจึงไม่ทำให้ติดต่อไม่ได้",
+    },
   },
 
   membership: {

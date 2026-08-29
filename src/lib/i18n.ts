@@ -26,6 +26,14 @@ export function formatDate(iso: string, locale: Locale): string {
   }).format(new Date(`${iso}T00:00:00Z`));
 }
 
+/** For an occasion whose exact day is not fixed yet. */
+export function formatMonth(iso: string, locale: Locale): string {
+  const tag = locale === "no" ? "nb-NO" : locale === "th" ? "th-TH" : "en-GB";
+  return new Intl.DateTimeFormat(tag, { month: "long", year: "numeric" }).format(
+    new Date(`${iso}T00:00:00Z`),
+  );
+}
+
 export function formatPrice(nok: number, locale: Locale): string {
   const tag = locale === "no" ? "nb-NO" : locale === "th" ? "th-TH" : "en-GB";
   return `${new Intl.NumberFormat(tag).format(nok)} kr`;

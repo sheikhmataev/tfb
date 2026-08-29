@@ -70,16 +70,47 @@ export interface AgencyGroup {
   items: Agency[];
 }
 
-export interface Activity {
+export type Strand = "culture" | "charity" | "festival" | "notice";
+
+/**
+ * ONE content type. There are no news items, activities or events as separate
+ * things: there are entries, and a date decides where an entry appears. The
+ * board never chooses a section, it sets a date and the page sorts itself.
+ */
+export interface Entry {
   id: string;
   slug: string;
   status: Status;
-  strand: "charity" | "culture" | "food-festivals";
+  strand: Strand;
+  /** When the entry itself was published. */
+  publishedAt: string;
+  /** Set when the entry is an occasion rather than a report. */
+  eventStartsAt: string | null;
+  eventEndsAt: string | null;
+  /** Lunar festivals have no fixed Gregorian date until the year is close. */
+  dateIsApproximate: boolean;
+  /** Shown inline when the date is approximate, so a reader never has to guess why. */
+  approximateReason: L10n | null;
+  venue: L10n | null;
+  leadImage: string | null;
+  /** Provenance when the entry came from a Facebook or Instagram post. */
+  sourceUrl: string | null;
+  sourcePlatform: "facebook" | "instagram" | null;
+  sourceFetchedAt: string | null;
+  sourceLocked: boolean;
   title: L10n;
   summary: L10n;
-  dateIso: string;
-  place: string | null;
+  body: L10n | null;
   updatedAt: string;
+}
+
+export interface FactRow {
+  id: string;
+  label: L10n;
+  value: L10n;
+  /** The year the figure was true. A dated fact, never a bare current claim. */
+  asOf: string | null;
+  href: string | null;
 }
 
 export interface BoardFunction {

@@ -16,3 +16,12 @@ export const SITE_URL =
 export function withBase(path: string): string {
   return `${BASE_PATH}${path}`;
 }
+
+/**
+ * The date the site was built, used to place entries in Coming up or Recently.
+ * A static export has no request-time clock, so this is stamped at build. The
+ * Cloudflare cron that rolls expired events into the past is what keeps it
+ * accurate between deploys.
+ */
+export const BUILD_DATE: string =
+  process.env.NEXT_PUBLIC_BUILD_DATE ?? new Date().toISOString().slice(0, 10);

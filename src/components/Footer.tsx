@@ -32,7 +32,7 @@ export function Footer({ locale }: { locale: Locale }) {
           <div>
             <FooterHeading>{S.footer.sections[locale]}</FooterHeading>
             <ul className="text-sm">
-              {(["courses", "help", "activities", "about", "contact"] as const).map((k) => (
+              {(["help", "calendar", "articles", "about", "courses", "contact"] as const).map((k) => (
                 <li key={k}>
                   <Link href={`/${locale}/${k}`} className="flex min-h-11 items-center text-[#d8d0ce] no-underline hover:text-paper hover:underline">
                     {S.nav[k][locale]}
@@ -44,6 +44,7 @@ export function Footer({ locale }: { locale: Locale }) {
 
           <div>
             <FooterHeading>{S.footer.contact[locale]}</FooterHeading>
+            <p className="mb-3 text-sm text-[#a89f9d]">{S.footer.rolesForward[locale]}</p>
             <address className="space-y-1 text-sm not-italic text-[#d8d0ce]">
               <p>
                 <a href={`mailto:${association.email}`} className="inline-flex min-h-11 items-center text-[#d8d0ce] hover:text-paper">

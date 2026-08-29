@@ -1,11 +1,13 @@
 import type {
-  Activity, AgencyGroup, BoardFunction, Course, HelpService, Locale, L10n, Settings,
+  AgencyGroup, BoardFunction, Course, Entry, FactRow, HelpService, Locale, L10n, Settings,
 } from "./types";
 
 import settingsJson from "@content/settings.json";
 import servicesJson from "@content/help/services.json";
 import agenciesJson from "@content/help/agencies.json";
-import activitiesJson from "@content/activities/index.json";
+import archiveJson from "@content/entries/archive.json";
+import upcomingJson from "@content/entries/upcoming.json";
+import factsJson from "@content/about/facts.json";
 import boardJson from "@content/board/functions.json";
 import foodHygiene from "@content/courses/food-hygiene.json";
 import ikMatSystem from "@content/courses/ik-mat-system.json";
@@ -41,10 +43,70 @@ export function getAgencyGroups(): AgencyGroup[] {
   return agenciesJson as AgencyGroup[];
 }
 
-export function getActivities(): Activity[] {
-  return (activitiesJson as Activity[])
-    .filter((a) => a.status === "published")
-    .sort((a, b) => b.dateIso.localeCompare(a.dateIso));
+const allEntries = [...(upcomingJson as Entry[]), ...(archiveJson as Entry[])].filter(
+  (e) => e.status === "published",
+);
+
+/**
+ * The sort key is the LATER of the publish date and the end of the occasion.
+ * Sorting by publishedAt alone would drop a festival announced in January and
+ * held in October eight months down the list the morning after it happens,
+ * which is exactly when people go looking for the photographs.
+ */
+export function entrySortKey(e: Entry): string {
+  return [e.publishedAt, e.eventEndsAt ?? e.eventStartsAt ?? ""].sort().at(-1) as string;
+}
+
+function isUpcoming(e: Entry, today: string): boolean {
+  const ends = e.eventEndsAt ?? e.eventStartsAt;
+  return ends !== null && ends >= today;
+}
+
+/** Occasions still ahead of us, nearest first. */
+export function getComingUp(today: string, limit = 4): Entry[] {
+  return allEntries
+    .filter((e) => isUpcoming(e, today))
+    .sort((a, b) => (a.eventStartsAt ?? "").localeCompare(b.eventStartsAt ?? ""))
+    .slice(0, limit);
+}
+
+/** Everything else, most recent first. */
+export function getRecently(today: string, limit = 4): Entry[] {
+  return allEntries
+    .filter((e) => !isUpcoming(e, today))
+    .sort((a, b) => entrySortKey(b).localeCompare(entrySortKey(a)))
+    .slice(0, limit);
+}
+
+export function getEntries(): Entry[] {
+  return [...allEntries].sort((a, b) => entrySortKey(b).localeCompare(entrySortKey(a)));
+}
+
+export function getEntry(slug: string): Entry | undefined {
+  return allEntries.find((e) => e.slug === slug);
+}
+
+/**
+ * The archive heading is a rule reading the data, not an editorial decision.
+ * It flips to "Recently" on its own once the newest entry is under 18 months
+ * old, with no code change and no redesign.
+ */
+export function isArchive(today: string): boolean {
+  const newest = getRecently(today, 1)[0];
+  if (!newest) return false;
+  const then = new Date(entrySortKey(newest));
+  const now = new Date(today);
+  const months = (now.getFullYear() - then.getFullYear()) * 12 + (now.getMonth() - then.getMonth());
+  return months > 18;
+}
+
+export function archiveRange(): { from: string; to: string } {
+  const years = allEntries.map((e) => entrySortKey(e).slice(0, 4)).sort();
+  return { from: years[0], to: years[years.length - 1] };
+}
+
+export function getFacts(): FactRow[] {
+  return factsJson as FactRow[];
 }
 
 export function getBoardFunctions(): BoardFunction[] {
@@ -62,6 +124,10 @@ export function draftReport(): string[] {
   for (const c of allCourses) {
     if (c.status === "draft") gaps.push(`course ${c.slug}: draft`);
     if (c.nextDateIso === null) gaps.push(`course ${c.slug}: nextDateIso unset`);
+  }
+  for (const e of allEntries) {
+    if (e.eventStartsAt && e.venue === null) gaps.push(`entry ${e.slug}: venue unset`);
+    if (e.dateIsApproximate) gaps.push(`entry ${e.slug}: date approximate`);
   }
   if (settings.association.vipps === null) gaps.push("settings: association vipps unset");
   if (settings.courseProvider.vipps === null) gaps.push("settings: courseProvider vipps unset");

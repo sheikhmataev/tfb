@@ -1,9 +1,24 @@
 [
   {
-    "id": "act-temple-2011",
+    "id": "ent-temple-2011",
     "slug": "first-thai-temple-bergen",
     "status": "published",
     "strand": "culture",
+    "publishedAt": "2011-09-11",
+    "eventStartsAt": null,
+    "eventEndsAt": null,
+    "dateIsApproximate": false,
+    "approximateReason": null,
+    "venue": {
+      "en": "Bergen",
+      "no": "Bergen",
+      "th": "Bergen"
+    },
+    "leadImage": null,
+    "sourceUrl": null,
+    "sourcePlatform": null,
+    "sourceFetchedAt": null,
+    "sourceLocked": false,
     "title": {
       "en": "The first Thai temple in Bergen",
       "no": "Det første thailandske tempelet i Bergen",
@@ -14,15 +29,29 @@
       "no": "Foreningen fant og leide den første bostedet for munker på Loddefjord i juli 2011, og var vertskap for åpningen i september. BT skrev om saken i august.",
       "th": "สมาคมจัดหาและเช่าที่พำนักสงฆ์แห่งแรกที่ Loddefjord ในเดือนกรกฎาคม 2011 และเป็นเจ้าภาพงานเปิดวัดในเดือนกันยายน หนังสือพิมพ์ BT ลงข่าวในเดือนสิงหาคม"
     },
-    "dateIso": "2011-09-11",
-    "place": "Bergen",
+    "body": null,
     "updatedAt": "2026-08-29"
   },
   {
-    "id": "act-flood-2011",
+    "id": "ent-flood-2011",
     "slug": "flood-relief-southern-thailand",
     "status": "published",
     "strand": "charity",
+    "publishedAt": "2011-04-26",
+    "eventStartsAt": null,
+    "eventEndsAt": null,
+    "dateIsApproximate": false,
+    "approximateReason": null,
+    "venue": {
+      "en": "Bangkok",
+      "no": "Bangkok",
+      "th": "Bangkok"
+    },
+    "leadImage": null,
+    "sourceUrl": null,
+    "sourcePlatform": null,
+    "sourceFetchedAt": null,
+    "sourceLocked": false,
     "title": {
       "en": "Flood relief for southern Thailand",
       "no": "Flomhjelp til Sør-Thailand",
@@ -33,15 +62,29 @@
       "no": "Hele inntekten fra innsamlingen ble overlevert i Bangkok i april 2011 gjennom foreningens representant i Thailand.",
       "th": "รายได้ทั้งหมดจากการจัดงานถูกส่งมอบที่กรุงเทพในเดือนเมษายน 2011 ผ่านตัวแทนของสมาคมในประเทศไทย"
     },
-    "dateIso": "2011-04-26",
-    "place": "Bangkok",
+    "body": null,
     "updatedAt": "2026-08-29"
   },
   {
-    "id": "act-flood-centres-2012",
+    "id": "ent-flood-centres-2012",
     "slug": "flood-recovery-centres",
     "status": "published",
     "strand": "charity",
+    "publishedAt": "2012-01-15",
+    "eventStartsAt": null,
+    "eventEndsAt": null,
+    "dateIsApproximate": false,
+    "approximateReason": null,
+    "venue": {
+      "en": "Thailand",
+      "no": "Thailand",
+      "th": "Thailand"
+    },
+    "leadImage": null,
+    "sourceUrl": null,
+    "sourcePlatform": null,
+    "sourceFetchedAt": null,
+    "sourceLocked": false,
     "title": {
       "en": "Two flood recovery centres",
       "no": "To sentre for flomgjenoppbygging",
@@ -52,30 +95,62 @@
       "no": "Etter flommen i 2011 satte foreningen opp to hjelpesentre i Thailand. To styremedlemmer reiste ned i januar 2012 for å drive dem, og betalte reisen selv.",
       "th": "หลังน้ำท่วมปี 2011 สมาคมจัดตั้งศูนย์ช่วยเหลือสองแห่งในประเทศไทย กรรมการสองท่านเดินทางไปดูแลในเดือนมกราคม 2012 โดยออกค่าเดินทางเอง"
     },
-    "dateIso": "2012-01-15",
-    "place": "Thailand",
+    "body": null,
     "updatedAt": "2026-08-29"
   },
   {
-    "id": "act-loikrathong-2012",
+    "id": "ent-loikrathong-2012",
     "slug": "loi-krathong-2012",
     "status": "published",
     "strand": "culture",
-    "title": { "en": "Loi Krathong 2012", "no": "Loi Krathong 2012", "th": "งานลอยกระทง 2012" },
+    "publishedAt": "2012-11-24",
+    "eventStartsAt": null,
+    "eventEndsAt": null,
+    "dateIsApproximate": false,
+    "approximateReason": null,
+    "venue": {
+      "en": "Bergen",
+      "no": "Bergen",
+      "th": "Bergen"
+    },
+    "leadImage": null,
+    "sourceUrl": null,
+    "sourcePlatform": null,
+    "sourceFetchedAt": null,
+    "sourceLocked": false,
+    "title": {
+      "en": "Loi Krathong 2012",
+      "no": "Loi Krathong 2012",
+      "th": "งานลอยกระทง 2012"
+    },
     "summary": {
       "en": "The floating lantern festival, held in Bergen with food, performance and a ceremony on the water.",
       "no": "Lysfesten på vannet, holdt i Bergen med mat, opptreden og seremoni.",
       "th": "งานลอยกระทงที่เบอร์เกน มีอาหาร การแสดง และพิธีลอยกระทง"
     },
-    "dateIso": "2012-11-24",
-    "place": "Bergen",
+    "body": null,
     "updatedAt": "2026-08-29"
   },
   {
-    "id": "act-medical-2013",
+    "id": "ent-medical-2013",
     "slug": "mobile-medical-ayutthaya",
     "status": "published",
     "strand": "charity",
+    "publishedAt": "2013-06-01",
+    "eventStartsAt": null,
+    "eventEndsAt": null,
+    "dateIsApproximate": false,
+    "approximateReason": null,
+    "venue": {
+      "en": "Ayutthaya",
+      "no": "Ayutthaya",
+      "th": "Ayutthaya"
+    },
+    "leadImage": null,
+    "sourceUrl": null,
+    "sourcePlatform": null,
+    "sourceFetchedAt": null,
+    "sourceLocked": false,
     "title": {
       "en": "Mobile medical project, Ayutthaya",
       "no": "Mobilt medisinsk prosjekt, Ayutthaya",
@@ -86,15 +161,29 @@
       "no": "Finansierte en ambulerende klinikk til landsbyer uten fast legetilgang.",
       "th": "สนับสนุนหน่วยแพทย์เคลื่อนที่ไปยังหมู่บ้านที่ไม่มีแพทย์ประจำ"
     },
-    "dateIso": "2013-06-01",
-    "place": "Ayutthaya",
+    "body": null,
     "updatedAt": "2026-08-29"
   },
   {
-    "id": "act-school-meals-2015",
+    "id": "ent-school-meals-2015",
     "slug": "school-meals-project",
     "status": "published",
     "strand": "charity",
+    "publishedAt": "2015-05-01",
+    "eventStartsAt": null,
+    "eventEndsAt": null,
+    "dateIsApproximate": false,
+    "approximateReason": null,
+    "venue": {
+      "en": "Thailand",
+      "no": "Thailand",
+      "th": "Thailand"
+    },
+    "leadImage": null,
+    "sourceUrl": null,
+    "sourcePlatform": null,
+    "sourceFetchedAt": null,
+    "sourceLocked": false,
     "title": {
       "en": "School meals project",
       "no": "Skolemåltidsprosjektet",
@@ -105,45 +194,95 @@
       "no": "Måltider til barn på skoler der familiene ikke kunne dekke kostnaden.",
       "th": "อาหารกลางวันสำหรับเด็กในโรงเรียนที่ครอบครัวไม่สามารถรับผิดชอบค่าใช้จ่ายได้"
     },
-    "dateIso": "2015-05-01",
-    "place": "Thailand",
+    "body": null,
     "updatedAt": "2026-08-29"
   },
   {
-    "id": "act-festival-2015",
+    "id": "ent-festival-2015",
     "slug": "thai-food-festival-2015",
     "status": "published",
-    "strand": "food-festivals",
-    "title": { "en": "Thai Food Festival 2015", "no": "Thai Food Festival 2015", "th": "งานมหกรรมอาหารไทย 2015" },
+    "strand": "festival",
+    "publishedAt": "2015-08-15",
+    "eventStartsAt": null,
+    "eventEndsAt": null,
+    "dateIsApproximate": false,
+    "approximateReason": null,
+    "venue": {
+      "en": "Bergen",
+      "no": "Bergen",
+      "th": "Bergen"
+    },
+    "leadImage": null,
+    "sourceUrl": null,
+    "sourcePlatform": null,
+    "sourceFetchedAt": null,
+    "sourceLocked": false,
+    "title": {
+      "en": "Thai Food Festival 2015",
+      "no": "Thai Food Festival 2015",
+      "th": "งานมหกรรมอาหารไทย 2015"
+    },
     "summary": {
       "en": "A full day of Thai cooking sold from stalls in Bergen, with performance through the afternoon.",
       "no": "En hel dag med thailandsk mat solgt fra boder i Bergen, med opptreden gjennom ettermiddagen.",
       "th": "งานขายอาหารไทยเต็มวันที่เบอร์เกน พร้อมการแสดงตลอดช่วงบ่าย"
     },
-    "dateIso": "2015-08-15",
-    "place": "Bergen",
+    "body": null,
     "updatedAt": "2026-08-29"
   },
   {
-    "id": "act-festival-2016",
+    "id": "ent-festival-2016",
     "slug": "thai-food-festival-2016",
     "status": "published",
-    "strand": "food-festivals",
-    "title": { "en": "Thai Food Festival 2016", "no": "Thai Food Festival 2016", "th": "งานมหกรรมอาหารไทย 2016" },
+    "strand": "festival",
+    "publishedAt": "2016-08-20",
+    "eventStartsAt": null,
+    "eventEndsAt": null,
+    "dateIsApproximate": false,
+    "approximateReason": null,
+    "venue": {
+      "en": "Bergen",
+      "no": "Bergen",
+      "th": "Bergen"
+    },
+    "leadImage": "activities-lead.jpg",
+    "sourceUrl": null,
+    "sourcePlatform": null,
+    "sourceFetchedAt": null,
+    "sourceLocked": false,
+    "title": {
+      "en": "Thai Food Festival 2016",
+      "no": "Thai Food Festival 2016",
+      "th": "งานมหกรรมอาหารไทย 2016"
+    },
     "summary": {
       "en": "The third year of the food festival, and the association's largest public event.",
       "no": "Tredje året med matfestivalen, og foreningens største offentlige arrangement.",
       "th": "ปีที่สามของงานมหกรรมอาหาร และเป็นงานสาธารณะที่ใหญ่ที่สุดของสมาคม"
     },
-    "dateIso": "2016-08-20",
-    "place": "Bergen",
+    "body": null,
     "updatedAt": "2026-08-29"
   },
   {
-    "id": "act-ambassador-2014",
+    "id": "ent-ambassador-2014",
     "slug": "ambassador-visit",
     "status": "published",
     "strand": "culture",
+    "publishedAt": "2014-09-06",
+    "eventStartsAt": null,
+    "eventEndsAt": null,
+    "dateIsApproximate": false,
+    "approximateReason": null,
+    "venue": {
+      "en": "Bergen",
+      "no": "Bergen",
+      "th": "Bergen"
+    },
+    "leadImage": null,
+    "sourceUrl": null,
+    "sourcePlatform": null,
+    "sourceFetchedAt": null,
+    "sourceLocked": false,
     "title": {
       "en": "Visit from the ambassador and consul",
       "no": "Besøk av ambassadøren og konsulen",
@@ -154,8 +293,7 @@
       "no": "Foreningen var vertskap for den thailandske ambassadøren og konsulen i Bergen, sammen med mobile konsulære tjenester for medlemmene.",
       "th": "สมาคมเป็นเจ้าภาพต้อนรับเอกอัครราชทูตและกงสุลไทยที่เบอร์เกน พร้อมบริการกงสุลสัญจรสำหรับสมาชิก"
     },
-    "dateIso": "2014-09-06",
-    "place": "Bergen",
+    "body": null,
     "updatedAt": "2026-08-29"
   }
 ]

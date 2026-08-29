@@ -60,13 +60,21 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* Thai needs more size and much more leading for stacked vowel and tone
-     marks, and must never be tracked: Thai has no inter-word spaces, so
-     letter-spacing destroys word boundaries. The browser's own Thai line
-     breaker does the wrapping. */
+  /* Thai needs roughly 18 per cent more size than Latin at the same optical
+     weight. That bump belongs on the ROOT and nowhere else: :lang(th) matches
+     every element under <html lang="th">, so a 1.18em font-size there
+     compounds once per nesting level and a six-deep tree renders at 2.7x.
+     Setting it once on the root scales every rem-based step in the type scale
+     exactly once. */
+  html:lang(th) {
+    font-size: 118%;
+  }
+
+  /* Thai must never be tracked: it has no inter-word spaces, so letter-spacing
+     destroys word boundaries. Unitless line-height does not compound, because
+     each element multiplies it by its own font-size. */
   :lang(th) {
     font-family: var(--font-thai);
-    font-size: 1.18em;
     line-height: 1.85;
     letter-spacing: 0;
     word-break: normal;

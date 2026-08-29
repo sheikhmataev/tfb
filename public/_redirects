@@ -1,3 +1,11 @@
 /            /en/            302
 /courses/*   /en/courses/:splat  302
 /help/*      /en/help/:splat     302
+
+# /activities was dissolved into /articles, so the old tree does not linger.
+/en/activities/*  /en/articles/:splat  301
+/no/activities/*  /no/articles/:splat  301
+/th/activities/*  /th/articles/:splat  301
+/en/activities    /en/articles         301
+/no/activities    /no/articles         301
+/th/activities    /th/articles         301

@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
-import { Hero } from "@/components/home/Hero";
-import { Courses } from "@/components/home/Courses";
-import { Help } from "@/components/home/Help";
-import { Activities } from "@/components/home/Activities";
-import { About } from "@/components/home/About";
-import { Contact } from "@/components/home/Contact";
+import { HelpToday } from "@/components/home/HelpToday";
+import { ComingUp } from "@/components/home/ComingUp";
+import { Recently } from "@/components/home/Recently";
+import { OnPaper } from "@/components/home/OnPaper";
+import { Join } from "@/components/home/Join";
 import { isLocale } from "@/lib/i18n";
+import { BUILD_DATE } from "@/lib/site";
 import { LOCALES, type Locale } from "@/lib/types";
 
 export function generateStaticParams() {
@@ -13,10 +13,16 @@ export function generateStaticParams() {
 }
 
 /**
- * Section order follows the board's stated priorities: courses first, then
- * public help, activities, background, contact. The persistent help bar is
- * what makes leading with courses safe, since the emergency number stays one
- * tap away at any scroll position.
+ * Nearest first, and forward before back.
+ *
+ * The page is read outward from today: what you can do today, then what is
+ * coming, then what has happened, then the standing facts that carry no date
+ * because they are always true. One rule decides where every piece of content
+ * sits, its date relative to today, so the board never chooses a section. It
+ * sets a date and the page sorts itself.
+ *
+ * Courses are deliberately absent. They are a commercial service sold by a
+ * separate legal entity and they keep their own nav item and pages.
  */
 export default async function HomePage({
   params,
@@ -29,12 +35,11 @@ export default async function HomePage({
 
   return (
     <>
-      <Hero locale={l} />
-      <Courses locale={l} />
-      <Help locale={l} />
-      <Activities locale={l} />
-      <About locale={l} />
-      <Contact locale={l} />
+      <HelpToday locale={l} />
+      <ComingUp locale={l} today={BUILD_DATE} />
+      <Recently locale={l} today={BUILD_DATE} />
+      <OnPaper locale={l} />
+      <Join locale={l} />
     </>
   );
 }
