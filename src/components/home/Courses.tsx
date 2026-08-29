@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBase } from "@/lib/site";
 import { CourseTable } from "@/components/CourseTable";
 import { Section, SectionHead } from "@/components/Section";
 import { getCourses, settings } from "@/lib/content";
@@ -17,7 +18,7 @@ export function Courses({ locale }: { locale: Locale }) {
           appears nowhere else on the site. */}
       <div className="mb-8 flex flex-wrap items-center gap-6 border-b border-rule pb-6">
         <Image
-          src="/assets/logo-courses.png"
+          src={withBase("/assets/logo-courses.png")}
           alt={settings.courseProvider.name}
           width={1915}
           height={1423}

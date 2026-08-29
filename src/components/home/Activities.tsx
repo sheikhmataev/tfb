@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBase } from "@/lib/site";
 import Link from "next/link";
 import { Section, SectionHead } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
@@ -34,7 +35,7 @@ export function Activities({ locale }: { locale: Locale }) {
               <Link href={`/${locale}/activities/${lead.slug}`} className="group block no-underline">
                 <div className="petal-mask relative aspect-[4/3] bg-ink/10">
                   <Image
-                    src="/assets/activities-lead.jpg"
+                    src={withBase("/assets/activities-lead.jpg")}
                     alt=""
                     fill
                     sizes="(max-width: 768px) 100vw, 62vw"

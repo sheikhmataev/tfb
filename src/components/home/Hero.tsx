@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBase } from "@/lib/site";
 import { ButtonPrimary, ButtonText } from "@/components/Button";
 import { S } from "@/lib/strings";
 import { settings } from "@/lib/content";
@@ -39,7 +40,7 @@ export function Hero({ locale }: { locale: Locale }) {
         <div className="md:col-span-5">
           <div className="petal-mask petal-open relative aspect-square bg-petal min-[1240px]:-mr-10">
             <Image
-              src="/assets/hero-bryggen.jpg"
+              src={withBase("/assets/hero-bryggen.jpg")}
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 40vw"

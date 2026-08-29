@@ -2,6 +2,7 @@ import Link from "next/link";
 import { LOCALES, DEFAULT_LOCALE } from "@/lib/types";
 import { LOCALE_LABELS } from "@/lib/i18n";
 import { S } from "@/lib/strings";
+import { withBase } from "@/lib/site";
 
 /**
  * A static export has no server at request time, so redirect() cannot run here.
@@ -11,7 +12,7 @@ import { S } from "@/lib/strings";
 export default function RootIndex() {
   return (
     <>
-      <meta httpEquiv="refresh" content={`0; url=/${DEFAULT_LOCALE}/`} />
+      <meta httpEquiv="refresh" content={`0; url=${withBase(`/${DEFAULT_LOCALE}/`)}`} />
       <main className="flex min-h-screen items-center justify-center p-8">
         <div>
           <p className="display mb-5 text-xl">{S.siteName.en}</p>

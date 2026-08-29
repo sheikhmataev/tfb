@@ -8,6 +8,7 @@ import { Footer } from "@/components/Footer";
 import { S } from "@/lib/strings";
 import { HTML_LANG, isLocale } from "@/lib/i18n";
 import { LOCALES, type Locale } from "@/lib/types";
+import { SITE_URL } from "@/lib/site";
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
@@ -21,13 +22,16 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   return {
+    metadataBase: new URL(SITE_URL),
+    // Absolute, because SITE_URL already carries the subpath and Next would
+    // otherwise resolve a relative alternate against it and double the prefix.
     alternates: {
-      canonical: `/${locale}`,
+      canonical: `${SITE_URL}/${locale}/`,
       languages: {
-        en: "/en",
-        nb: "/no",
-        th: "/th",
-        "x-default": "/en",
+        en: `${SITE_URL}/en/`,
+        nb: `${SITE_URL}/no/`,
+        th: `${SITE_URL}/th/`,
+        "x-default": `${SITE_URL}/en/`,
       },
     },
     openGraph: { locale: HTML_LANG[locale], siteName: S.siteName[locale] },
