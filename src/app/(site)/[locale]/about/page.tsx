@@ -123,7 +123,7 @@ export default async function AboutPage({
                   key={s.key}
                   href={`/${l}/about/${s.href}`}
                   lang={th}
-                  className="group flex items-baseline justify-between gap-3 border-b border-rule py-3.5 font-semibold text-ink no-underline transition-colors duration-150 hover:border-lotus"
+                  className="group flex min-h-11 items-center justify-between gap-3 border-b border-rule py-3 font-semibold text-ink no-underline transition-colors duration-150 hover:border-lotus"
                 >
                   {SUBLABEL[s.key][l]}
                   <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">

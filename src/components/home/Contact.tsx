@@ -66,12 +66,12 @@ function EntityCard({
       <p className="display mt-1.5 text-lg leading-snug">{entity.name}</p>
       <dl className="mt-4 space-y-2 text-sm">
         <Row label={S.contact.email[locale]} lang={th}>
-          <a href={`mailto:${entity.email}`} className="text-lotus-deep underline-offset-4">
+          <a href={`mailto:${entity.email}`} className="inline-flex min-h-11 items-center text-lotus-deep underline-offset-4">
             {entity.email}
           </a>
         </Row>
         <Row label={S.contact.phone[locale]} lang={th}>
-          <a href={`tel:${entity.phone.replace(/\s/g, "")}`} className="text-lotus-deep underline-offset-4">
+          <a href={`tel:${entity.phone.replace(/\s/g, "")}`} className="inline-flex min-h-11 items-center text-lotus-deep underline-offset-4">
             {entity.phone}
           </a>
         </Row>

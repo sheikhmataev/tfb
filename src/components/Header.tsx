@@ -22,7 +22,7 @@ export function Header({ locale }: { locale: Locale }) {
   return (
     <header className="sticky top-0 z-40 border-b border-rule bg-paper">
       <div className="mx-auto flex max-w-[1180px] flex-wrap items-center gap-x-6 gap-y-3 px-4 py-3.5 sm:px-7">
-        <Link href={`/${locale}`} className="flex items-center gap-3 no-underline">
+        <Link href={`/${locale}`} className="flex min-h-11 items-center gap-3 no-underline">
           <Mark className="w-[34px] shrink-0 text-lotus" />
           <span className="display text-sm uppercase tracking-[0.08em] text-ink">
             {S.siteName[locale]}
@@ -35,7 +35,7 @@ export function Header({ locale }: { locale: Locale }) {
               key={key}
               href={`/${locale}/${key}`}
               aria-current={isActive(key) ? "page" : undefined}
-              className={`display -mb-[15px] border-b-2 pb-3.5 text-sm uppercase tracking-[0.06em] text-ink no-underline transition-colors duration-150 hover:border-rule ${
+              className={`display -mb-[15px] inline-flex min-h-11 items-center border-b-2 pb-3.5 text-sm uppercase tracking-[0.06em] text-ink no-underline transition-colors duration-150 hover:border-rule ${
                 isActive(key) ? "border-lotus" : "border-transparent"
               }`}
             >
@@ -53,7 +53,7 @@ export function Header({ locale }: { locale: Locale }) {
                 hrefLang={l}
                 aria-current={l === locale ? "true" : undefined}
                 lang={l === "th" ? "th" : undefined}
-                className={`px-2.5 no-underline first:pl-0 last:pr-0 ${
+                className={`inline-flex min-h-11 items-center px-2.5 no-underline first:pl-0 last:pr-0 ${
                   i < LOCALES.length - 1 ? "border-r border-rule" : ""
                 } ${l === locale ? "font-semibold text-ink" : "text-ink-soft"}`}
               >

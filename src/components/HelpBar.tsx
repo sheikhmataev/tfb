@@ -17,7 +17,7 @@ export function HelpBar({ locale }: { locale: Locale }) {
         <span className="label-caps text-xs text-lotus-light">{S.helpBar.tag[locale]}</span>
         <span className="whitespace-nowrap">
           {emergency.name}{" "}
-          <a href={tel} className="font-semibold underline underline-offset-4">
+          <a href={tel} className="inline-flex min-h-11 items-center font-semibold underline underline-offset-4">
             {emergency.phone}
           </a>
         </span>

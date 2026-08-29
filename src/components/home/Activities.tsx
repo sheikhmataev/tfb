@@ -76,7 +76,7 @@ export function Activities({ locale }: { locale: Locale }) {
             key={s}
             href={`/${locale}/activities/strand/${s}`}
             lang={th}
-            className="group flex items-baseline justify-between gap-3 py-1 font-semibold text-ink no-underline"
+            className="group flex min-h-11 items-center justify-between gap-3 font-semibold text-ink no-underline"
           >
             {S.activities.strands[s][locale]}
             <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">

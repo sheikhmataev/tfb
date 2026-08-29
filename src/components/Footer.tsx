@@ -31,10 +31,10 @@ export function Footer({ locale }: { locale: Locale }) {
 
           <div>
             <FooterHeading>{S.footer.sections[locale]}</FooterHeading>
-            <ul className="space-y-2 text-sm">
+            <ul className="text-sm">
               {(["courses", "help", "activities", "about", "contact"] as const).map((k) => (
                 <li key={k}>
-                  <Link href={`/${locale}/${k}`} className="text-[#d8d0ce] no-underline hover:text-paper hover:underline">
+                  <Link href={`/${locale}/${k}`} className="flex min-h-11 items-center text-[#d8d0ce] no-underline hover:text-paper hover:underline">
                     {S.nav[k][locale]}
                   </Link>
                 </li>
@@ -46,12 +46,12 @@ export function Footer({ locale }: { locale: Locale }) {
             <FooterHeading>{S.footer.contact[locale]}</FooterHeading>
             <address className="space-y-1 text-sm not-italic text-[#d8d0ce]">
               <p>
-                <a href={`mailto:${association.email}`} className="text-[#d8d0ce] hover:text-paper">
+                <a href={`mailto:${association.email}`} className="inline-flex min-h-11 items-center text-[#d8d0ce] hover:text-paper">
                   {association.email}
                 </a>
               </p>
               <p>
-                <a href={`tel:${association.phone.replace(/\s/g, "")}`} className="text-[#d8d0ce] hover:text-paper">
+                <a href={`tel:${association.phone.replace(/\s/g, "")}`} className="inline-flex min-h-11 items-center text-[#d8d0ce] hover:text-paper">
                   {association.phone}
                 </a>
               </p>
@@ -72,7 +72,7 @@ export function Footer({ locale }: { locale: Locale }) {
                   plausible-looking number is ever invented in its place. */}
               <p className="pt-2 text-[#a89f9d]">{S.footer.vippsPending[locale]}</p>
               <p className="pt-3">
-                <Link href={`/${locale}/about/finances`} className="text-[#d8d0ce] hover:text-paper">
+                <Link href={`/${locale}/about/finances`} className="inline-flex min-h-11 items-center text-[#d8d0ce] hover:text-paper">
                   {S.footer.finances[locale]}
                 </Link>
               </p>
@@ -94,14 +94,14 @@ export function Footer({ locale }: { locale: Locale }) {
           <p>
             {S.siteName[locale]} · {S.contact.orgNumber[locale]} {association.orgNumber}
           </p>
-          <div className="flex flex-wrap gap-5">
-            <Link href={`/${locale}/about/bylaws`} className="text-[#a89f9d] hover:text-paper">
+          <div className="flex flex-wrap gap-x-6">
+            <Link href={`/${locale}/about/bylaws`} className="inline-flex min-h-11 items-center text-[#a89f9d] hover:text-paper">
               {S.footer.bylaws[locale]}
             </Link>
-            <Link href={`/${locale}/about/membership`} className="text-[#a89f9d] hover:text-paper">
+            <Link href={`/${locale}/about/membership`} className="inline-flex min-h-11 items-center text-[#a89f9d] hover:text-paper">
               {S.footer.membership[locale]}
             </Link>
-            <Link href={`/${locale}/privacy`} className="text-[#a89f9d] hover:text-paper">
+            <Link href={`/${locale}/privacy`} className="inline-flex min-h-11 items-center text-[#a89f9d] hover:text-paper">
               {S.footer.privacy[locale]}
             </Link>
           </div>

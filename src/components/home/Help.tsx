@@ -40,7 +40,7 @@ export function Help({ locale }: { locale: Locale }) {
               {s.phone ? (
                 <a
                   href={`tel:+47${s.phone.replace(/\s/g, "")}`}
-                  className="mt-3 inline-block py-1 font-semibold text-ink no-underline"
+                  className="mt-2 inline-flex min-h-11 items-center font-semibold text-ink no-underline"
                 >
                   {s.phone}{" "}
                   <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">
@@ -51,7 +51,7 @@ export function Help({ locale }: { locale: Locale }) {
                 <Link
                   href={`/${locale}/help/${s.slug}`}
                   lang={th}
-                  className="mt-3 inline-block py-1 font-semibold text-ink no-underline"
+                  className="mt-2 inline-flex min-h-11 items-center font-semibold text-ink no-underline"
                 >
                   {S.help.readMore[locale]}{" "}
                   <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">
@@ -80,14 +80,14 @@ export function Help({ locale }: { locale: Locale }) {
               <p lang={th} className="mb-3 border-b border-rule pb-2 text-sm font-semibold">
                 {g.heading[locale]}
               </p>
-              <ul className="space-y-3.5">
+              <ul>
                 {g.items.map((a) => (
-                  <li key={a.name} className="text-sm">
+                  <li key={a.name} className="border-b border-rule text-sm last:border-b-0">
                     <a
                       href={a.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-semibold text-lotus-deep underline-offset-4"
+                      className="flex min-h-11 items-center py-2 font-semibold text-lotus-deep underline-offset-4"
                     >
                       {a.name}
                       <span className="sr-only"> ({S.common.externalLink[locale]})</span>
@@ -95,7 +95,7 @@ export function Help({ locale }: { locale: Locale }) {
                     {a.phone && (
                       <a
                         href={`tel:+47${a.phone.replace(/\s/g, "")}`}
-                        className="ml-2 whitespace-nowrap font-semibold text-ink"
+                        className="inline-flex min-h-11 items-center whitespace-nowrap font-semibold text-ink"
                       >
                         {a.phone}
                       </a>

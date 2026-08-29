@@ -69,7 +69,7 @@ export default async function ContactPage({
             <Link
               href={`/${l}/contact/complaint`}
               lang={th}
-              className="group mt-6 flex items-baseline justify-between gap-3 border-b border-rule py-3.5 font-semibold text-ink no-underline transition-colors duration-150 hover:border-lotus"
+              className="group mt-6 flex min-h-11 items-center justify-between gap-3 border-b border-rule py-3 font-semibold text-ink no-underline transition-colors duration-150 hover:border-lotus"
             >
               {COMPLAINT[l]}
               <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">
@@ -97,7 +97,7 @@ function EntityBlock({ title, entity, locale }: { title: string; entity: Entity;
             {S.contact.email[locale]}
           </dt>
           <dd>
-            <a href={`mailto:${entity.email}`} className="text-lotus-deep underline-offset-4">
+            <a href={`mailto:${entity.email}`} className="inline-flex min-h-11 items-center text-lotus-deep underline-offset-4">
               {entity.email}
             </a>
           </dd>
@@ -107,7 +107,7 @@ function EntityBlock({ title, entity, locale }: { title: string; entity: Entity;
             {S.contact.phone[locale]}
           </dt>
           <dd>
-            <a href={`tel:${entity.phone.replace(/\s/g, "")}`} className="text-lotus-deep underline-offset-4">
+            <a href={`tel:${entity.phone.replace(/\s/g, "")}`} className="inline-flex min-h-11 items-center text-lotus-deep underline-offset-4">
               {entity.phone}
             </a>
           </dd>

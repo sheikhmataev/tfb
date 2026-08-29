@@ -47,8 +47,16 @@ export const S = {
     price: { en: "Price", no: "Pris", th: "ราคา" },
     register: { en: "Register", no: "Meld deg på", th: "ลงทะเบียน" },
     tbd: { en: "Date to be announced", no: "Dato kommer", th: "รอประกาศวันอบรม" },
-    allRegulators: { en: "All courses", no: "Alle kurs", th: "ทุกคอร์ส" },
-    filterBy: { en: "Filter by what the inspector asks for", no: "Filtrer etter hva tilsynet spør etter", th: "กรองตามเอกสารที่เจ้าหน้าที่ตรวจสอบขอ" },
+    priceIncludes: {
+      en: "every course, materials and certificate included",
+      no: "alle kurs, kursmateriell og kursbevis inkludert",
+      th: "ทุกคอร์ส รวมเอกสารประกอบและใบรับรอง",
+    },
+    asksFor: {
+      en: "{regulator} asks for this one",
+      no: "{regulator} krever dette kurset",
+      th: "{regulator} กำหนดให้ต้องมีคอร์สนี้",
+    },
     seats: { en: "6 to 8 places per course", no: "6 til 8 plasser per kurs", th: "รับ 6 ถึง 8 คนต่อคอร์ส" },
     noExam: { en: "No written exam", no: "Ingen skriftlig eksamen", th: "ไม่มีการสอบข้อเขียน" },
     certificatePosted: { en: "Certificate posted to you", no: "Kursbevis sendes i posten", th: "ส่งใบรับรองทางไปรษณีย์" },

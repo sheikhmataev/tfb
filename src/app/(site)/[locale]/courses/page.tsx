@@ -2,7 +2,7 @@ import Image from "next/image";
 import { withBase } from "@/lib/site";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CourseTable } from "@/components/CourseTable";
+import { CourseList } from "@/components/CourseList";
 import { PageHeader } from "@/components/PageHeader";
 import { getCourses, settings } from "@/lib/content";
 import { S } from "@/lib/strings";
@@ -22,8 +22,6 @@ export async function generateMetadata({
   if (!isLocale(locale)) return {};
   return { title: S.courses.label[locale], description: S.courses.lead[locale] };
 }
-
-const FACTS = ["hours", "seats", "noExam", "certificatePosted"] as const;
 
 export default async function CoursesPage({
   params,
@@ -59,17 +57,7 @@ export default async function CoursesPage({
           </p>
         </div>
 
-        <div className="border-2 border-ink p-5 sm:p-8">
-          <CourseTable courses={courses} locale={l} />
-          <ul className="mt-6 flex flex-wrap gap-x-7 gap-y-2.5 border-t border-rule pt-5 text-sm text-ink-soft">
-            <li lang={th}>{courses[0]?.format[l]}</li>
-            {FACTS.map((k) => (
-              <li key={k} lang={th}>
-                {S.courses[k][l]}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <CourseList courses={courses} locale={l} />
 
         <p lang={th} className="mt-8 max-w-[62ch] text-sm text-ink-soft">
           {S.courses.certificateNote[l]}
