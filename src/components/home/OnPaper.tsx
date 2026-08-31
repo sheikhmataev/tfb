@@ -19,9 +19,9 @@ export function OnPaper({ locale }: { locale: Locale }) {
   const th = locale === "th" ? "th" : undefined;
 
   return (
-    <section className="border-y border-rule bg-petal">
-      <div className="mx-auto max-w-[1180px] px-4 py-14 sm:px-7">
-        <SectionOpener className="mb-7" />
+    <section className="border-y border-rule">
+      <div className="mx-auto max-w-[1180px] px-4 py-11 sm:px-7">
+        <SectionOpener className="mb-6" />
 
         <h2 lang={th} className="display text-[clamp(1.625rem,3vw,1.875rem)] leading-tight">
           {S.onPaper.heading[locale]}

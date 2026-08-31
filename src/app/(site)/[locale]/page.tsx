@@ -15,11 +15,17 @@ export function generateStaticParams() {
 /**
  * Nearest first, and forward before back.
  *
- * The page is read outward from today: what you can do today, then what is
- * coming, then what has happened, then the standing facts that carry no date
- * because they are always true. One rule decides where every piece of content
- * sits, its date relative to today, so the board never chooses a section. It
- * sets a date and the page sorts itself.
+ * The page opens on what is happening, then help, then what has happened, then
+ * the standing facts that carry no date because they are always true. One rule
+ * decides where every piece of dated content sits, its date relative to today,
+ * so the board never chooses a section. It sets a date and the page sorts
+ * itself.
+ *
+ * Help used to open the page, above the first date. It moved below because the
+ * Krisesenteret number is now in the pinned section line at every scroll
+ * position on every page, so it is never more than a glance away, and because a
+ * reader arriving at an association's front page should be able to see what the
+ * association is doing without scrolling past a screen of triage first.
  *
  * Courses are deliberately absent. They are a commercial service sold by a
  * separate legal entity and they keep their own nav item and pages.
@@ -35,8 +41,8 @@ export default async function HomePage({
 
   return (
     <>
-      <HelpToday locale={l} />
       <ComingUp locale={l} today={BUILD_DATE} />
+      <HelpToday locale={l} />
       <Recently locale={l} today={BUILD_DATE} />
       <OnPaper locale={l} />
       <Join locale={l} />

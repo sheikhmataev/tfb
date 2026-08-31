@@ -36,8 +36,8 @@ export function HelpToday({ locale }: { locale: Locale }) {
 
   return (
     <section id="help" className="scroll-mt-24 border-y border-rule bg-petal">
-      <div className="mx-auto max-w-[1180px] px-4 py-14 sm:px-7">
-        <SectionOpener className="mb-7" />
+      <div className="mx-auto max-w-[1180px] px-4 py-11 sm:px-7">
+        <SectionOpener className="mb-6" />
 
         <h2 lang={th} className="display text-[clamp(1.625rem,3vw,1.875rem)] leading-tight">
           {S.helpToday.heading[locale]}

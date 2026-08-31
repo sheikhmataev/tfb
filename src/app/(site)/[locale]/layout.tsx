@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { fontVars } from "@/lib/fonts";
 import "../../globals.css";
 import { notFound } from "next/navigation";
-import { HelpBar } from "@/components/HelpBar";
 import { Masthead, MastheadNav } from "@/components/home/Masthead";
 import { Footer } from "@/components/Footer";
 import { S } from "@/lib/strings";
@@ -69,7 +68,6 @@ export default async function LocaleLayout({
       >
         {S.skipToContent[l]}
       </a>
-        <HelpBar locale={l} />
         <Masthead locale={l} />
         <MastheadNav locale={l} />
         <main id="main">{children}</main>

@@ -39,9 +39,18 @@ export function Masthead({ locale }: { locale: Locale }) {
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
           <Link href={`/${locale}`} className="flex min-h-11 items-center gap-3 no-underline">
             <Mark className="w-9 shrink-0 text-lotus" />
-            <Name lang={th} className="display m-0 text-[clamp(1.5rem,3.2vw,2rem)] leading-none text-ink">
-              {S.siteName[locale]}
-            </Name>
+            <span className="flex flex-col gap-0.5">
+              <Name lang={th} className="display m-0 text-[clamp(1.5rem,3.2vw,2rem)] leading-none text-ink">
+                {S.siteName[locale]}
+              </Name>
+              {/* The association is named in both its languages, the way the
+                  reference names itself in English and Thai on one lockup. On a
+                  Thai page the Thai name is already the line above, so the Latin
+                  name takes the second line instead of repeating the Thai. */}
+              <span lang={locale === "th" ? undefined : "th"} className="text-base leading-none text-ink-soft">
+                {locale === "th" ? "Thai Foreningen Bergen" : S.siteName.th}
+              </span>
+            </span>
           </Link>
           <LanguageSwitch locale={locale} />
         </div>

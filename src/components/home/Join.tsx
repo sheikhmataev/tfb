@@ -22,8 +22,8 @@ export function Join({ locale }: { locale: Locale }) {
 
   return (
     <section className="scroll-mt-24">
-      <div className="mx-auto max-w-[1180px] px-4 py-14 sm:px-7">
-        <SectionOpener className="mb-7" />
+      <div className="mx-auto max-w-[1180px] px-4 py-11 sm:px-7">
+        <SectionOpener className="mb-6" />
         <div className="grid gap-x-10 gap-y-8 md:grid-cols-12">
           <div className="hidden md:col-span-5 md:flex md:items-center md:justify-center">
             <QuietLotus className="w-full max-w-[300px]" />
