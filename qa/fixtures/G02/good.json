@@ -1,0 +1,10 @@
+{
+  "files": {
+    "out/en/index.html": "<link rel=\"stylesheet\" href=\"/tfb/_next/app.css\"><img src=\"/tfb/assets/logo-mark.svg\" srcset=\"/tfb/assets/logo-mark.svg 1x\"><meta property=\"og:image\" content=\"/tfb/assets/logo-lockup.svg\">"
+  },
+  "statuses": {
+    "http://localhost:4611/tfb/_next/app.css": 200,
+    "http://localhost:4611/tfb/assets/logo-mark.svg": 200,
+    "http://localhost:4611/tfb/assets/logo-lockup.svg": 200
+  }
+}

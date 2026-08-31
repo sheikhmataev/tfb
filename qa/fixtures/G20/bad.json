@@ -1,0 +1,274 @@
+{
+  "files": {
+    "src/lib/strings.ts": "export const S = {\n  helpBar: {\n    interpreter: { en: \"We can provide an interpreter\", no: \"Vi kan stille med tolk\", th: \"สมาคมจัดล่ามให้ได้\" },\n  },\n};\n"
+  },
+  "captures": [
+    {
+      "route": "/",
+      "locale": "en",
+      "width": 1280,
+      "nojs": false,
+      "dump": {
+        "url": "http://localhost/tfb/en/",
+        "locale": "en",
+        "width": 1280,
+        "documentHeight": 2000,
+        "scrollWidth": 1280,
+        "innerWidth": 1280,
+        "wordCount": 800,
+        "headingOutline": [
+          {
+            "tag": "h1",
+            "text": "T",
+            "y": 100,
+            "fontFamily": "Marcellus, \"Marcellus Fallback\", Georgia, serif",
+            "fontSizePx": 46
+          },
+          {
+            "tag": "h2",
+            "text": "U",
+            "y": 300,
+            "fontFamily": "Marcellus, \"Marcellus Fallback\", Georgia, serif",
+            "fontSizePx": 34
+          }
+        ],
+        "landmarks": {
+          "navCount": 1,
+          "navLinkTexts": [
+            []
+          ],
+          "mainCount": 1
+        },
+        "interactive": [],
+        "textNodes": [],
+        "images": [],
+        "boxes": [],
+        "links": [
+          {
+            "text": "Bylaws",
+            "chars": 6,
+            "href": "/tfb/en/about/bylaws/",
+            "color": "rgb(141, 12, 73)",
+            "inTableRow": false,
+            "inProse": false
+          },
+          {
+            "text": "Bylaws",
+            "chars": 6,
+            "href": "/tfb/en/about/bylaws/",
+            "color": "rgb(141, 12, 73)",
+            "inTableRow": false,
+            "inProse": false
+          }
+        ],
+        "aboveFoldLinkCount": 10,
+        "helpBar": {
+          "presentAtScroll": {
+            "0": true,
+            "50": true,
+            "100": true
+          },
+          "yAtScroll": {
+            "0": 0,
+            "50": 0,
+            "100": 0
+          },
+          "phoneFontSizePx": 20,
+          "phoneTapW": 120,
+          "phoneTapH": 44
+        },
+        "renderedTextConcat": "We can provide an interpreter",
+        "emDashCount": 0
+      },
+      "aux": {
+        "route": "/",
+        "locale": "en",
+        "width": 1280,
+        "htmlLang": "en",
+        "truncated": {
+          "textNodes": 0,
+          "boxes": 0
+        },
+        "contrast": [],
+        "images": [],
+        "boxes": [],
+        "sections": [],
+        "liCount": 6,
+        "h1Count": 1
+      }
+    },
+    {
+      "route": "/",
+      "locale": "no",
+      "width": 1280,
+      "nojs": false,
+      "dump": {
+        "url": "http://localhost/tfb/en/",
+        "locale": "en",
+        "width": 1280,
+        "documentHeight": 2000,
+        "scrollWidth": 1280,
+        "innerWidth": 1280,
+        "wordCount": 800,
+        "headingOutline": [
+          {
+            "tag": "h1",
+            "text": "T",
+            "y": 100,
+            "fontFamily": "Marcellus, \"Marcellus Fallback\", Georgia, serif",
+            "fontSizePx": 46
+          },
+          {
+            "tag": "h2",
+            "text": "U",
+            "y": 300,
+            "fontFamily": "Marcellus, \"Marcellus Fallback\", Georgia, serif",
+            "fontSizePx": 34
+          }
+        ],
+        "landmarks": {
+          "navCount": 1,
+          "navLinkTexts": [
+            []
+          ],
+          "mainCount": 1
+        },
+        "interactive": [],
+        "textNodes": [],
+        "images": [],
+        "boxes": [],
+        "links": [
+          {
+            "text": "Bylaws",
+            "chars": 6,
+            "href": "/tfb/en/about/bylaws/",
+            "color": "rgb(141, 12, 73)",
+            "inTableRow": false,
+            "inProse": false
+          },
+          {
+            "text": "Bylaws",
+            "chars": 6,
+            "href": "/tfb/en/about/bylaws/",
+            "color": "rgb(141, 12, 73)",
+            "inTableRow": false,
+            "inProse": false
+          }
+        ],
+        "aboveFoldLinkCount": 10,
+        "helpBar": {
+          "presentAtScroll": {
+            "0": true,
+            "50": true,
+            "100": true
+          },
+          "yAtScroll": {
+            "0": 0,
+            "50": 0,
+            "100": 0
+          },
+          "phoneFontSizePx": 20,
+          "phoneTapW": 120,
+          "phoneTapH": 44
+        },
+        "renderedTextConcat": "We can provide an interpreter",
+        "emDashCount": 0
+      },
+      "aux": {
+        "route": "/",
+        "locale": "en",
+        "width": 1280,
+        "htmlLang": "en",
+        "truncated": {
+          "textNodes": 0,
+          "boxes": 0
+        },
+        "contrast": [],
+        "images": [],
+        "boxes": [],
+        "sections": [],
+        "liCount": 6,
+        "h1Count": 1
+      }
+    },
+    {
+      "route": "/",
+      "locale": "th",
+      "width": 1280,
+      "nojs": false,
+      "dump": {
+        "url": "http://localhost/tfb/en/",
+        "locale": "en",
+        "width": 1280,
+        "documentHeight": 2000,
+        "scrollWidth": 1280,
+        "innerWidth": 1280,
+        "wordCount": 800,
+        "headingOutline": [
+          {
+            "tag": "h1",
+            "text": "T",
+            "y": 100,
+            "fontFamily": "Marcellus, \"Marcellus Fallback\", Georgia, serif",
+            "fontSizePx": 46
+          }
+        ],
+        "landmarks": {
+          "navCount": 1,
+          "navLinkTexts": [
+            []
+          ],
+          "mainCount": 1
+        },
+        "interactive": [],
+        "textNodes": [],
+        "images": [],
+        "boxes": [],
+        "links": [
+          {
+            "text": "Bylaws",
+            "chars": 6,
+            "href": "/tfb/en/about/bylaws/",
+            "color": "rgb(141, 12, 73)",
+            "inTableRow": false,
+            "inProse": false
+          }
+        ],
+        "aboveFoldLinkCount": 10,
+        "helpBar": {
+          "presentAtScroll": {
+            "0": true,
+            "50": true,
+            "100": true
+          },
+          "yAtScroll": {
+            "0": 0,
+            "50": 0,
+            "100": 0
+          },
+          "phoneFontSizePx": 20,
+          "phoneTapW": 120,
+          "phoneTapH": 44
+        },
+        "renderedTextConcat": "We can provide an interpreter",
+        "emDashCount": 0
+      },
+      "aux": {
+        "route": "/",
+        "locale": "en",
+        "width": 1280,
+        "htmlLang": "en",
+        "truncated": {
+          "textNodes": 0,
+          "boxes": 0
+        },
+        "contrast": [],
+        "images": [],
+        "boxes": [],
+        "sections": [],
+        "liCount": 3,
+        "h1Count": 1
+      }
+    }
+  ]
+}

@@ -111,7 +111,7 @@ export default async function HelpPage({
                       {a.phone && (
                         <a
                           href={`tel:+47${a.phone.replace(/\s/g, "")}`}
-                          className="inline-flex min-h-11 items-center whitespace-nowrap font-semibold text-ink"
+                          className="inline-flex min-h-11 items-center whitespace-nowrap font-semibold text-lotus-deep"
                         >
                           {a.phone}
                         </a>

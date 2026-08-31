@@ -16,15 +16,28 @@ export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
 }
 
+/**
+ * The authorisation rule is quoted from the bylaws and nothing else. § 7 a says
+ * the leader must authorise ordinary operating expenses together with the
+ * treasurer, and that the two jointly dispose of the association's accounts. It
+ * does not say two signatures are required for every transaction, and the page
+ * may not say more than its source.
+ */
 const LEAD = {
-  en: "The association publishes what came in and what went out, line by line. Two board signatures are required for every transaction, and the leader and treasurer authorise spending jointly.",
-  no: "Foreningen publiserer hva som kom inn og hva som gikk ut, post for post. Hver transaksjon krever to signaturer fra styret, og leder og kasserer autoriserer utgifter sammen.",
-  th: "สมาคมเปิดเผยรายรับและรายจ่ายเป็นรายการ ทุกธุรกรรมต้องมีลายเซ็นกรรมการสองท่าน และประธานกับเหรัญญิกอนุมัติค่าใช้จ่ายร่วมกัน",
+  en: "The association publishes what came in and what went out, line by line. The leader and the treasurer authorise ordinary operating expenses together, and the two dispose of the association's accounts together.",
+  no: "Foreningen publiserer hva som kom inn og hva som gikk ut, post for post. Leder og kasserer autoriserer ordinære driftsutgifter sammen, og de to disponerer foreningens kontoer sammen.",
+  th: "สมาคมเปิดเผยรายรับและรายจ่ายเป็นรายการ ประธานและเหรัญญิกอนุมัติค่าใช้จ่ายในการดำเนินงานตามปกติร่วมกัน และทั้งสองดูแลบัญชีของสมาคมร่วมกัน",
 };
+
+/**
+ * The gap note counts the years the page is actually rendering, so it can never
+ * drift from the file again. It says nothing about what happened to the years
+ * that are missing, because nothing in the repo knows.
+ */
 const GAP = {
-  en: "Accounts were published every year from 2011 to 2015. The years after that have not been entered yet.",
-  no: "Regnskap ble publisert hvert år fra 2011 til 2015. Årene etter det er ikke lagt inn ennå.",
-  th: "มีการเผยแพร่บัญชีทุกปีตั้งแต่ 2011 ถึง 2015 ส่วนปีหลังจากนั้นยังไม่ได้บันทึก",
+  en: "Accounts are published here for {years}, in full and line by line. No other year has been entered.",
+  no: "Regnskap er publisert her for {years}, i sin helhet og post for post. Ingen andre år er lagt inn.",
+  th: "บัญชีที่เผยแพร่ที่นี่คือปี {years} ครบถ้วนเป็นรายการ ยังไม่มีการบันทึกปีอื่น",
 };
 const T = {
   income: { en: "Income", no: "Inntekter", th: "รายรับ" },
@@ -68,8 +81,10 @@ export default async function FinancesPage({
           const inc = y.income.reduce((s, r) => s + r.nok, 0);
           const exp = y.expenditure.reduce((s, r) => s + r.nok, 0);
           return (
-            <section key={y.year} className="mb-14">
-              <h2 className="display border-b border-ink pb-3 text-2xl">{y.year}</h2>
+            <section key={y.year} aria-labelledby={`year-${y.year}`} className="mb-14">
+              <h2 id={`year-${y.year}`} className="display border-b border-ink pb-3 text-2xl">
+                {y.year}
+              </h2>
               <div className="grid gap-10 md:grid-cols-2">
                 <LineTable title={T.income[l]} rows={y.income} total={inc} locale={l} />
                 <LineTable title={T.expenditure[l]} rows={y.expenditure} total={exp} locale={l} />
@@ -85,7 +100,7 @@ export default async function FinancesPage({
         })}
 
         <p lang={th} className="max-w-[62ch] border-t border-rule pt-6 text-sm text-ink-soft">
-          {GAP[l]}
+          {GAP[l].replace("{years}", years.map((y) => y.year).join(", "))}
         </p>
         <p className="mt-4 text-sm text-ink-soft">
           {settings.association.name} · {S.contact.orgNumber[l]} {settings.association.orgNumber} ·{" "}

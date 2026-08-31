@@ -1,0 +1,119 @@
+{
+  "captures": [
+    {
+      "route": "/",
+      "locale": "en",
+      "width": 1280,
+      "nojs": false,
+      "dump": {
+        "url": "http://localhost/tfb/en/",
+        "locale": "en",
+        "width": 1280,
+        "documentHeight": 2000,
+        "scrollWidth": 1280,
+        "innerWidth": 1280,
+        "wordCount": 800,
+        "headingOutline": [],
+        "landmarks": {
+          "navCount": 1,
+          "navLinkTexts": [
+            []
+          ],
+          "mainCount": 1
+        },
+        "interactive": [],
+        "textNodes": [
+          {
+            "text": "Body copy",
+            "fontFamily": "\"Public Sans\", \"Public Sans Fallback\", Arial, sans-serif",
+            "fontSizePx": 17,
+            "color": "rgb(20, 16, 15)",
+            "opacity": 1,
+            "visibility": "visible",
+            "lang": "en",
+            "depth": 5,
+            "parentFontSizePx": 17
+          },
+          {
+            "text": "Courses",
+            "fontFamily": "Marcellus, \"Marcellus Fallback\", Georgia, serif",
+            "fontSizePx": 46,
+            "color": "rgb(20, 16, 15)",
+            "opacity": 1,
+            "visibility": "visible",
+            "lang": "en",
+            "depth": 5,
+            "parentFontSizePx": 17
+          },
+          {
+            "text": "2011",
+            "fontFamily": "\"Public Sans\", \"Public Sans Fallback\", Arial, sans-serif",
+            "fontSizePx": 34,
+            "color": "rgb(227, 19, 117)",
+            "opacity": 1,
+            "visibility": "visible",
+            "lang": "en",
+            "depth": 5,
+            "parentFontSizePx": 17
+          }
+        ],
+        "images": [],
+        "boxes": [],
+        "links": [],
+        "aboveFoldLinkCount": 10,
+        "helpBar": {
+          "presentAtScroll": {
+            "0": true,
+            "50": true,
+            "100": true
+          },
+          "yAtScroll": {
+            "0": 0,
+            "50": 0,
+            "100": 0
+          },
+          "phoneFontSizePx": 20,
+          "phoneTapW": 120,
+          "phoneTapH": 44
+        },
+        "renderedTextConcat": "Krisesenteret 55 31 50 50 open 24 hours",
+        "emDashCount": 0
+      },
+      "aux": {
+        "route": "/",
+        "locale": "en",
+        "width": 1280,
+        "htmlLang": "en",
+        "truncated": {
+          "textNodes": 0,
+          "boxes": 0
+        },
+        "contrast": [
+          {
+            "text": "Body copy",
+            "color": "#14100F",
+            "background": "#FAF7F5",
+            "fontSizePx": 17,
+            "fontWeight": "400",
+            "contrast": 17.72,
+            "selector": "p"
+          },
+          {
+            "text": "Courses",
+            "color": "#E31375",
+            "background": "#FAF7F5",
+            "fontSizePx": 46,
+            "fontWeight": "400",
+            "contrast": 4.26,
+            "selector": "h2"
+          }
+        ],
+        "images": [],
+        "boxes": [],
+        "sections": [],
+        "liCount": 6,
+        "h1Count": 1
+      }
+    }
+  ]
+}

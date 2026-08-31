@@ -1,0 +1,8 @@
+{
+  "files": {
+    "out/en/index.html": "<link rel=\"stylesheet\" href=\"/_next/app.css\"><img src=\"/tfb/assets/gone.svg\">"
+  },
+  "statuses": {
+    "http://localhost:4611/tfb/assets/gone.svg": 404
+  }
+}

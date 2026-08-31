@@ -39,7 +39,11 @@ export default async function ArticlesPage({
 
   return (
     <>
-      <PageHeader title={S.nav.articles[l]} lead={LEAD[l]} locale={l} />
+      {/* The section link in the masthead already says "Articles" and it sits
+          a screen-width above this heading. The page is titled by what it
+          holds, every entry the association has published, rather than by the
+          word the reader has just read. */}
+      <PageHeader title={S.entries.all[l]} lead={LEAD[l]} locale={l} />
       <div className="mx-auto max-w-[1180px] px-4 py-12 sm:px-7">
         {entries.length === 0 ? (
           <p lang={th} className="border-t border-rule py-8 text-ink-soft">

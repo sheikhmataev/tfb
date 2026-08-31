@@ -1,0 +1,26 @@
+{
+  "_": "A gate failure waived after three fix attempts, or a rule the client's own instruction overrode. Every entry names the gate, the exact element, a one-line reason and the date. This file is printed IN FULL in the closing report, because an allowlist is where a real regression goes to hide.",
+  "waivers": [
+    {
+      "gate": "G14",
+      "date": "2026-08-30",
+      "element": "the homepage, all three locales, and the locale chooser",
+      "measured": "0 SITE navigation landmarks on / (en, no, th); 1 nav element in total, the language switcher",
+      "reason": "The client was asked directly where navigation should live and chose that the homepage loses the nav bar while inner pages keep a thin one. Their words: 'there is no nav bar on top'. The six section links are still on the page, in the footer, and every inner page still reports exactly one site nav. Wrapping the footer list in a nav landmark was considered and rejected: it would fix the homepage and give every inner page two site navs with a fully overlapping link set, which is the duplicated-nav bug this gate exists to catch."
+    },
+    {
+      "gate": "G21",
+      "date": "2026-08-30",
+      "element": "the Norwegian homepage at 1280",
+      "measured": "526 words against a 550 floor. English and Thai pass.",
+      "reason": "Direct consequence of the client instructing the removal of the masthead lede, which they named verbatim as repetitive with /about. The band was calibrated against a homepage that carried that paragraph. Norwegian is the tersest of the three locales and fell 24 words under. The floor was NOT lowered to make this pass, because the floor is what stops the page becoming an empty shell."
+    },
+    {
+      "gate": "G18",
+      "date": "2026-08-30",
+      "element": "public/assets/hero-bryggen.jpg, activities-lead.jpg, logo-lockup.svg, logo-lockup-inverse.svg, logo-mark.svg",
+      "measured": "never referenced by the build",
+      "reason": "True for the two photographs, because no entry may carry a photograph none of them depicts, and no hero is permitted. True in a narrow sense for the three logo files, because Mark.tsx inlines the mark geometry rather than linking the file, so the SVGs are the source of truth for artwork that does ship. These are client-supplied assets. Deleting them to satisfy a gate would destroy the originals to make a counter go to zero."
+    }
+  ]
+}

@@ -57,9 +57,9 @@
       "th": "บัญชีประจำปี"
     },
     "value": {
-      "en": "Published in full, line by line, 2011 to 2015. The 2016 accounts were announced and never filed.",
-      "no": "Publisert i sin helhet, post for post, 2011 til 2015. Regnskapet for 2016 ble varslet og aldri levert.",
-      "th": "เผยแพร่ครบถ้วนเป็นรายการ ปี 2011 ถึง 2015 ส่วนบัญชีปี 2016 ประกาศไว้แต่ไม่เคยจัดทำ"
+      "en": "Published in full, line by line, for 2011. No later year is on the site.",
+      "no": "Publisert i sin helhet, post for post, for 2011. Ingen senere år ligger på nettsiden.",
+      "th": "เผยแพร่ครบถ้วนเป็นรายการสำหรับปี 2011 ยังไม่มีปีหลังจากนั้นบนเว็บไซต์"
     },
     "asOf": null,
     "href": "/about/finances",

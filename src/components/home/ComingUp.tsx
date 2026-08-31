@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getComingUp } from "@/lib/content";
 import { S } from "@/lib/strings";
 import { DateRail } from "@/components/DateRail";
+import { SectionOpener } from "@/components/Ornament";
 import type { Locale } from "@/lib/types";
 
 /**
@@ -20,6 +21,8 @@ export function ComingUp({ locale, today }: { locale: Locale; today: string }) {
   return (
     <section id="calendar" className="scroll-mt-24">
       <div className="mx-auto max-w-[1180px] px-4 py-14 sm:px-7">
+        <SectionOpener className="mb-7" />
+
         <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
           <h2 lang={th} className="display text-[clamp(1.625rem,3vw,1.875rem)] leading-tight">
             {S.comingUp.heading[locale]}

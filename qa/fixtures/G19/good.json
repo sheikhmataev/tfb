@@ -1,0 +1,6 @@
+{
+  "files": {
+    "qa/notes.md": "No long dashes here, only commas and full stops.\n",
+    "out/en/index.html": "<p>Plain text</p>"
+  }
+}

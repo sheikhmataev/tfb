@@ -27,6 +27,14 @@ const LEAD = {
 };
 const PAST = { en: "Already held", no: "Allerede avholdt", th: "จัดไปแล้ว" };
 
+/**
+ * The same words the homepage uses for the link that lands here, so the label
+ * a reader clicks is the title they arrive at, and neither is the bare nav
+ * item sitting above it. The Thai link label opens with a verb, "view", which
+ * a heading should not, so the heading keeps the noun alone.
+ */
+const TITLE = { ...S.comingUp.all, th: "ปฏิทินทั้งหมด" };
+
 export default async function CalendarPage({
   params,
 }: {
@@ -64,7 +72,7 @@ export default async function CalendarPage({
 
   return (
     <>
-      <PageHeader title={S.nav.calendar[l]} lead={LEAD[l]} locale={l} />
+      <PageHeader title={TITLE[l]} lead={LEAD[l]} locale={l} />
       <div className="mx-auto max-w-[1180px] px-4 py-12 sm:px-7">
         <h2 lang={th} className="display text-2xl">
           {S.comingUp.heading[l]}

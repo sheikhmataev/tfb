@@ -1,0 +1,70 @@
+{
+  "_": "The job panel's answer key. Derived only from qa/seed-facts.json, content/, and pre-existing documents in git history. Nothing else in this run may edit this file. Every value listed below must resolve through an anchored row in qa/evidence.json; gate G22 asserts it.",
+  "asOfDate": "2026-08-30",
+  "answers": {
+    "job1.crisisPhone": {
+      "question": "A phone number you can call right now.",
+      "value": ["55 31 50 50"],
+      "notes": "Krisesenteret. Open 24 hours every day of the year. It sits in the persistent help bar at every scroll position on every page. Reaching it must take at most one screen and zero clicks."
+    },
+    "job2.legalName": { "question": "The organisation's legal name.", "value": ["Thai Foreningen Bergen"] },
+    "job2.orgNumber": { "question": "Its organisation number.", "value": ["996 630 307"] },
+    "job2.boardSize": {
+      "question": "Who sits on the board.",
+      "value": ["8"],
+      "notes": "Eight unpaid functions, listed by function and duty at /about/board/. No names are published. A tester who comes away believing the site names individuals has formed an unsupported belief."
+    },
+    "job2.whereMoneyGoes": {
+      "question": "Where the money goes.",
+      "value": ["1503.21.07556"],
+      "notes": "The association's own account. Accounts are published for 2011 only, and the site currently claims a run of 2011 to 2015 that the repo does not support. A tester who comes away believing five years of accounts are published has formed an unsupported belief, and that is a shipped defect."
+    },
+    "job2.complaint": {
+      "question": "Who you complain to.",
+      "value": ["post@thaiforeningenbergen.no"],
+      "notes": "The complaint route is /contact/complaint/. The membership fee is 50 kr, so 300 kr is a donation and not a fee."
+    },
+    "job3.nextThing": {
+      "question": "The single next thing happening, and its date.",
+      "value": ["Loi Krathong", "2026-11-01"],
+      "notes": "Relative to 30 August 2026. The stored range is 2026-11-01 to 2026-11-30 and renders as an approximate month, not a day. A tester who comes away believing a specific day has been announced has formed an unsupported belief."
+    },
+    "job3.thisMonth": {
+      "question": "Is anything happening this month.",
+      "value": [],
+      "notes": "Nothing. August 2026 is empty. The correct answer is an explicit no, not silence. A page that leaves the tester unsure fails."
+    },
+    "job4.price": { "question": "What a food-safety course costs.", "value": ["800"], "notes": "800 kr, stated once. Five hours, six to eight places." },
+    "job4.legalEntity": { "question": "Which legal entity you pay.", "value": ["Thai Restaurantvirksomhet Kurs"] },
+    "job4.entityOrgNumber": { "question": "That entity's organisation number.", "value": ["924 409 509"] },
+    "job4.account": {
+      "question": "Which account number the money goes to.",
+      "value": ["1506.34.69634"],
+      "notes": "The course provider's own account. 1503.21.07556 is the association's and must never appear on a course page."
+    },
+    "job4.sameOrganisation": {
+      "question": "Is that entity the same organisation whose website this is.",
+      "value": ["A separate legal entity from Thai Foreningen Bergen."],
+      "notes": "No. This is the load-bearing distinction. A tester who cannot say which of the two bodies takes the money has found a shipped defect."
+    },
+    "job4.nextDate": {
+      "question": "When the next course runs.",
+      "value": [],
+      "notes": "Not set. nextDateIso is null on all four courses and must render as a stated absence. A tester who comes away with any date at all has formed an unsupported belief."
+    }
+  },
+  "negativeSet": {
+    "_": "Beliefs a tester must NOT come away with. Any of these is an automatic round failure. The ratchet adds to this list before a panel-missed lie is fixed.",
+    "beliefs": [
+      "That any photograph on the site shows a specific TFB event.",
+      "That any photograph on the site is association archive material.",
+      "That Thai Restaurantvirksomhet Kurs and Thai Foreningen Bergen are one body.",
+      "That a course has a date.",
+      "That the association has 233 members today, rather than 233 as counted on 25 December 2016.",
+      "That annual accounts are published for 2012, 2013, 2014 or 2015.",
+      "That the site names the individuals who sit on the board.",
+      "That Vipps is available.",
+      "That the association is a company selling a service."
+    ]
+  }
+}

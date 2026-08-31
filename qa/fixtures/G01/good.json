@@ -1,0 +1,9 @@
+{
+  "buildResult": {
+    "code": 0
+  },
+  "files": {
+    "out/index.html": "<!doctype html><html lang=\"en\"><body><ul><li><a href=\"/tfb/en/\">English</a></li><li><a href=\"/tfb/no/\">Norsk</a></li><li><a href=\"/tfb/th/\">Thai</a></li></ul></body></html>",
+    "src/app/(chooser)/page.tsx": "/**\n * The locale chooser.\n *\n * A static export has no server at request time, so redirect() cannot run here.\n * Cloudflare Pages sends / to /en/ at the edge; this page is the fallback.\n */\nexport default function Page() {\n  // Not a redirect(): the reader picks a language.\n  return null;\n}\n"
+  }
+}

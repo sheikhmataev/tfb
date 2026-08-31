@@ -58,13 +58,28 @@ export default async function BylawsPage({
             årsmøte resolution, not a code change. */}
         <div className="grid gap-x-12 md:grid-cols-12">
           <div className="md:col-span-8 hyphens-auto break-words" lang="nb">
-            {BYLAWS_NO.map((block) => (
-              <section key={block.ref} className="border-t border-rule py-6">
+            {/* The section is named by the two visible elements that already
+                name it, the paragraph mark and the heading beside it, so there
+                is no second copy of the label to drift. One block carries a
+                bare mark with no number, which is a recorded defect in the
+                adopted text and is reproduced rather than repaired. */}
+            {BYLAWS_NO.map((block, bi) => (
+              <section
+                key={block.ref}
+                aria-labelledby={
+                  block.heading ? `bylaw-ref-${bi} bylaw-head-${bi}` : `bylaw-ref-${bi}`
+                }
+                className="border-t border-rule py-6"
+              >
                 <div className="grid gap-x-6 md:grid-cols-[4rem_1fr]">
-                  <p className="display text-lotus-deep">{block.ref}</p>
+                  <p id={`bylaw-ref-${bi}`} className="display text-lotus-deep">
+                    {block.ref}
+                  </p>
                   <div>
                     {block.heading && (
-                      <h2 className="display mb-2 text-lg leading-snug">{block.heading}</h2>
+                      <h2 id={`bylaw-head-${bi}`} className="display mb-2 text-lg leading-snug">
+                        {block.heading}
+                      </h2>
                     )}
                     {block.paragraphs.map((para, i) => (
                       <p key={i} className="mb-3 max-w-[64ch] text-ink-soft last:mb-0">

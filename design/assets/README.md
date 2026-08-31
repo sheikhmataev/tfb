@@ -16,7 +16,7 @@ and the raster is visibly soft on a retina screen at any size above about 120px.
 
 ## Notes on the artwork
 
-The mark is **landscape, not square** — 939×767, aspect 1.224. A 36px-tall header slot
+The mark is **landscape, not square**: 939×767, aspect 1.224. A 36px-tall header slot
 is 44px wide, not 36. Size on height and let width follow, or the mark shrinks.
 
 The favicon needs its own square export with its own optical padding; do not letterbox

@@ -1,0 +1,10 @@
+{
+  "files": {
+    "out/en/index.html": "<html><head><link rel=\"alternate\" hrefLang=\"en\" href=\"https://sheikhmataev.github.io/tfb/en/\"/><link rel=\"alternate\" hrefLang=\"nb\" href=\"https://sheikhmataev.github.io/tfb/no/\"/><link rel=\"alternate\" hrefLang=\"th\" href=\"https://sheikhmataev.github.io/tfb/th/\"/><link rel=\"alternate\" hrefLang=\"x-default\" href=\"https://sheikhmataev.github.io/tfb/en/\"/></head></html>"
+  },
+  "statuses": {
+    "http://localhost:4611/tfb/en/": 200,
+    "http://localhost:4611/tfb/no/": 200,
+    "http://localhost:4611/tfb/th/": 200
+  }
+}

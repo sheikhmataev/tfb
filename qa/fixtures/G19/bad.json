@@ -1,0 +1,6 @@
+{
+  "files": {
+    "qa/notes.md": "This sentence uses an em dash \u2014 which is banned.\n",
+    "out/en/index.html": "<p>Also banned \u2014 here</p>"
+  }
+}

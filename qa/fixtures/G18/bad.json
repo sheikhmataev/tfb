@@ -1,0 +1,10 @@
+{
+  "files": {
+    "src/app/(site)/[locale]/page.tsx": "export default function Page() { return null; }\n",
+    "src/components/DateRail.tsx": "export function DateRail() { return null; }\n",
+    "src/app/globals.css": "@utility petal-mask {\n  border-radius: 0 62% 0 62%;\n}\n@keyframes panel {\n  from { opacity: 0; }\n}\n.ghost {\n  transition: opacity 0.22s;\n}\n",
+    "out/en/index.html": "<html><body><p>nothing here</p></body></html>",
+    "out/_next/static/app.css": "p{color:#14100F}",
+    "public/assets/hero-bryggen.jpg": "binary-stand-in"
+  }
+}

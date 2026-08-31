@@ -20,10 +20,14 @@ export function PageHeader({
   return (
     <div className="mx-auto max-w-[1180px] px-4 pb-2 pt-12 sm:px-7 md:pt-16">
       {backHref && backLabel && (
+        // A standalone control, not an inline prose anchor, so it carries the
+        // 44px floor. The height comes from min-h-11 with the text centred in
+        // it, and a negative top margin gives back the 10px that added above
+        // the text, so the printed rhythm under the page title is unchanged.
         <Link
           href={backHref}
           lang={th}
-          className="mb-6 inline-block text-sm text-lotus-deep underline-offset-4"
+          className="-mt-2.5 mb-3.5 inline-flex min-h-11 items-center text-sm text-lotus-deep underline-offset-4"
         >
           &lsaquo; {backLabel}
         </Link>

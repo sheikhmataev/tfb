@@ -1,6 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
-import { withBase } from "@/lib/site";
+import { QuietLotus, SectionOpener } from "@/components/Ornament";
 import { S } from "@/lib/strings";
 import type { Locale } from "@/lib/types";
 
@@ -8,6 +7,15 @@ import type { Locale } from "@/lib/types";
  * A statement of terms, not a call to action. No button, no form, no fee
  * table, no benefit list, no urgency. It answers what she is actually asking:
  * may I join, what does it cost, do I need Norwegian, is my husband welcome.
+ *
+ * The column that held a photograph now holds the mark, pale. The picture
+ * there was a tinted harbour view captioned as a placeholder for photographs
+ * the association has not supplied, which is stock photography doing a
+ * brochure's job on the site of an organisation that sells nothing. The mark
+ * says the same amount about the association, which is nothing, without
+ * pretending to be a record of it. It is hidden below the two-column
+ * breakpoint rather than stacked, so a reader on a phone pays no scroll for
+ * an ornament.
  */
 export function Join({ locale }: { locale: Locale }) {
   const th = locale === "th" ? "th" : undefined;
@@ -15,21 +23,11 @@ export function Join({ locale }: { locale: Locale }) {
   return (
     <section className="scroll-mt-24">
       <div className="mx-auto max-w-[1180px] px-4 py-14 sm:px-7">
+        <SectionOpener className="mb-7" />
         <div className="grid gap-x-10 gap-y-8 md:grid-cols-12">
-          <figure className="m-0 md:col-span-5">
-            <div className="petal-mask relative aspect-square bg-petal">
-              <Image
-                src={withBase("/assets/activities-lead.jpg")}
-                alt=""
-                fill
-                sizes="(max-width: 768px) 100vw, 40vw"
-                className="object-cover"
-              />
-            </div>
-            <figcaption lang={th} className="mt-2 text-sm text-ink-soft">
-              {S.join.photoNote[locale]}
-            </figcaption>
-          </figure>
+          <div className="hidden md:col-span-5 md:flex md:items-center md:justify-center">
+            <QuietLotus className="w-full max-w-[300px]" />
+          </div>
 
           <div className="md:col-span-6 md:col-start-7">
             <h2 lang={th} className="display text-[clamp(1.625rem,3vw,1.875rem)] leading-tight">

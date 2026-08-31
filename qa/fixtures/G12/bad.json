@@ -1,0 +1,103 @@
+{
+  "captures": [
+    {
+      "route": "/",
+      "locale": "en",
+      "width": 1280,
+      "nojs": false,
+      "dump": {
+        "url": "http://localhost/tfb/en/",
+        "locale": "en",
+        "width": 1280,
+        "documentHeight": 2000,
+        "scrollWidth": 1280,
+        "innerWidth": 1280,
+        "wordCount": 800,
+        "headingOutline": [],
+        "landmarks": {
+          "navCount": 1,
+          "navLinkTexts": [
+            []
+          ],
+          "mainCount": 1
+        },
+        "interactive": [],
+        "textNodes": [],
+        "images": [],
+        "boxes": [
+          {
+            "selector": "div.card",
+            "w": 200,
+            "h": 200,
+            "borderRadius": "0px",
+            "boxShadow": "rgba(0, 0, 0, 0.08) 0px 2px 8px 0px",
+            "backgroundImage": "none",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderStyle": "none",
+            "hasTextContent": true,
+            "containsLoadedImage": false
+          },
+          {
+            "selector": "div.hero",
+            "w": 200,
+            "h": 200,
+            "borderRadius": "0px",
+            "boxShadow": "none",
+            "backgroundImage": "linear-gradient(180deg, rgb(255, 119, 174), rgb(227, 19, 117))",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderStyle": "none",
+            "hasTextContent": true,
+            "containsLoadedImage": false
+          },
+          {
+            "selector": "button.pill",
+            "w": 200,
+            "h": 200,
+            "borderRadius": "9999px",
+            "boxShadow": "none",
+            "backgroundImage": "none",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderStyle": "none",
+            "hasTextContent": true,
+            "containsLoadedImage": false
+          }
+        ],
+        "links": [],
+        "aboveFoldLinkCount": 10,
+        "helpBar": {
+          "presentAtScroll": {
+            "0": true,
+            "50": true,
+            "100": true
+          },
+          "yAtScroll": {
+            "0": 0,
+            "50": 0,
+            "100": 0
+          },
+          "phoneFontSizePx": 20,
+          "phoneTapW": 120,
+          "phoneTapH": 44
+        },
+        "renderedTextConcat": "Krisesenteret 55 31 50 50 open 24 hours",
+        "emDashCount": 0
+      },
+      "aux": {
+        "route": "/",
+        "locale": "en",
+        "width": 1280,
+        "htmlLang": "en",
+        "truncated": {
+          "textNodes": 0,
+          "boxes": 0
+        },
+        "contrast": [],
+        "images": [],
+        "boxes": [],
+        "sections": [],
+        "liCount": 6,
+        "h1Count": 1
+      }
+    }
+  ]
+}

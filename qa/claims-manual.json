@@ -1,0 +1,189 @@
+{
+  "_": "Factual claims the site renders that are hardcoded in src/ rather than driven from content/. Each is resolved by qa/gates/evidence-anchor.mjs against the file and quoted line named here, or marked UNVERIFIED. This run may not create files in qa/sources/.",
+  "rows": [
+    {
+      "claim": "The leader and the treasurer authorise ordinary operating expenses together",
+      "renderedOn": [
+        "/en/about/finances/",
+        "/no/about/finances/",
+        "/th/about/finances/"
+      ],
+      "source": "document",
+      "file": "src/lib/bylaws.ts",
+      "pointer": "§ 7 a",
+      "literal": "Leder må sammen med kasserer autorisere alle ordinære driftsutgifter.",
+      "note": "Was UNVERIFIED and overreaching: the page said two board signatures were required for every transaction. Restated to match the bylaws, which say the leader authorises ordinary operating expenses together with the treasurer and that the two jointly dispose of the accounts."
+    },
+    {
+      "claim": "the leader and treasurer authorise spending jointly",
+      "renderedOn": [
+        "/en/about/finances/",
+        "/no/about/finances/",
+        "/th/about/finances/"
+      ],
+      "source": "document",
+      "file": "src/lib/bylaws.ts",
+      "pointer": "§ 7 a",
+      "literal": "Leder må sammen med kasserer autorisere alle ordinære driftsutgifter."
+    },
+    {
+      "claim": "One year of accounts is published, 2011",
+      "renderedOn": [
+        "/en/about/finances/",
+        "/no/about/finances/",
+        "/th/about/finances/"
+      ],
+      "source": "content",
+      "file": "content/about/finances.json",
+      "pointer": "/0/year",
+      "literal": "2011",
+      "note": "Was UNVERIFIED. The page now states only the year it actually holds."
+    },
+    {
+      "claim": "Published in full, line by line, for 2011. No later year is on the site.",
+      "renderedOn": [
+        "/en/about/",
+        "/no/about/",
+        "/th/about/",
+        "/en/",
+        "/no/",
+        "/th/"
+      ],
+      "source": "content",
+      "file": "content/about/facts.json",
+      "pointer": "/3/value/en",
+      "literal": "Published in full, line by line, for 2011. No later year is on the site.",
+      "note": "Was UNVERIFIED. The page claimed accounts were published every year from 2011 to 2015 and that the 2016 accounts were announced and never filed, while content/about/finances.json held one year. The claim was reduced to what the repo can support and now names its own gap. Fixed by deletion and a gap note, never by inventing the four missing years."
+    },
+    {
+      "claim": "Elected by the members every two years",
+      "renderedOn": [
+        "/en/about/",
+        "/en/about/board/",
+        "/no/about/",
+        "/no/about/board/",
+        "/th/about/",
+        "/th/about/board/"
+      ],
+      "source": "document",
+      "file": "src/lib/bylaws.ts",
+      "pointer": "§ 6 e",
+      "literal": "Nytt styremedlemmene i Thai forening Hordaland blir valgt hvert 2 år av medlemene i Thai forening."
+    },
+    {
+      "claim": "Eight unpaid functions",
+      "renderedOn": [
+        "/en/about/",
+        "/en/about/board/",
+        "/no/about/",
+        "/no/about/board/",
+        "/th/about/",
+        "/th/about/board/"
+      ],
+      "source": "content",
+      "file": "content/board/functions.json",
+      "pointer": "/length",
+      "literal": "8"
+    },
+    {
+      "claim": "Vipps is not set up yet. Bank transfer works today.",
+      "renderedOn": [
+        "/en/",
+        "/en/about/membership/",
+        "/no/",
+        "/th/"
+      ],
+      "source": "content",
+      "file": "content/settings.json",
+      "pointer": "/association/vipps",
+      "literal": null,
+      "note": "Null rendered as a stated absence, which is the required behaviour."
+    },
+    {
+      "claim": "Courses are run by a separate company: Thai Restaurantvirksomhet Kurs",
+      "renderedOn": [
+        "every page footer"
+      ],
+      "source": "brief",
+      "file": "qa/seed-facts.json",
+      "pointer": "provider.separateEntity",
+      "literal": "A separate legal entity from Thai Foreningen Bergen.",
+      "note": "The brief says separate legal entity. The footer says separate company. Same fact, looser word."
+    },
+    {
+      "claim": "Arbeidstilsynet is the regulator for HMS and labour law",
+      "renderedOn": [
+        "/en/courses/hse-labour-law/",
+        "/no/courses/hse-labour-law/",
+        "/th/courses/hse-labour-law/"
+      ],
+      "source": "content",
+      "file": "content/courses/hse-labour-law.json",
+      "pointer": "/regulator",
+      "literal": "Arbeidstilsynet",
+      "note": "Content-anchored. Not named in the brief. The brief names Mattilsynet for food-hygiene only."
+    },
+    {
+      "claim": "Mattilsynet is the regulator for the IK-mat system course",
+      "renderedOn": [
+        "/en/courses/ik-mat-system/",
+        "/no/courses/ik-mat-system/",
+        "/th/courses/ik-mat-system/"
+      ],
+      "source": "content",
+      "file": "content/courses/ik-mat-system.json",
+      "pointer": "/regulator",
+      "literal": "Mattilsynet",
+      "note": "Content-anchored. Not named in the brief."
+    },
+    {
+      "claim": "Vallahøgda 17",
+      "renderedOn": [
+        "every page footer",
+        "/en/courses/",
+        "/en/contact/"
+      ],
+      "source": "content",
+      "file": "content/settings.json",
+      "pointer": "/courseProvider/address/0",
+      "literal": "Vallahøgda 17",
+      "note": "The brief spells this Vallahogda 17 without the diacritic. The content spelling carries the ø. The two do not match as exact strings. The rendered form is the Norwegian one and is very probably correct, but the immutable anchor and the render disagree by one character and a person should confirm which the board uses."
+    },
+    {
+      "claim": "The nine archive entries and their dates, venues and narratives",
+      "renderedOn": [
+        "/en/articles/",
+        "/en/articles/<slug>/",
+        "and the no and th equivalents"
+      ],
+      "source": "content",
+      "file": "content/entries/archive.json",
+      "pointer": "/*",
+      "literal": "see file",
+      "note": "Content-anchored, so these pass the anchor gate. Their upstream provenance is the legacy site tfhnorway.com, and no capture of it exists in qa/sources/. This run may not create one. If the board disputes a date or a narrative, nothing in this repo can settle it."
+    },
+    {
+      "claim": "Loi Krathong",
+      "renderedOn": [
+        "/en/",
+        "/en/calendar/",
+        "/en/articles/loi-krathong-2026/"
+      ],
+      "source": "content",
+      "file": "content/entries/upcoming.json",
+      "pointer": "/0/title/en",
+      "literal": "Loi Krathong",
+      "note": "Named here because the job panel's answer key needs it as an anchored literal."
+    },
+    {
+      "claim": "Annual meeting",
+      "renderedOn": [
+        "/en/calendar/"
+      ],
+      "source": "content",
+      "file": "content/entries/upcoming.json",
+      "pointer": "/1/title/en",
+      "literal": "Annual meeting"
+    }
+  ]
+}

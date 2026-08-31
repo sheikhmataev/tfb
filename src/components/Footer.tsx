@@ -16,22 +16,21 @@ export function Footer({ locale }: { locale: Locale }) {
                 the reduced mark plus a text wordmark, not the lockup file. */}
             <div className="flex items-center gap-3">
               <Mark className="w-10 shrink-0 text-paper" />
-              <span className="display text-sm uppercase tracking-[0.08em]">
+              <span className="display text-lg uppercase tracking-[0.08em]">
                 {S.siteName[locale]}
               </span>
             </div>
-            <div className="mt-5 space-y-1 text-sm text-[#d8d0ce]">
-              <p>{S.about.founded[locale]}, 8.1.2010</p>
-              <p>
-                {S.contact.orgNumber[locale]} {association.orgNumber}
-              </p>
-              {settings.frivilligsentral && <p>{S.footer.frivilligsentral[locale]}</p>}
-            </div>
+            {/* The founding date and the frivilligsentral affiliation are facts
+                about the association, not footer furniture. They are on /about,
+                stated once, and were repeated here on all 66 pages. */}
+            <p className="mt-5 text-base text-[#d8d0ce]">
+              {S.contact.orgNumber[locale]} {association.orgNumber}
+            </p>
           </div>
 
           <div>
-            <FooterHeading>{S.footer.sections[locale]}</FooterHeading>
-            <ul className="text-sm">
+            <FooterHeading>{S.sections[locale]}</FooterHeading>
+            <ul className="text-base">
               {(["help", "calendar", "articles", "about", "courses", "contact"] as const).map((k) => (
                 <li key={k}>
                   <Link href={`/${locale}/${k}`} className="flex min-h-11 items-center text-[#d8d0ce] no-underline hover:text-paper hover:underline">
@@ -44,8 +43,7 @@ export function Footer({ locale }: { locale: Locale }) {
 
           <div>
             <FooterHeading>{S.footer.contact[locale]}</FooterHeading>
-            <p className="mb-3 text-sm text-[#a89f9d]">{S.footer.rolesForward[locale]}</p>
-            <address className="space-y-1 text-sm not-italic text-[#d8d0ce]">
+            <address className="space-y-1 text-base not-italic text-[#d8d0ce]">
               <p>
                 <a href={`mailto:${association.email}`} className="inline-flex min-h-11 items-center text-[#d8d0ce] hover:text-paper">
                   {association.email}
@@ -66,7 +64,7 @@ export function Footer({ locale }: { locale: Locale }) {
 
           <div>
             <FooterHeading>{S.footer.support[locale]}</FooterHeading>
-            <div className="space-y-1 text-sm text-[#d8d0ce]">
+            <div className="space-y-1 text-base text-[#d8d0ce]">
               <p>{association.name}</p>
               <p>{association.bank}</p>
               {/* Vipps does not exist. The row simply does not render, and no
@@ -83,7 +81,7 @@ export function Footer({ locale }: { locale: Locale }) {
 
         {/* Two legal entities share this site. The one that takes course money
             is named here in its own right, never merged into the association. */}
-        <div className="mt-10 border-t border-paper/20 pt-6 text-xs text-[#a89f9d]">
+        <div className="mt-10 border-t border-paper/20 pt-6 text-base text-[#a89f9d]">
           <p>
             {S.footer.separateEntity[locale]}: {courseProvider.name},{" "}
             {S.contact.orgNumber[locale]} {courseProvider.orgNumber},{" "}
@@ -91,29 +89,35 @@ export function Footer({ locale }: { locale: Locale }) {
           </p>
         </div>
 
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-paper/20 pt-6 text-xs text-[#a89f9d]">
-          <p>
-            {S.siteName[locale]} · {S.contact.orgNumber[locale]} {association.orgNumber}
-          </p>
-          <div className="flex flex-wrap gap-x-6">
-            <Link href={`/${locale}/about/bylaws`} className="inline-flex min-h-11 items-center text-[#a89f9d] hover:text-paper">
-              {S.footer.bylaws[locale]}
-            </Link>
-            <Link href={`/${locale}/about/membership`} className="inline-flex min-h-11 items-center text-[#a89f9d] hover:text-paper">
-              {S.footer.membership[locale]}
-            </Link>
-            <Link href={`/${locale}/privacy`} className="inline-flex min-h-11 items-center text-[#a89f9d] hover:text-paper">
-              {S.footer.privacy[locale]}
-            </Link>
-          </div>
+        {/* The name is on the wordmark at the head of this footer and the
+            organisation number is in the column under it. A colophon repeating
+            both is the sort of line a public body prints out of habit. */}
+        <div className="mt-6 flex flex-wrap gap-x-6 border-t border-paper/20 pt-6 text-base text-[#a89f9d]">
+          <Link href={`/${locale}/about/bylaws`} className="inline-flex min-h-11 items-center text-[#a89f9d] hover:text-paper">
+            {S.footer.bylaws[locale]}
+          </Link>
+          <Link href={`/${locale}/about/membership`} className="inline-flex min-h-11 items-center text-[#a89f9d] hover:text-paper">
+            {S.footer.membership[locale]}
+          </Link>
+          <Link href={`/${locale}/privacy`} className="inline-flex min-h-11 items-center text-[#a89f9d] hover:text-paper">
+            {S.footer.privacy[locale]}
+          </Link>
         </div>
       </div>
     </footer>
   );
 }
 
+/**
+ * Public Sans at the 17px body size, not Marcellus at 20px. Setting the column
+ * heads in the display serif would make them the largest thing in the footer
+ * and turn a legal and contact strip into a brochure masthead; at the body size
+ * nothing down here outranks the text it introduces, and the caps alone carry
+ * the head. No tracking class: these carry no lang guard, and tracking Thai
+ * destroys word boundaries in a script that has no inter-word spaces.
+ */
 function FooterHeading({ children }: { children: React.ReactNode }) {
   return (
-    <p className="display mb-3 text-xs uppercase tracking-[0.07em] text-[#c9bfbd]">{children}</p>
+    <p className="mb-3 text-base uppercase text-[#c9bfbd]">{children}</p>
   );
 }

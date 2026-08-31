@@ -57,8 +57,8 @@ export default async function CoursePage({
 
       <div className="mx-auto grid max-w-[1180px] gap-12 px-4 py-12 sm:px-7 md:grid-cols-12">
         <div className="md:col-span-7">
-          <section>
-            <h2 lang={th} className="label-caps border-b border-rule pb-3 text-ink">
+          <section aria-labelledby="who-for">
+            <h2 id="who-for" lang={th} className="label-caps border-b border-rule pb-3 text-ink">
               {S.courses.whoFor[l]}
             </h2>
             <p lang={th} className="mt-4 text-lg text-ink-soft">
@@ -66,8 +66,12 @@ export default async function CoursePage({
             </p>
           </section>
 
-          <section className="mt-12">
-            <h2 lang={th} className="label-caps border-b border-rule pb-3 text-ink">
+          <section aria-labelledby="what-you-learn" className="mt-12">
+            <h2
+              id="what-you-learn"
+              lang={th}
+              className="label-caps border-b border-rule pb-3 text-ink"
+            >
               {S.courses.whatYouLearn[l]}
             </h2>
             <ul className="mt-4">

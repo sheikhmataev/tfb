@@ -1,0 +1,49 @@
+{
+  "_": "Immutable. Written verbatim from the brief at Step 0. Nothing in this run may edit this file. G22 checks it byte-identical against its first commit.",
+  "facts": [
+    { "id": "assoc.name", "value": "Thai Foreningen Bergen", "source": "brief" },
+    { "id": "assoc.orgnr", "value": "996 630 307", "source": "brief" },
+    { "id": "assoc.founded", "value": "8 January 2010", "iso": "2010-01-08", "source": "brief" },
+    { "id": "assoc.registered", "value": "18 March 2011", "iso": "2011-03-18", "source": "brief" },
+    { "id": "assoc.bylawsAmended", "value": "15 February 2016", "iso": "2016-02-15", "source": "brief" },
+    { "id": "assoc.memberCount", "value": "233", "asOf": "25 December 2016", "asOfIso": "2016-12-25", "source": "brief" },
+    { "id": "assoc.membershipFeeNok", "value": "50", "source": "brief" },
+    { "id": "assoc.frivilligsentral", "value": "Affiliated with the local frivilligsentral.", "source": "brief" },
+    { "id": "assoc.bank", "value": "1503.21.07556", "bankName": "DnB NOR", "source": "brief" },
+    { "id": "assoc.address", "value": "Landas Menighet Eldresenter, Landasveien 26, 5097 Bergen", "source": "brief" },
+    { "id": "assoc.email", "value": "post@thaiforeningenbergen.no", "source": "brief" },
+    { "id": "assoc.phone", "value": "+47 97 08 81 36", "source": "brief" },
+
+    { "id": "provider.name", "value": "Thai Restaurantvirksomhet Kurs", "source": "brief" },
+    { "id": "provider.orgnr", "value": "924 409 509", "source": "brief" },
+    { "id": "provider.bank", "value": "1506.34.69634", "source": "brief" },
+    { "id": "provider.address", "value": "Vallahogda 17, 5227 Nesttun", "source": "brief" },
+    { "id": "provider.email", "value": "kurs@thaiforeningenbergen.no", "source": "brief" },
+    { "id": "provider.separateEntity", "value": "A separate legal entity from Thai Foreningen Bergen.", "source": "brief" },
+
+    { "id": "courses.count", "value": "4", "source": "brief" },
+    { "id": "courses.priceNok", "value": "800", "source": "brief" },
+    { "id": "courses.durationHours", "value": "5", "source": "brief" },
+    { "id": "courses.capacity", "value": "6 to 8", "source": "brief" },
+    { "id": "courses.format", "value": "delivered online over Line video", "source": "brief" },
+    { "id": "courses.slugs", "value": "food-hygiene, food-allergy, hse-labour-law, ik-mat-system", "source": "brief" },
+    { "id": "courses.foodHygiene.regulator", "value": "Mattilsynet", "source": "brief" },
+    { "id": "courses.nextDate", "value": null, "rendersAs": "a stated absence", "source": "brief" },
+
+    { "id": "emergency.name", "value": "Krisesenteret", "source": "brief" },
+    { "id": "emergency.phone", "value": "55 31 50 50", "source": "brief" },
+    { "id": "emergency.hours", "value": "open 24 hours every day of the year", "source": "brief" },
+
+    { "id": "entries.total", "value": "13", "source": "brief" },
+    { "id": "entries.archive", "value": "9", "source": "brief" },
+    { "id": "entries.upcoming", "value": "4", "source": "brief" },
+    { "id": "entries.leadImages", "value": "every entry has leadImage null", "source": "brief" },
+
+    { "id": "assets.heroBryggen", "value": "general Bergen photography supplied to the project; not association archive material; depicts no specific entry", "source": "brief" },
+    { "id": "assets.activitiesLead", "value": "general activity photography supplied to the project; not association archive material; depicts no specific entry", "source": "brief" },
+
+    { "id": "client.brief", "value": "Vi onsker at nettsiden skal se ut som en offentlig etat eller tjeneste sin nettside, bare finere.", "source": "brief" },
+    { "id": "client.notACompany", "value": "It is an organisation, not a company that sells.", "source": "brief" },
+    { "id": "client.coursesOffHomepage", "value": "Courses are off the homepage by the client's own decision.", "source": "brief" }
+  ]
+}

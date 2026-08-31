@@ -1,15 +1,15 @@
-# Thai Foreningen Bergen (TFB) — Enhanced Build Prompt + Baseline Skeleton
+# Thai Foreningen Bergen (TFB): Enhanced Build Prompt + Baseline Skeleton
 
 **Status:** design brief only. No application code in this document.
-**Revision 5** — the skeleton has been built. See Part 1.5 for what shipped, what deviated, and why.
+**Revision 5**: the skeleton has been built. See Part 1.5 for what shipped, what deviated, and why.
 
-**Revision 4** — a full 70-page Firecrawl crawl of the legacy site replaces guesswork. The courses entity, its org number and prices, the board roster, the association's bank details, membership terms, and seven years of accounts are now known facts rather than open questions. Revision 3 note follows.
+**Revision 4**: a full 70-page Firecrawl crawl of the legacy site replaces guesswork. The courses entity, its org number and prices, the board roster, the association's bank details, membership terms, and seven years of accounts are now known facts rather than open questions. Revision 3 note follows.
 
-**Revision 3** — client brief folded in: stated content priorities now drive the homepage and nav order, Thai Airways added as a second reference, the courses sub-brand is handled as brand architecture, and all logo assets are delivered and measured.
+**Revision 3**. Client brief folded in: stated content priorities now drive the homepage and nav order, Thai Airways added as a second reference, the courses sub-brand is handled as brand architecture, and all logo assets are delivered and measured.
 
 ---
 
-## PART 0 — SOURCE AUDIT
+## PART 0: SOURCE AUDIT
 
 Scraped `https://www.tfhnorway.com` (ReadyPlanet CMS, charset `windows-874`, © 2011, ~133k lifetime visitors, several dead or empty pages).
 
@@ -196,7 +196,7 @@ Borrow the **information architecture and the institutional seriousness**: a fiv
 
 ---
 
-## PART 1 — THE ENHANCED PROMPT
+## PART 1: THE ENHANCED PROMPT
 
 > Paste everything between the rules below into a fresh session.
 
@@ -294,7 +294,7 @@ Run this before writing code, and again before declaring the plan finished. Repo
 
 Count the em dashes in your copy; the answer must be zero. Check whether the palette drifted toward indigo or violet. Check whether every card in every grid has the same word count. Check whether any emoji is doing an icon's job. Check whether every section has identical height and padding. Check whether any human being appears in a generated image. Check whether the lotus appears anywhere except the logo. Check whether any rendered number was invented. Check whether the copy uses "seamlessly", "empower", "vibrant community", "rich cultural heritage", or "bridging cultures"; if so, rewrite in the plain register an association actually writes in. Fix every failure before proceeding.
 
-### OUTPUT STRUCTURE — PHASE 1: THE PLAN
+### OUTPUT STRUCTURE, PHASE 1: THE PLAN
 
 1. **Strategic concept**, under 150 words. How a frightened member, a curious Norwegian, and a caseworker each reach what they need in under two clicks.
 2. **Reference selection.** Exactly 3 to 5 references from `/Users/brz/Downloads/design_list.md`, each justified in one sentence tied to a specific mechanic you are borrowing. If that file is unreadable, say so and substitute named public institutional sites.
@@ -304,13 +304,13 @@ Count the em dashes in your copy; the answer must be zero. Check whether the pal
 6. **Asset blueprint.** Exact Recraft prompts. State explicitly that no human figures are generated.
 7. **Draft-field register.** Every field currently carrying a placeholder, so the board can fill them in one pass.
 
-### OUTPUT STRUCTURE — PHASE 2: BUILD
+### OUTPUT STRUCTURE, PHASE 2: BUILD
 
 Once the plan is complete, proceed without asking. Order: scaffold and `@theme` tokens, content layer and types, root layout with locale routing and the persistent help bar, header and footer, homepage sections in order, the Help section, then remaining routes. Ship real copy in all three languages as you go.
 
 ---
 
-## PART 1.5 — BUILD REPORT
+## PART 1.5: BUILD REPORT
 
 The skeleton has been executed. 99 static pages across `en`, `no` and `th`.
 Run it with `npm run dev`; build with `npm run build`.
@@ -331,7 +331,7 @@ What was done instead is the thing that actually matters for this audience: **th
 
 **Still outstanding, all content rather than code.** Course dates, the Brannvern contradiction, the membership catchment after the Vestland merger, the board roster for 2026, accounts after 2015, Vipps, and a transparent vector of the courses mark. Each has a designed empty state today, so none of them blocks launch.
 
-## PART 2 — THE BASELINE SKELETON
+## PART 2: THE BASELINE SKELETON
 
 ### 2.0 Living reference
 
@@ -395,9 +395,9 @@ What links them is already there: both lockups set `THAI` in the same Roman capi
 | `--lotus` | `#E31375` | **4.26:1** | Display type 24px and up, rules, active state, mask edge. Not for body text. |
 | `--lotus-deep` | `#8D0C49` | 8.63:1 | Links, small text, hover, anything under 24px |
 | `--lotus-light` | `#FF77AE` | 7.65:1 on `--ink` | Labels and links on `--ink` and `--fjord` grounds |
-| `--paper` | `#FAF7F5` | — | Page ground |
-| `--petal` | `#F6EAF1` | — | Alternating band, table zebra, quiet callouts |
-| `--rule` | `#E2D8DC` | — | 1px hairlines, the primary structural device |
+| `--paper` | `#FAF7F5` | n/a | Page ground |
+| `--petal` | `#F6EAF1` | n/a | Alternating band, table zebra, quiet callouts |
+| `--rule` | `#E2D8DC` | n/a | 1px hairlines, the primary structural device |
 | `--fjord` | `#1F3A44` | 11.27:1 | The single cool counterweight, courses section only |
 
 **Correction worth reading.** The magenta is sampled from the supplied artwork, not chosen. The dominant fill in `logo-mark.png` is **#E31375**, which is redder than it reads on screen and is not the `#E10082` an eyedropper-by-eye would guess. It measures **4.26:1 on `--paper`**, below the 4.5:1 AA threshold for normal text. So `--lotus` is a display and graphics colour only: 24px and up, or 18.66px bold, where the 3:1 large-text threshold applies. Every link, label, caption, and table cell uses `--lotus-deep` at 8.63:1, and anything sitting on `--ink` or `--fjord` uses `--lotus-light`. Do not put `--lotus` on a body string anywhere, including eyebrow labels if they drop below 24px.
@@ -564,7 +564,7 @@ No newsletter signup. No social icon larger than 20px.
 
 Rebuilt around the client's five stated priorities. The persistent help bar carries the emergency number at all times, which is what allows the body to lead with courses.
 
-**1 — Hero.** Asymmetric 7/5, left-weighted, never centred.
+**1. Hero.** Asymmetric 7/5, left-weighted, never centred.
 Left: eyebrow in magenta uppercase, `Founded in Bergen, 8 January 2010`; H1 in mixed-case display serif at `clamp(38px, 5vw, 62px)`; a 20px lead at 52 characters per line; two actions, a solid `--ink` primary and a text-plus-underline secondary; then a hairline and one line of proof in `--ink-soft`.
 Right: one real photograph in the petal mask, bleeding 40px past the container's right edge on desktop, square and inset on mobile.
 Interaction: the H1 does not animate. The mask animates `border-radius` from `0 40% 0 40%` to `0 62% 0 62%` over 700ms on mount, once. That is the entire hero animation.
@@ -576,7 +576,7 @@ Interaction: the H1 does not animate. The mask animates `border-radius` from `0 
 - Actions: `See the courses` / `Se kursene` / `ดูคอร์สอบรม` and `Get help` / `Få hjelp` / `ขอความช่วยเหลือ`
 - Proof: `Volunteer run since 2010 · Org.nr 996 630 307`. Member count omitted until published.
 
-**2 — Courses.** The client's first priority, so it is the first thing under the hero. A light section framed by a 2px `--ink` rule, with the courses sub-brand mark at its head at 64px, 48px on mobile.
+**2. Courses.** The client's first priority, so it is the first thing under the hero. A light section framed by a 2px `--ink` rule, with the courses sub-brand mark at its head at 64px, 48px on mobile.
 This is where the Thai Airways lesson lands: the primary action sits high and is the first interactive thing on the page. A compact course finder above the table, filtering by language of instruction and by month, with a single `Register` action per row.
 Then a table, not cards. Columns: course, next date, language of instruction, price, action. Zebra striping in `--petal`, tabular numerals.
 
@@ -598,27 +598,27 @@ Certificate wording: say what the course covers and that the certificate documen
 Unset dates render `Date to be announced` linking to the enquiry contact, never a fabricated date. Rows expand in place at 200ms to show duration, location, and what the certificate is worth. No modal. Below 900px the table becomes stacked definition blocks, never a horizontally scrolling table.
 Section copy, EN: `Courses and certification`. Lead: `The courses you need to work in a Norwegian kitchen. Taught in Thai and Norwegian.`
 
-**3 — Public help and social services.** The client's second priority, and the section that replaces both the old help pathways and the old links rail, because they named the same agencies.
+**3. Public help and social services.** The client's second priority, and the section that replaces both the old help pathways and the old links rail, because they named the same agencies.
 Layout: four pathway blocks in a deliberately uneven 7/5 then 5/7 arrangement, hairline-ruled, not cards. Copy lengths differ per block because the situations differ. Then a ruled directory of the named agencies with the destination host shown in `--ink-soft`.
 Blocks: `Emergency` (Krisesenteret 55 31 50 50, free, every day of the year, no membership needed, bring identity documents for you and your children); `Barnevernet` (what it is, what happens when they contact you, that we can come with you); `Interpreting and paperwork` (letters from NAV or UDI before a deadline passes); `Confidentiality` (what we log, which is nothing, and who is bound).
 Directory, grouped under three ruled headings: `Norwegian authorities` (UDI, Politiet, NAV, Barnevernet, Helsenorge, Skatteetaten), `Thailand` (Royal Thai Embassy Oslo, Norwegian Embassy Bangkok, Thai e-Visa), `Urgent` (Krisesenteret 55 31 50 50, Alarmtelefonen for barn og unge 116 111, Legevakt 116 117, emergency 113).
 The confidentiality block must state plainly in all three languages that emergency contacts are not reported to the board and no record is kept. Inherited from the legacy site, and members rely on it.
 
-**4 — Activities.** The client's third priority: charity work and donations, cultural events, food festivals.
+**4. Activities.** The client's third priority: charity work and donations, cultural events, food festivals.
 Layout: one lead item at 8 columns with a petal-masked photograph, then three secondary items at 4 columns as a hairline-separated list with no images. Underneath, a compact three-strand summary linking to `/activities/charity`, `/activities/culture`, `/activities/food-festivals`.
 Dates in tabular numerals, formatted per locale. No view counters, no category pills.
 Charity strand carries amounts raised and where they went, because that is what earns trust for a volunteer association.
 Empty state: with no posts, one ruled block reading `No activities published yet` plus the Facebook link. Never an empty grid.
 
-**5 — About the association.** The client's fourth priority: who they are, why they started, what the purpose is.
+**5. About the association.** The client's fourth priority: who they are, why they started, what the purpose is.
 Layout: 5/7 split. Left, a short statement of purpose drawn from § 5 of the bylaws, not a marketing rewrite. Right, three dated facts as a ruled sequence: founded in Bergen 8 January 2010, bylaws last amended 15 February 2016, affiliated with the local frivilligsentral. Then one text link to the full background.
 No timeline graphic, no milestone counters.
 
-**6 — Contact.** The client's fifth priority, and it gets a real section rather than only a footer line.
+**6. Contact.** The client's fifth priority, and it gets a real section rather than only a footer line.
 Layout: 7/5. Left, contact by role, each with a `mailto:` and a `tel:` where one exists, plus contact hours and the expected response time. Right, the emergency number repeated at full size, because someone who scrolled this far may have been looking for exactly that.
 No contact form on the homepage. The form lives on `/contact`, and the complaints procedure has its own route.
 
-**7 — Footer.** As specified in 2.4C.
+**7. Footer.** As specified in 2.4C.
 
 Membership is deliberately absent from the homepage. No fee is set, no payment details exist, and a band inviting people to join with nothing behind it would be the same empty promise the legacy site made. It lives at `/about/membership` with a working register-your-interest form.
 
@@ -638,19 +638,19 @@ Design these properly. They are the majority of the launch surface and the legac
 
 ### 2.7 Key inner pages
 
-**`/help`** — index of the four pathways at full depth, with the help bar repeated as an in-page block at the top. Confidentiality gets its own route because people need to read it before they trust the number.
+**`/help`**: index of the four pathways at full depth, with the help bar repeated as an in-page block at the top. Confidentiality gets its own route because people need to read it before they trust the number.
 
-**`/courses/[slug]`** — what it certifies, who legally needs it, duration, language, price, next dates, and a registration form posting to the Worker. Include the Norwegian statutory reference where one exists, `legalBasis: null` when unverified rather than guessed.
+**`/courses/[slug]`**: what it certifies, who legally needs it, duration, language, price, next dates, and a registration form posting to the Worker. Include the Norwegian statutory reference where one exists, `legalBasis: null` when unverified rather than guessed.
 
-**`/about/bylaws`** — full text, reproduced verbatim from 2.8. Norwegian is the legally binding version; English and Thai are marked clearly as unofficial translations. Two-column desktop layout with paragraph numbers in a left rail, stacked language blocks on mobile. Show the amendment date, 15 February 2016.
+**`/about/bylaws`**: full text, reproduced verbatim from 2.8. Norwegian is the legally binding version; English and Thai are marked clearly as unofficial translations. Two-column desktop layout with paragraph numbers in a left rail, stacked language blocks on mobile. Show the amendment date, 15 February 2016.
 
-**`/about/board`** — the four roles with their bylaw duties, which are unusually well documented. Names and photos as supplied.
+**`/about/board`**: the four roles with their bylaw duties, which are unusually well documented. Names and photos as supplied.
 
-**`/about/finances`** — annual accounts, the fact that leder and kasserer jointly authorise expenditure, and any fundraising campaign with amounts raised and destination. This is where a volunteer association earns trust, and the legacy site had `บัญชีสมาคม` for exactly this reason.
+**`/about/finances`**: annual accounts, the fact that leder and kasserer jointly authorise expenditure, and any fundraising campaign with amounts raised and destination. This is where a volunteer association earns trust, and the legacy site had `บัญชีสมาคม` for exactly this reason.
 
-**`/membership/members`** — member roster, driven by a `published` flag in settings so the board controls visibility centrally rather than by deleting a route.
+**`/membership/members`**: member roster, driven by a `published` flag in settings so the board controls visibility centrally rather than by deleting a route.
 
-**`/contact/complaint`** — the procedure carried over intact: submit in writing by email with name, subject, content, and the outcome sought; the secretary forwards to the leader; the board convenes; you receive an answer.
+**`/contact/complaint`**. The procedure carried over intact: submit in writing by email with name, subject, content, and the outcome sought; the secretary forwards to the leader; the board convenes; you receive an answer.
 
 ### 2.8 Bylaws, verbatim source text
 

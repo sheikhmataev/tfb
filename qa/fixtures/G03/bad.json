@@ -1,0 +1,8 @@
+{
+  "files": {
+    "out/en/index.html": "<html><head><link rel=\"alternate\" hrefLang=\"en\" href=\"/tfb/en/\"/><link rel=\"alternate\" hrefLang=\"th\" href=\"https://sheikhmataev.github.io/tfb/tfb/th/\"/></head></html>"
+  },
+  "statuses": {
+    "http://localhost:4611/tfb/tfb/th/": 404
+  }
+}

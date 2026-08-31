@@ -1,0 +1,80 @@
+{
+  "captures": [
+    {
+      "route": "/",
+      "locale": "th",
+      "width": 1280,
+      "nojs": false,
+      "dump": {
+        "url": "http://localhost/tfb/th/",
+        "locale": "th",
+        "width": 1280,
+        "documentHeight": 2000,
+        "scrollWidth": 1280,
+        "innerWidth": 1280,
+        "wordCount": 800,
+        "headingOutline": [],
+        "landmarks": {
+          "navCount": 1,
+          "navLinkTexts": [
+            [
+              "Help",
+              "Calendar",
+              "Articles",
+              "About",
+              "Courses",
+              "Contact"
+            ]
+          ],
+          "mainCount": 1
+        },
+        "interactive": [],
+        "textNodes": [
+          {
+            "text": "สมาคมคนไทยในเบอร์เกน",
+            "fontFamily": "Marcellus, \"Marcellus Fallback\", Georgia, serif",
+            "fontSizePx": 28.3,
+            "color": "#14100F",
+            "opacity": 1,
+            "visibility": "visible",
+            "lang": "th",
+            "depth": 5,
+            "parentFontSizePx": 28.3
+          },
+          {
+            "text": "ลอยกระทง",
+            "fontFamily": "Marcellus, \"Marcellus Fallback\", Georgia, serif",
+            "fontSizePx": 30.7,
+            "color": "#14100F",
+            "opacity": 1,
+            "visibility": "visible",
+            "lang": "th",
+            "depth": 7,
+            "parentFontSizePx": 30.7
+          }
+        ],
+        "images": [],
+        "boxes": [],
+        "links": [],
+        "aboveFoldLinkCount": 10,
+        "helpBar": {
+          "presentAtScroll": {
+            "0": true,
+            "50": true,
+            "100": true
+          },
+          "yAtScroll": {
+            "0": 0,
+            "50": 0,
+            "100": 0
+          },
+          "phoneFontSizePx": 24,
+          "phoneTapW": 95,
+          "phoneTapH": 44
+        },
+        "renderedTextConcat": "55 31 50 50",
+        "emDashCount": 0
+      }
+    }
+  ]
+}

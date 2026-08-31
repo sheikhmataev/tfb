@@ -82,7 +82,14 @@ export function CourseList({
                 </p>
               )}
               <h3 lang={th} className="display mt-1.5 text-xl leading-snug sm:text-2xl">
-                <Link href={`/${locale}/courses/${c.slug}`} className="text-ink no-underline hover:underline">
+                {/* The title is a control, not prose, so it clears 44px. The
+                    line box is 32px at the mobile step; symmetric padding
+                    lifts it over the floor and a matching negative margin
+                    cancels the extra height out of the row. */}
+                <Link
+                  href={`/${locale}/courses/${c.slug}`}
+                  className="-my-2 inline-block py-2 text-ink no-underline hover:underline"
+                >
                   {c.title[locale]}
                 </Link>
               </h3>

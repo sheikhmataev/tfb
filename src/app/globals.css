@@ -22,8 +22,13 @@
   --font-text: var(--font-public-sans), "Helvetica Neue", Arial, sans-serif;
   --font-thai: var(--font-sarabun), "Noto Sans Thai", sans-serif;
 
-  --text-xs: 0.8125rem;   /* 13 */
-  --text-sm: 0.9375rem;   /* 15 */
+  /* 17px is an absolute floor on rendered text, so the two steps that used to
+     sit under the base collapse onto it. The names are kept rather than
+     deleted: removing them would let every existing text-xs and text-sm call
+     site fall through to Tailwind's own 12px and 14px defaults, which is the
+     failure this floor exists to prevent. */
+  --text-xs: 1.0625rem;   /* 17, floored */
+  --text-sm: 1.0625rem;   /* 17, floored */
   --text-base: 1.0625rem; /* 17 */
   --text-lg: 1.25rem;     /* 20 */
   --text-xl: 1.625rem;    /* 26 */
@@ -32,8 +37,6 @@
   --text-4xl: 3.875rem;   /* 62 */
 
   --radius-input: 2px;
-
-  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @layer base {
@@ -96,9 +99,26 @@
   ::selection { background: var(--color-petal); }
 }
 
+/* Marcellus is never set below 20px, and the floor belongs on the utility
+   rather than on each call site: a display element written with no size class
+   inherited the 17px body size and rendered the serif underneath its floor.
+   .display is emitted ahead of every text-* size utility, so an explicit step
+   still wins; only an unsized element is lifted. max() against 1em means a
+   display element sitting inside larger type keeps that larger size instead of
+   being pulled down to the floor. */
 @utility display {
   font-family: var(--font-display);
   font-weight: 400;
+  font-size: max(1em, var(--text-lg));
+}
+
+/* Marcellus is a Latin serif with no Thai glyphs, so Thai set in it falls
+   through to whatever face the reader's operating system supplies. Same guard
+   as label-caps below: when the content is Thai, the display face resolves to
+   Sarabun. Outside every cascade layer, so it outranks the utility. */
+:lang(th) .display,
+.display:lang(th) {
+  font-family: var(--font-thai);
 }
 
 /* Section label: Marcellus caps, tracked. Thai never uses the Latin display
@@ -107,8 +127,23 @@
   font-family: var(--font-display);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  font-size: var(--text-sm);
 }
+/* The 20px floor, and the reason it is not a declaration inside the utility
+   above: text-xs and the other size utilities outrank an @utility by source
+   order, which is how a label-caps label ended up setting the display serif at
+   17px. Unlayered, so the floor holds whichever size utility a call site adds,
+   and max() lets a larger inherited size through untouched. */
+.label-caps {
+  font-size: max(1em, var(--text-lg));
+}
+
+/* Thai must never be tracked, and a tracking-[...] utility outranks the base
+   layer rule above that says so. Unlayered, so no call site can put the
+   tracking back and break Thai word boundaries. */
+:lang(th) {
+  letter-spacing: 0;
+}
+
 :lang(th) .label-caps,
 .label-caps:lang(th) {
   font-family: var(--font-thai);
@@ -124,23 +159,4 @@
   overflow: hidden;
 }
 
-@keyframes panel {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: none; }
-}
-
-/* Scroll entrance. Hidden only when JS is proven to be running, so the
-   finished state is what ships in the HTML. */
-[data-js] .reveal:not(.is-in) {
-  opacity: 0;
-  transform: translateY(8px);
-}
-.reveal {
-  transition:
-    opacity 0.22s var(--ease-out-soft) var(--reveal-delay, 0s),
-    transform 0.22s var(--ease-out-soft) var(--reveal-delay, 0s);
-}
-@media (prefers-reduced-motion: reduce) {
-  [data-js] .reveal:not(.is-in) { opacity: 1; transform: none; }
-}
 

@@ -22,20 +22,11 @@ export const S = {
   close: { en: "Close", no: "Lukk", th: "ปิด" },
   skipToContent: { en: "Skip to content", no: "Hopp til innhold", th: "ข้ามไปยังเนื้อหา" },
   language: { en: "Language", no: "Språk", th: "ภาษา" },
+  sections: { en: "Sections", no: "Sider", th: "หมวดหมู่" },
 
-  masthead: {
-    identity: {
-      en: "A volunteer association for Thai people in Bergen, founded 8 January 2010. Affiliated with the local frivilligsentral.",
-      no: "En frivillig forening for thailendere i Bergen, stiftet 8. januar 2010. Tilknyttet den lokale frivilligsentralen.",
-      th: "สมาคมอาสาสมัครสำหรับคนไทยในเบอร์เกน ก่อตั้งเมื่อ 8 มกราคม 2010 สังกัดศูนย์อาสาสมัครท้องถิ่น",
-    },
-    orgNumber: { en: "Organisation number", no: "Organisasjonsnummer", th: "เลขทะเบียนองค์กร" },
-    registryLink: {
-      en: "opens the entry in the Brønnøysund register",
-      no: "åpner oppføringen i Brønnøysundregistrene",
-      th: "เปิดข้อมูลในทะเบียน Brønnøysund",
-    },
-  },
+  /* Not a translation table. Each language is named in itself, which is what a
+     reader looks for when the page they landed on is one they cannot read. */
+  languageNames: { en: "English", no: "Norsk", th: "ไทย" },
 
   helpToday: {
     heading: { en: "If you need help today", no: "Hvis du trenger hjelp i dag", th: "หากคุณต้องการความช่วยเหลือวันนี้" },
@@ -238,21 +229,14 @@ export const S = {
   },
 
   footer: {
-    sections: { en: "Sections", no: "Sider", th: "หมวดหมู่" },
     contact: { en: "Contact", no: "Kontakt", th: "ติดต่อ" },
     support: { en: "Support the association", no: "Støtt foreningen", th: "สนับสนุนสมาคม" },
     membership: { en: "Membership", no: "Medlemskap", th: "สมาชิก" },
     bylaws: { en: "Bylaws", no: "Vedtekter", th: "ข้อบังคับ" },
     finances: { en: "Finances", no: "Økonomi", th: "การเงิน" },
     privacy: { en: "Privacy", no: "Personvern", th: "ความเป็นส่วนตัว" },
-    frivilligsentral: { en: "Affiliated with the local frivilligsentral", no: "Tilknyttet den lokale frivilligsentralen", th: "สังกัดศูนย์อาสาสมัครท้องถิ่น" },
     vippsPending: { en: "Vipps is not set up yet. Bank transfer works today.", no: "Vipps er ikke satt opp ennå. Bankoverføring fungerer i dag.", th: "ยังไม่ได้เปิดใช้ Vipps สามารถโอนผ่านธนาคารได้" },
     separateEntity: { en: "Courses are run by a separate company", no: "Kursene drives av et eget foretak", th: "คอร์สอบรมดำเนินการโดยบริษัทแยกต่างหาก" },
-    rolesForward: {
-      en: "These addresses forward to whoever currently holds the role, so a change of board never breaks a contact.",
-      no: "Disse adressene går videre til den som til enhver tid har vervet, slik at et styrebytte aldri bryter en kontakt.",
-      th: "ที่อยู่อีเมลเหล่านี้ส่งต่อไปยังผู้ที่ดำรงตำแหน่งอยู่ในขณะนั้น การเปลี่ยนคณะกรรมการจึงไม่ทำให้ติดต่อไม่ได้",
-    },
   },
 
   membership: {

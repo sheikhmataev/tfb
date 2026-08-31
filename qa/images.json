@@ -1,0 +1,43 @@
+{
+  "_": "What each file in public/assets actually is. An image may only appear next to content it genuinely depicts. An entry with no photograph renders with no photograph and no placeholder.",
+  "images": [
+    {
+      "file": "public/assets/hero-bryggen.jpg",
+      "depicts": "Bryggen in Bergen. General city photography.",
+      "suppliedBy": "supplied to the project",
+      "suppliedWhen": "unrecorded",
+      "rightToUse": "yes, supplied for this project",
+      "isAssociationArchive": false,
+      "mayIllustrate": ["site furniture, captioned as what it is: a photograph of Bergen"],
+      "mayNotIllustrate": [
+        "any specific dated event",
+        "anything described as archive material",
+        "anything described as belonging to the association",
+        "Thai Food Festival 2015 or 2016",
+        "any entry in content/entries/"
+      ]
+    },
+    {
+      "file": "public/assets/activities-lead.jpg",
+      "depicts": "General activity photography. It does not depict any identified TFB event.",
+      "suppliedBy": "supplied to the project",
+      "suppliedWhen": "unrecorded",
+      "rightToUse": "yes, supplied for this project",
+      "isAssociationArchive": false,
+      "mayIllustrate": ["site furniture, captioned as what it is"],
+      "mayNotIllustrate": [
+        "any specific dated event",
+        "anything described as archive material",
+        "anything described as belonging to the association",
+        "any entry in content/entries/"
+      ]
+    },
+    { "file": "public/assets/logo-lockup.svg", "depicts": "The association wordmark and lotus mark.", "suppliedBy": "the client", "rightToUse": "yes", "isAssociationArchive": false, "mayIllustrate": ["the association's own identity"], "mayNotIllustrate": ["the course provider"] },
+    { "file": "public/assets/logo-lockup-inverse.svg", "depicts": "The association wordmark and lotus mark, reversed for dark grounds.", "suppliedBy": "the client", "rightToUse": "yes", "isAssociationArchive": false, "mayIllustrate": ["the association's own identity on a dark ground"], "mayNotIllustrate": ["the course provider"] },
+    { "file": "public/assets/logo-mark.svg", "depicts": "The lotus mark alone.", "suppliedBy": "the client", "rightToUse": "yes", "isAssociationArchive": false, "mayIllustrate": ["the association's own identity"], "mayNotIllustrate": ["the course provider"] },
+    { "file": "public/assets/logo-courses.svg", "depicts": "The mark of Thai Restaurantvirksomhet Kurs, the separate legal entity that runs the courses.", "suppliedBy": "the client", "rightToUse": "yes", "isAssociationArchive": false, "mayIllustrate": ["the course provider"], "mayNotIllustrate": ["the association itself", "anything implying the two bodies are one"] }
+  ],
+  "entries": {
+    "leadImage": "null on all 13 entries. No entry may be given a photograph from public/assets, because none of them depicts any entry."
+  }
+}

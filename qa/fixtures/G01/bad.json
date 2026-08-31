@@ -1,0 +1,9 @@
+{
+  "buildResult": {
+    "code": 1
+  },
+  "files": {
+    "out/index.html": "<!doctype html><html><body><h2>Application error</h2><script>self.__next_error__=1</script><p>digest: 12345</p><a href=\"/tfb/en/\">English</a></body></html>",
+    "src/app/(chooser)/page.tsx": "import { redirect } from \"next/navigation\";\nexport default function Page() { redirect(\"/en/\"); }\n"
+  }
+}

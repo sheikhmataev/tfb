@@ -49,6 +49,13 @@ const PURPOSE = [
   },
 ];
 
+/**
+ * In English and Norwegian the nav item and the page title are already
+ * different words. In Thai they are the same string, so the Thai title is said
+ * in full, with the association's own name, which the nav item cannot carry.
+ */
+const TITLE = { ...S.about.label, th: `เกี่ยวกับ${S.siteName.th}` };
+
 const SUBPAGES = [
   { href: "board", key: "board" },
   { href: "bylaws", key: "bylaws" },
@@ -77,7 +84,7 @@ export default async function AboutPage({
     <>
       <PageHeader
         eyebrow={S.nav.about[l]}
-        title={S.about.label[l]}
+        title={TITLE[l]}
         lead={S.about.lead[l]}
         locale={l}
       />
@@ -97,7 +104,10 @@ export default async function AboutPage({
             </ul>
             <p lang={th} className="mt-6 text-sm text-ink-soft">
               {S.about.bylaws[l]}: {formatDate(settings.bylawsAmendedIso, l)}.{" "}
-              <Link href={`/${l}/about/bylaws`} className="text-lotus-deep">
+              <Link
+                href={`/${l}/about/bylaws`}
+                className="inline-flex min-h-11 items-center text-lotus-deep"
+              >
                 {S.footer.bylaws[l]}
               </Link>
             </p>

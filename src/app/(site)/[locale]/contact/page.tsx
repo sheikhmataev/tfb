@@ -13,6 +13,21 @@ export function generateStaticParams() {
 
 const COMPLAINT = { en: "Complaints procedure", no: "Klageordning", th: "ขั้นตอนการร้องเรียน" };
 
+/**
+ * The nav item above already says "Contact". This heading says what is on the
+ * page instead: the addresses, numbers and registration numbers of the two
+ * entities, which is what a person scanning for one of them is looking for.
+ */
+const TITLE = {
+  en: "Contact details",
+  no: "Kontaktinformasjon",
+  th: "ข้อมูลติดต่อ",
+};
+
+/** Verbs taken from the page lead, which already says "Write or call". */
+const WRITE = { en: "Write", no: "Skriv", th: "เขียน" };
+const CALL = { en: "Call", no: "Ring", th: "โทร" };
+
 export async function generateMetadata({
   params,
 }: {
@@ -37,7 +52,7 @@ export default async function ContactPage({
     <>
       <PageHeader
         eyebrow={S.nav.contact[l]}
-        title={S.contact.label[l]}
+        title={TITLE[l]}
         lead={S.contact.lead[l]}
         locale={l}
       />
@@ -87,18 +102,27 @@ function EntityBlock({ title, entity, locale }: { title: string; entity: Entity;
   const th = locale === "th" ? "th" : undefined;
   return (
     <div className="border-t border-rule pt-5">
-      <p lang={th} className="label-caps text-xs text-ink-soft">
+      <p lang={th} className="label-caps text-ink-soft">
         {title}
       </p>
       <p className="display mt-1.5 text-xl leading-snug">{entity.name}</p>
-      <dl className="mt-4 space-y-2.5 text-sm">
+      {/* The address itself is plain, selectable, copyable text and the link is
+          a short named action beside it. A value cell that is entirely a link
+          reads as a row of buttons rather than as a register, and it made a
+          third of the block's glyphs lotus. */}
+      <dl className="mt-4 space-y-2.5">
         <div>
           <dt lang={th} className="text-ink-soft">
             {S.contact.email[locale]}
           </dt>
-          <dd>
-            <a href={`mailto:${entity.email}`} className="inline-flex min-h-11 items-center text-lotus-deep underline-offset-4">
-              {entity.email}
+          <dd className="flex flex-wrap items-center gap-x-4">
+            <span className="break-words">{entity.email}</span>
+            <a
+              href={`mailto:${entity.email}`}
+              aria-label={`${WRITE[locale]} ${entity.name}`}
+              className="inline-flex min-h-11 items-center text-lotus-deep underline underline-offset-4"
+            >
+              {WRITE[locale]}
             </a>
           </dd>
         </div>
@@ -106,9 +130,14 @@ function EntityBlock({ title, entity, locale }: { title: string; entity: Entity;
           <dt lang={th} className="text-ink-soft">
             {S.contact.phone[locale]}
           </dt>
-          <dd>
-            <a href={`tel:${entity.phone.replace(/\s/g, "")}`} className="inline-flex min-h-11 items-center text-lotus-deep underline-offset-4">
-              {entity.phone}
+          <dd className="flex flex-wrap items-center gap-x-4">
+            <span>{entity.phone}</span>
+            <a
+              href={`tel:${entity.phone.replace(/\s/g, "")}`}
+              aria-label={`${CALL[locale]} ${entity.name}`}
+              className="inline-flex min-h-11 items-center text-lotus-deep underline underline-offset-4"
+            >
+              {CALL[locale]}
             </a>
           </dd>
         </div>

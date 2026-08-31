@@ -1,0 +1,10 @@
+{
+  "files": {
+    "src/app/(site)/[locale]/page.tsx": "import { HelpBar } from \"@/components/HelpBar\";\nexport default function Page() { return <HelpBar />; }\n",
+    "src/components/HelpBar.tsx": "export function HelpBar() { return null; }\n",
+    "src/app/globals.css": "@utility petal-mask {\n  border-radius: 0 62% 0 62%;\n}\n@keyframes panel {\n  from { opacity: 0; }\n}\n.reveal {\n  transition: opacity 0.22s;\n  animation: panel 0.2s;\n}\n",
+    "out/en/index.html": "<html><body><figure class=\"petal-mask\"><img src=\"/tfb/assets/logo-mark.svg\"></figure><div class=\"reveal\">x</div></body></html>",
+    "out/_next/static/app.css": ".reveal{animation:panel .2s}",
+    "public/assets/logo-mark.svg": "<svg></svg>"
+  }
+}

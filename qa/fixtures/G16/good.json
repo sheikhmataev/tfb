@@ -1,0 +1,71 @@
+{
+  "today": "2026-08-30",
+  "files": {
+    "content/entries/archive.json": "[\n {\n  \"publishedAt\": \"2011-09-11\",\n  \"eventStartsAt\": null\n },\n {\n  \"publishedAt\": \"2016-06-04\",\n  \"eventStartsAt\": null\n }\n]",
+    "content/entries/upcoming.json": "[\n {\n  \"publishedAt\": \"2026-08-29\",\n  \"eventStartsAt\": \"2027-11-01\"\n }\n]"
+  },
+  "captures": [
+    {
+      "route": "/",
+      "locale": "en",
+      "width": 1280,
+      "nojs": false,
+      "dump": {
+        "url": "http://localhost/tfb/en/",
+        "locale": "en",
+        "width": 1280,
+        "documentHeight": 2000,
+        "scrollWidth": 1280,
+        "innerWidth": 1280,
+        "wordCount": 800,
+        "headingOutline": [],
+        "landmarks": {
+          "navCount": 1,
+          "navLinkTexts": [
+            []
+          ],
+          "mainCount": 1
+        },
+        "interactive": [],
+        "textNodes": [],
+        "images": [],
+        "boxes": [],
+        "links": [],
+        "aboveFoldLinkCount": 10,
+        "helpBar": {
+          "presentAtScroll": {
+            "0": true,
+            "50": true,
+            "100": true
+          },
+          "yAtScroll": {
+            "0": 0,
+            "50": 0,
+            "100": 0
+          },
+          "phoneFontSizePx": 20,
+          "phoneTapW": 120,
+          "phoneTapH": 44
+        },
+        "renderedTextConcat": "From the archive, 2011 to 2016. Thirteen documented projects.",
+        "emDashCount": 0
+      },
+      "aux": {
+        "route": "/",
+        "locale": "en",
+        "width": 1280,
+        "htmlLang": "en",
+        "truncated": {
+          "textNodes": 0,
+          "boxes": 0
+        },
+        "contrast": [],
+        "images": [],
+        "boxes": [],
+        "sections": [],
+        "liCount": 6,
+        "h1Count": 1
+      }
+    }
+  ]
+}

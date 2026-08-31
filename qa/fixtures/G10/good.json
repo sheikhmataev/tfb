@@ -1,0 +1,86 @@
+{
+  "files": {
+    "out/en/about/index.html": "<table><tr><th>Organisation number</th><td>996 630 307 <a href=\"/tfb/x\">register</a>. The association was entered in the register in March 2011 and has filed every year since, which is the plain fact the row is here to state.</td></tr></table>"
+  },
+  "captures": [
+    {
+      "route": "/",
+      "locale": "en",
+      "width": 1280,
+      "nojs": false,
+      "dump": {
+        "url": "http://localhost/tfb/en/",
+        "locale": "en",
+        "width": 1280,
+        "documentHeight": 2000,
+        "scrollWidth": 1280,
+        "innerWidth": 1280,
+        "wordCount": 800,
+        "headingOutline": [],
+        "landmarks": {
+          "navCount": 1,
+          "navLinkTexts": [
+            []
+          ],
+          "mainCount": 1
+        },
+        "interactive": [],
+        "textNodes": [],
+        "images": [],
+        "boxes": [],
+        "links": [
+          {
+            "text": "Bylaws",
+            "chars": 6,
+            "href": "/tfb/en/about/bylaws/",
+            "color": "rgb(141, 12, 73)",
+            "inTableRow": false,
+            "inProse": false
+          },
+          {
+            "text": "The association was entered in the Brønnøysund register on 18 March 2011 under number",
+            "chars": 85,
+            "href": "/tfb/en/about/bylaws/",
+            "color": "rgb(141, 12, 73)",
+            "inTableRow": false,
+            "inProse": true
+          }
+        ],
+        "aboveFoldLinkCount": 10,
+        "helpBar": {
+          "presentAtScroll": {
+            "0": true,
+            "50": true,
+            "100": true
+          },
+          "yAtScroll": {
+            "0": 0,
+            "50": 0,
+            "100": 0
+          },
+          "phoneFontSizePx": 20,
+          "phoneTapW": 120,
+          "phoneTapH": 44
+        },
+        "renderedTextConcat": "Krisesenteret 55 31 50 50 open 24 hours",
+        "emDashCount": 0
+      },
+      "aux": {
+        "route": "/",
+        "locale": "en",
+        "width": 1280,
+        "htmlLang": "en",
+        "truncated": {
+          "textNodes": 0,
+          "boxes": 0
+        },
+        "contrast": [],
+        "images": [],
+        "boxes": [],
+        "sections": [],
+        "liCount": 6,
+        "h1Count": 1
+      }
+    }
+  ]
+}

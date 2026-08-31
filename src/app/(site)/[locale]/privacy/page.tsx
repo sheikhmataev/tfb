@@ -18,6 +18,7 @@ const LEAD = {
 
 const SECTIONS = [
   {
+    id: "emergency-not-logged",
     heading: { en: "Emergency contact is not logged", no: "Akutte henvendelser logges ikke", th: "การติดต่อฉุกเฉินไม่ถูกบันทึก" },
     body: {
       en: "Everyone who takes an emergency call is bound by taushetsplikt. Those calls are not reported to the board and no record of them is kept. This has been the rule since the association started.",
@@ -26,6 +27,7 @@ const SECTIONS = [
     },
   },
   {
+    id: "membership-records",
     heading: { en: "Membership records", no: "Medlemsopplysninger", th: "ข้อมูลสมาชิก" },
     body: {
       en: "For membership we hold your name, address, national identity number, phone and email. It is used to administer your membership and nothing else. Ask us and we will tell you what we hold, correct it, or delete it.",
@@ -34,6 +36,7 @@ const SECTIONS = [
     },
   },
   {
+    id: "course-registration",
     heading: { en: "Course registration", no: "Kurspåmelding", th: "การลงทะเบียนอบรม" },
     body: {
       en: "Course registration is handled by Thai Restaurantvirksomhet Kurs, which is a separate company. What you send when you register goes to that company, not to the association.",
@@ -42,6 +45,7 @@ const SECTIONS = [
     },
   },
   {
+    id: "this-website",
     heading: { en: "This website", no: "Denne nettsiden", th: "เว็บไซต์นี้" },
     body: {
       en: "No cookies are set and no third party tracking runs on this site. Nothing you read here is tied back to you.",
@@ -77,8 +81,12 @@ export default async function PrivacyPage({
       <div className="mx-auto max-w-[1180px] px-4 py-12 sm:px-7">
         <div className="max-w-[68ch]">
           {SECTIONS.map((s) => (
-            <section key={s.heading.en} className="border-t border-rule py-6">
-              <h2 lang={th} className="display text-xl leading-snug">
+            <section
+              key={s.id}
+              aria-labelledby={s.id}
+              className="border-t border-rule py-6"
+            >
+              <h2 id={s.id} lang={th} className="display text-xl leading-snug">
                 {s.heading[l]}
               </h2>
               <p lang={th} className="mt-3 text-ink-soft">
@@ -89,7 +97,10 @@ export default async function PrivacyPage({
           <p className="border-t border-rule pt-6 text-sm text-ink-soft">
             {settings.association.name} · {S.contact.orgNumber[l]}{" "}
             {settings.association.orgNumber} ·{" "}
-            <a href={`mailto:${settings.association.email}`} className="text-lotus-deep">
+            <a
+              href={`mailto:${settings.association.email}`}
+              className="inline-flex min-h-11 items-center text-lotus-deep"
+            >
               {settings.association.email}
             </a>
           </p>

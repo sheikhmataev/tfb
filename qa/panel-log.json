@@ -1,0 +1,4 @@
+{
+  "_": "One entry per job-panel round. Records which jobs a reference won, whether the poisoned control lost, and every belief a tester came away with. A reference win is a diagnostic and never a stopping condition.",
+  "rounds": []
+}
