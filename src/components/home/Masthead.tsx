@@ -6,6 +6,10 @@ import { Mark } from "@/components/Mark";
 import { S } from "@/lib/strings";
 import { HTML_LANG } from "@/lib/i18n";
 import { LOCALES, type Locale } from "@/lib/types";
+import { settings } from "@/lib/content";
+
+const EMERGENCY_NAME = settings.emergency.name;
+const EMERGENCY_PHONE = settings.emergency.phone;
 
 /**
  * A nameplate, not a hero, and on the homepage not a navigation bar either.
@@ -109,12 +113,15 @@ const NAV = ["help", "calendar", "articles", "about", "courses", "contact"] as c
  */
 export function MastheadNav({ locale }: { locale: Locale }) {
   const pathname = usePathname();
-  if (isHome(pathname, locale)) return null;
   const th = locale === "th" ? "th" : undefined;
+  const tel = `tel:+47${EMERGENCY_PHONE.replace(/\s/g, "")}`;
 
   return (
-    <nav aria-label={S.sections[locale]} className="border-b border-rule">
-      <div className="mx-auto max-w-[1180px] px-1 pb-5 sm:px-4">
+    <nav
+      aria-label={S.sections[locale]}
+      className="sticky top-0 z-40 border-b border-rule bg-paper"
+    >
+      <div className="mx-auto flex max-w-[1180px] flex-wrap items-center gap-y-1 px-1 py-1 sm:px-4">
         <ul className="flex flex-wrap">
           {NAV.map((k) => {
             const active = pathname.startsWith(`/${locale}/${k}`);
@@ -134,6 +141,17 @@ export function MastheadNav({ locale }: { locale: Locale }) {
             );
           })}
         </ul>
+        {/* The emergency number rides in the persistent bar rather than in a
+            black band of its own. It stays reachable at every scroll position,
+            which is the requirement, without a strip of chrome at the top of
+            every page that reads as the navigation and is not. */}
+        <a
+          href={tel}
+          className="ml-auto inline-flex min-h-11 min-w-11 items-center gap-2 rounded-[2px] px-3 font-medium text-lotus-deep no-underline hover:underline"
+        >
+          <span lang={th} className="hidden sm:inline">{EMERGENCY_NAME}</span>
+          <span>{EMERGENCY_PHONE}</span>
+        </a>
       </div>
     </nav>
   );

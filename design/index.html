@@ -561,16 +561,23 @@ footer.page{border-top:1px solid var(--rule);margin-top:80px;padding:30px 0 70px
         delay between a person acting and the page admitting it.</p>
       </div>
       <div class="spec">
-        <span class="spec-label">The one thing that must never move</span>
-        <p style="font-size:17px">The help bar is pinned to the top of the viewport at
-        every scroll position on every page. It does not animate, collapse, dismiss or
-        retract on scroll direction.</p>
-        <p style="font-size:17px;margin-bottom:0">This too was a claim before it was a
-        fact. The bar was described here as never moving while the rendered measurement
-        put it at <code>y -3611</code> on the homepage, three thousand pixels above the
-        fold, gone. Gate G08 now asserts the bar's y is identical at 0, 50 and 100 per
-        cent of scroll on every route at both viewports, so the claim and the page cannot
-        drift apart again without the build breaking.</p>
+        <span class="spec-label">The one thing that must always be reachable</span>
+        <p style="font-size:17px">The section line is pinned to the top of the viewport at
+        every scroll position on every page, and it carries the Krisesenteret number in
+        lotus-deep at its right edge. One persistent bar does both jobs: it is what a
+        person navigates from, and it is where the emergency number always is.</p>
+        <p style="font-size:17px">The full emergency notice, with the hours and the offer
+        of an interpreter, sits once at the top of the document in normal flow. It is
+        deliberately not pinned. It was, for one round, and that was wrong: a black band
+        fixed to the top of every page becomes the topmost persistent element on the site,
+        which is the position a reader reads as the navigation, and it was not navigation.
+        The client said so in four words.</p>
+        <p style="font-size:17px;margin-bottom:0">Before that round the bar was not pinned
+        either, while this page and the component's own docstring both said it never moved.
+        The rendered measurement put it at <code>y -3611</code> on the homepage, three
+        thousand pixels above the fold and gone. Twice now the claim and the page have
+        drifted apart, in opposite directions, which is the argument for measuring the
+        rendered result rather than reading the intent.</p>
       </div>
     </div>
   </section>
@@ -580,7 +587,7 @@ footer.page{border-top:1px solid var(--rule);margin-top:80px;padding:30px 0 70px
     <div class="sec-head"><h2 class="sec-num" id="sec-07">07 · Components</h2></div>
 
     <div class="spec">
-      <span class="spec-label">Help bar, persistent, never dismissible</span>
+      <span class="spec-label">Help bar, the full notice, never dismissible</span>
       <div class="helpbar">
         <span class="tag">Urgent help</span>
         <span>Krisesenteret <a href="tel:+4755315050">55 31 50 50</a></span>
@@ -592,7 +599,7 @@ footer.page{border-top:1px solid var(--rule);margin-top:80px;padding:30px 0 70px
         <span lang="th">ศูนย์ช่วยเหลือ <a href="tel:+4755315050">55 31 50 50</a></span>
         <span class="spacer" lang="th">สมาคมจัดล่ามให้ได้</span>
       </div>
-      <p style="margin-top:14px;font-size:17px;color:var(--ink-soft)">Sits above the header, 44px, single line, tabular numerals. On mobile the whole bar is the tap target and the right text drops. It does not animate, collapse, or reveal.</p>
+      <p style="margin-top:14px;font-size:17px;color:var(--ink-soft)">Sits above the masthead in normal flow, one line where there is room. On mobile the whole bar is the tap target and the right text drops. It does not animate, collapse, or reveal.</p>
     </div>
 
     <div class="spec">

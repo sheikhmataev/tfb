@@ -3,23 +3,24 @@ import { S } from "@/lib/strings";
 import type { Locale } from "@/lib/types";
 
 /**
- * The one element on the site that never moves. No animation, no collapse,
- * no dismiss.
+ * The full emergency notice: who to call, the number, the hours, and the offer
+ * of an interpreter. It sits once at the top of the document, in normal flow.
  *
- * It is pinned, and that is load-bearing rather than decorative: a person who
- * reaches this site in trouble may be anywhere on any page when they decide to
- * call, and a number that has scrolled away is a number they have to go looking
- * for. Gate G08 asserts the bar's y is identical at 0, 50 and 100 per cent of
- * scroll on every route and viewport, because this comment claimed the bar never
- * moved for several rounds while the measurement said it left the screen at
- * y -3611 on the homepage.
+ * It is deliberately NOT the pinned element. Pinning a black band to the top of
+ * every page made it the topmost persistent thing on the site, which is the
+ * position a reader reads as the navigation, and it was not navigation. The
+ * requirement it exists to satisfy, that the number stays reachable at any
+ * scroll position, is met by the sticky section line in MastheadNav, which
+ * carries the same number in lotus-deep and is a bar a person can also navigate
+ * from. One persistent bar, doing both jobs, instead of two competing for the
+ * top of the viewport.
  */
 export function HelpBar({ locale }: { locale: Locale }) {
   const { emergency } = settings;
   const tel = `tel:+47${emergency.phone.replace(/\s/g, "")}`;
 
   return (
-    <div className="sticky top-0 z-50 bg-ink text-paper">
+    <div className="bg-ink text-paper">
       <div className="mx-auto flex max-w-[1180px] flex-wrap items-center gap-x-4 gap-y-1 px-4 py-2.5 text-base sm:px-7 md:min-h-11 md:flex-nowrap md:py-0">
         {/* Public Sans, not the display serif: the tag only has to name the bar,
             and it must stay smaller than the number it introduces. It carries no
