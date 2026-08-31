@@ -68,8 +68,13 @@ export default async function LocaleLayout({
       >
         {S.skipToContent[l]}
       </a>
-        <Masthead locale={l} />
-        <MastheadNav locale={l} />
+        {/* One sticky block, not two. The client asked to be able to change
+            language wherever they are, and a language control that scrolls
+            away is one a reader has to go back to the top to reach. */}
+        <header className="sticky top-0 z-50">
+          <Masthead locale={l} />
+          <MastheadNav locale={l} />
+        </header>
         <main id="main">{children}</main>
         <Footer locale={l} />
       </body>

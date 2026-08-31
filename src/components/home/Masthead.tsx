@@ -34,8 +34,8 @@ export function Masthead({ locale }: { locale: Locale }) {
   return (
     // The hairline closes the masthead. On an inner page it belongs under the
     // section line instead, so the name and the sections read as one block.
-    <div className={home ? "border-b border-rule" : ""}>
-      <div className={`mx-auto max-w-[1180px] px-4 sm:px-7 ${home ? "py-7" : "pb-3 pt-7"}`}>
+    <div className="bg-paper">
+      <div className="mx-auto max-w-[1180px] px-4 py-3 sm:px-7 sm:py-4">
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
           <Link href={`/${locale}`} className="flex min-h-11 items-center gap-3 no-underline">
             <Mark className="w-9 shrink-0 text-lotus" />
@@ -126,10 +126,7 @@ export function MastheadNav({ locale }: { locale: Locale }) {
   const tel = `tel:+47${EMERGENCY_PHONE.replace(/\s/g, "")}`;
 
   return (
-    <nav
-      aria-label={S.sections[locale]}
-      className="sticky top-0 z-40 border-b border-rule bg-paper"
-    >
+    <nav aria-label={S.sections[locale]} className="bg-ink text-paper">
       <div className="mx-auto flex max-w-[1180px] flex-wrap items-center gap-y-1 px-1 py-1 sm:px-4">
         <ul className="flex flex-wrap">
           {NAV.map((k) => {
@@ -140,8 +137,8 @@ export function MastheadNav({ locale }: { locale: Locale }) {
                   href={`/${locale}/${k}`}
                   lang={th}
                   aria-current={active ? "page" : undefined}
-                  className={`inline-flex min-h-11 min-w-11 items-center justify-center rounded-[2px] px-3 no-underline hover:text-lotus-deep ${
-                    active ? "bg-petal font-medium text-ink" : "text-ink-soft"
+                  className={`inline-flex min-h-11 min-w-11 items-center justify-center rounded-[2px] px-3 no-underline hover:underline ${
+                    active ? "bg-paper font-medium text-ink" : "text-paper"
                   }`}
                 >
                   {S.nav[k][locale]}
@@ -156,7 +153,7 @@ export function MastheadNav({ locale }: { locale: Locale }) {
             every page that reads as the navigation and is not. */}
         <a
           href={tel}
-          className="ml-auto inline-flex min-h-11 min-w-11 items-center gap-2 rounded-[2px] px-3 font-medium text-lotus-deep no-underline hover:underline"
+          className="inline-flex min-h-11 min-w-11 items-center gap-2 rounded-[2px] px-3 font-medium text-lotus-light no-underline hover:underline sm:ml-auto"
         >
           <span lang={th} className="hidden sm:inline">{EMERGENCY_NAME}</span>
           <span>{EMERGENCY_PHONE}</span>
