@@ -5,11 +5,17 @@ import { S } from "@/lib/strings";
 import type { Locale } from "@/lib/types";
 
 /**
- * Two numbers, not one, each with its purpose stated.
+ * Two numbers, not one, each with its purpose stated in a single line.
  *
  * Krisesenteret is a domestic-violence shelter. Routing a UDI deadline or a
  * Barnevernet letter toward it would be a wrong referral this page authored,
  * so the triage is done for the reader rather than handed to her.
+ *
+ * This is the only band on the homepage that survives from a page that has its
+ * own, and it survives as triage rather than as a copy: who to ring, and which
+ * of the two. The hours, the confidentiality note, the agency list and every
+ * service in detail are on /help, one link away. A number is worth repeating
+ * where a page of prose about the number is not.
  */
 export function HelpToday({ locale }: { locale: Locale }) {
   const th = locale === "th" ? "th" : undefined;
@@ -53,9 +59,6 @@ export function HelpToday({ locale }: { locale: Locale }) {
                 <dt lang={th} className="font-medium">
                   {l.forWhat}
                 </dt>
-                <dd lang={th} className="mt-1 max-w-[58ch] text-sm text-ink-soft">
-                  {l.note}
-                </dd>
               </div>
               <dd className="md:text-right">
                 <p className="text-sm text-ink-soft">{l.name}</p>
@@ -70,10 +73,7 @@ export function HelpToday({ locale }: { locale: Locale }) {
           ))}
         </dl>
 
-        <p lang={th} className="mt-2 max-w-[68ch] border-t border-rule pt-5 text-sm text-ink-soft">
-          {S.helpToday.confidentiality[locale]}
-        </p>
-        <p className="mt-3">
+        <p className="mt-5 border-t border-rule pt-5">
           <Link
             href={`/${locale}/help`}
             lang={th}
